@@ -1,0 +1,52 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-width: $mobile-min-width;
+
+  font-family: $daxline-pro;
+  font-size: 14px;
+  line-height: $body-lh;
+  font-weight: normal;
+  color: $body-fc;
+
+  background-color: $body-bg;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.default-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+
+  list-style: none;
+}
+
+.container {
+  position: relative;
+
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media (min-width: $desktop-min-width) {
+    width: $container-max-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
