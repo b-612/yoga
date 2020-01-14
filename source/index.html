@@ -41,5 +41,146 @@
 
     <a href="#" class="page-header__invitation">Запишитесь на бесплатное пробное занятие</a>
   </header>
+  <main>
+    <section class="directions">
+      <h2 class="directions__title">Направления</h2>
+
+      <ul class="directions__list">
+        <li class="directions__item direction">
+
+          <div class="direction__wrapper">
+            <h3 class="direction__title">Йога 23</h3>
+            <ul class="direction__schedule">
+              <li class="direction__schedule-item">Пн, Ср, Пт – с 12:00 до 15:00</li>
+              <li class="direction__schedule-item">Вт, Чт – с 18:00 до 21:00</li>
+            </ul>
+            <p class="direction__teacher">
+              <span class="direction__teacher-label">Инструктор</span>
+              Емельянова Полина
+            </p>
+          </div>
+
+          <a href="#" class="direction__link visually-hidden">Подробнее</a>
+        </li>
+
+        <li class="directions__item direction">
+
+          <div class="direction__wrapper">
+            <h3 class="direction__title">Ашатанга-йога</h3>
+            <ul class="direction__schedule">
+              <li class="direction__schedule-item">Пн, Ср, Пт – с 11:00 до 14:00</li>
+              <li class="direction__schedule-item">Вт, Чт – с 19:00 до 21:00 </li>
+            </ul>
+            <p class="direction__teacher">
+              <span class="direction__teacher-label">Инструктор</span>
+              Емельянова Полина
+            </p>
+          </div>
+
+          <a href="#" class="direction__link visually-hidden">Подробнее</a>
+        </li>
+
+        <li class="directions__item direction">
+
+          <div class="direction__wrapper">
+            <h3 class="direction__title">Айенгара-йога</h3>
+            <ul class="direction__schedule">
+              <li class="direction__schedule-item"></li>
+              <li class="direction__schedule-item"></li>
+            </ul>
+            <p class="direction__teacher">
+              <span class="direction__teacher-label">Инструктор</span>
+              Емельянова Полина
+            </p>
+          </div>
+
+          <a href="#" class="direction__link visually-hidden">Подробнее</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="subscriptions">
+      <h2 class="subscriptions__title">Абонементы</h2>
+
+      <ul class="subscriptions__subscription-times">
+        <li class="subscriptions__time-item">
+          <a href="#" class="subscriptions__time-btn">1 месяц</a>
+        </li>
+
+        <li class="subscriptions__time-item">
+          <a href="#" class="subscriptions__time-btn">6 месяцев</a>
+        </li>
+
+        <li class="subscriptions__time-item">
+          <a href="#" class="subscriptions__time-btn">12 месяцев</a>
+        </li>
+      </ul>
+
+      <ul class="subscriptions__list">
+        <li class="subscriptions__item subscription">
+          <h3 class="subscription__title">Утро</h3>
+          <p class="subscription__text">
+            <span class="subscription__description">Посещение</span>
+            <span class="subscription__time">с 11:00 до 16:00</span>
+          </p>
+          <b class="subscription__price">1 300 Р</b>
+          <a href="" class="subscription__link">Заказать абонемент</a>
+        </li>
+
+        <li class="subscriptions__item subscription">
+          <h3 class="subscription__title">Утро</h3>
+          <p class="subscription__text">
+            <span class="subscription__description">Посещение</span>
+            <span class="subscription__time">с 11:00 до 16:00</span>
+          </p>
+          <b class="subscription__price">1 300 Р</b>
+          <a href="" class="subscription__link">Заказать абонемент</a>
+        </li>
+
+        <li class="subscriptions__item subscription">
+          <h3 class="subscription__title">Утро</h3>
+          <p class="subscription__text">
+            <span class="subscription__description">Посещение</span>
+            <span class="subscription__time">с 11:00 до 16:00</span>
+          </p>
+          <b class="subscription__price">1 300 Р</b>
+          <a href="" class="subscription__link">Заказать абонемент</a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <!--  Шаблон карточки направления-->
+  <template id="direction">
+    <li class="directions__item direction">
+
+      <div class="direction__wrapper">
+        <h3 class="direction__title">Йога 23</h3>
+        <ul class="direction__schedule">
+          <li class="direction__schedule-item">Пн, Ср, Пт – с 12:00 до 15:00</li>
+          <li class="direction__schedule-item">Вт, Чт – с 18:00 до 21:00</li>
+        </ul>
+        <p class="direction__teacher">
+          <span class="direction__teacher-label">Инструктор</span>
+          Емельянова Полина
+        </p>
+      </div>
+
+      <a href="#" class="direction__link visually-hidden">Подробнее</a>
+    </li>
+  </template>
+
+  <!--  Шаблон абонемента-->
+  <template id="subscription">
+    <li class="subscriptions__item subscription">
+      <h3 class="subscription__title">Утро</h3>
+      <p class="subscription__text">
+        <span class="subscription__description">Посещение</span>
+        <span class="subscription__time">с 11:00 до 16:00</span>
+      </p>
+      <b class="subscription__price">1 300 Р</b>
+      <a href="" class="subscription__link">Заказать абонемент</a>
+    </li>
+  </template>
 </body>
 </html>
