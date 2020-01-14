@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <title>Yoga</title>
+  <meta name="format-detection" content="telephone=no">
 </head>
 <body>
   <header class="page-header">
@@ -162,15 +163,17 @@
               <span class="team-member__practice">Ашатанга-йога</span>
             </div>
 
-            <ul class="team-member__socials">
-              <li class="team-member__social social">
+            <ul class="team-member__socials socials">
+              <li class="team-member__social socials__social">
                 <a href="#" class="social__link">
-                  <span class="visually-hiden">Сергей Попов Вконтакте</span>
+                  <span class="visually-hidden">Сергей Попов Вконтакте</span>
                 </a>
               </li>
 
-              <li class="team-member__social social">
-                <a href="#" class="social__link">Сергей Попов на Фейсбук</a>
+              <li class="team-member__social socials__social">
+                <a href="#" class="social__link">
+                  <span class="visually-hidden">Сергей Попов на Фейсбук</span>
+                </a>
               </li>
             </ul>
           </div>
@@ -201,15 +204,17 @@
             class="review__author-name"></b>
             <time class="review__time" datetime="2018-05-16">16 мая 2018</time>
 
-            <ul class="review__socials">
-              <li class="review__social social">
+            <ul class="review__socials socials">
+              <li class="review__social socials__social">
                 <a href="#" class="social__link">
-                  <span class="visually-hiden">Сергей Попов Вконтакте</span>
+                  <span class="visually-hidden">Сергей Попов Вконтакте</span>
                 </a>
               </li>
 
-              <li class="review__social social">
-                <a href="#" class="social__link">Сергей Попов в Твиттер</a>
+              <li class="review__social socials__social">
+                <a href="#" class="social__link">
+                  <span class="visually-hidden">Сергей Попов в Твиттер</span>
+                </a>
               </li>
             </ul>
           </div>
@@ -240,6 +245,48 @@
       </form>
     </section>
   </main>
+
+  <footer class="page-footer">
+    <h2 class="visually-hidden">Дополнительная информация</h2>
+
+    <address class="page-footer__info">
+      <b class="page-footer__info-title">Адрес:</b>
+      <span class="page-footer__info-data">Московский проспект, 22</span>
+
+      <b class="page-footer__info-title">График работы:</b>
+      <span class="page-footer__info-data">Пн-Вс с 11:00 до 21:00</span>
+
+      <b class="page-footer__info-title">Телефон:</b>
+      <span class="page-footer__info-data">
+        <a href="tel:88126901010" class="page-footer__email">8 (812) 690-10-10</a>
+      </span>
+
+      <b class="page-footer__info-title">Email:</b>
+      <span class="page-footer__info-data">
+        <a href="mailto:yogaspb@gmail.com" class="page-footer__email">yogaspb@gmail.com</a>
+      </span>
+    </address>
+
+    <ul class="page-footer__socials socials">
+      <li class="page-footer__social socials__social">
+        <a href="#" class="social__link">
+          <span class="visually-hidden">Yoga Вконтакте</span>
+        </a>
+      </li>
+
+      <li class="page-footer__social socials__social">
+        <a href="#" class="social__link">
+          <span class="visually-hidden">Yoga в Твиттер</span>
+        </a>
+      </li>
+
+      <li class="page-footer__social socials__social">
+        <a href="#" class="social__link">
+          <span class="visually-hidden">Yoga в Фейсбук</span>
+        </a>
+      </li>
+    </ul>
+  </footer>
 
   <!--Шаблон карточки направления-->
   <template id="direction">
@@ -285,22 +332,24 @@
           <span class="team-member__practice">Ашатанга-йога</span>
         </div>
 
-        <ul class="team-member__socials">
-          <li class="team-member__social social">
+        <ul class="team-member__socials socials">
+          <li class="team-member__social socials__social">
             <a href="#" class="social__link">
-              <span class="visually-hiden">Сергей Попов Вконтакте</span>
+              <span class="visually-hidden">Сергей Попов Вконтакте</span>
             </a>
           </li>
 
-          <li class="team-member__social social">
-            <a href="#" class="social__link">Сергей Попов на Фейсбук</a>
+          <li class="team-member__social socials__social">
+            <a href="#" class="social__link">
+              <span class="visually-hidden">Сергей Попов на Фейсбук</span>
+            </a>
           </li>
         </ul>
       </div>
 
       <span class="team-member__experience">Опыт преподавания:
-            <span class="team-member__experience-time">8 лет</span>
-          </span>
+        <span class="team-member__experience-time">8 лет</span>
+      </span>
 
       <p class="team-member__description">Практикует с 2011 года, является сертифицированным инструктором по флоу- йоге. Большой опыт преподавания йоги для начинающих и продолжающих.</p>
     </li>
@@ -318,15 +367,17 @@
         class="review__author-name"></b>
         <time class="review__time" datetime="2018-05-16">16 мая 2018</time>
 
-        <ul class="review__socials">
-          <li class="review__social social">
+        <ul class="review__socials socials">
+          <li class="review__social socials__social">
             <a href="#" class="social__link">
-              <span class="visually-hiden">Сергей Попов Вконтакте</span>
+              <span class="visually-hidden">Сергей Попов Вконтакте</span>
             </a>
           </li>
 
-          <li class="review__social social">
-            <a href="#" class="social__link">Сергей Попов в Твиттер</a>
+          <li class="review__social socials__social">
+            <a href="#" class="social__link">
+              <span class="visually-hidden">Сергей Попов в Твиттер</span>
+            </a>
           </li>
         </ul>
       </div>
