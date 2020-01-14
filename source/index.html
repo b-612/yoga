@@ -186,9 +186,53 @@
         </li>
       </ul>
     </section>
+
+    <section class="reviews">
+      <h2 class="reviews__title">Отзывы</h2>
+
+      <ul class="reviews__list">
+        <li class="reviews__item review">
+          <blockquote class="review__text">
+            <p class="review__paragraph">Хожу на йогу вечером, чтобы расслабиться после  тяжелого трудового дня. И после занятий наступает спокойствие!</p>
+            <p class="review__paragraph">Йога это отличный способ быстро и качественно расслабиться. Спасибо инструктору Марине.</p>
+          </blockquote>
+
+          <div class="review__author"><img src="#" alt="Сергей Попов" class="review__avatar" width="52" height="51"><b
+            class="review__author-name"></b>
+            <time class="review__time" datetime="2018-05-16">16 мая 2018</time>
+
+            <ul class="review__socials">
+              <li class="review__social social">
+                <a href="#" class="social__link">
+                  <span class="visually-hiden">Сергей Попов Вконтакте</span>
+                </a>
+              </li>
+
+              <li class="review__social social">
+                <a href="#" class="social__link">Сергей Попов в Твиттер</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+
+      <nav class="reviews__nav">
+        <a href="#" class="reviews__nav-link reviews__nav-link--prev">
+          <span class="visually-hidden">Предыдущий отзыв</span>
+        </a>
+
+        <span class="reviews__nav-page reviews__nav-page--current">1</span>
+        /
+        <span class="reviews__nav-page reviews__nav-page--all">9</span>
+
+        <a href="#" class="reviews__nav-link reviews__nav-link--next">
+          <span class="visually-hidden">Следующий отзыв</span>
+        </a>
+      </nav>
+    </section>
   </main>
 
-  <!--  Шаблон карточки направления-->
+  <!--Шаблон карточки направления-->
   <template id="direction">
     <li class="directions__item direction">
 
@@ -208,7 +252,7 @@
     </li>
   </template>
 
-  <!--  Шаблон абонемента-->
+  <!--Шаблон абонемента-->
   <template id="subscription">
     <li class="subscriptions__item subscription">
       <h3 class="subscription__title">Утро</h3>
@@ -221,7 +265,7 @@
     </li>
   </template>
 
-  <!--  Шаблон карточки члена команды преподавателей-->
+  <!--Шаблон карточки члена команды преподавателей-->
   <template id="team-member">
     <li class="team__item team-member">
       <div class="team-member__header">
@@ -250,6 +294,33 @@
           </span>
 
       <p class="team-member__description">Практикует с 2011 года, является сертифицированным инструктором по флоу- йоге. Большой опыт преподавания йоги для начинающих и продолжающих.</p>
+    </li>
+  </template>
+
+  <!--Шаблон карточки отзыва-->
+  <template id="review">
+    <li class="reviews__item review">
+      <blockquote class="review__text">
+        <p class="review__paragraph">Хожу на йогу вечером, чтобы расслабиться после  тяжелого трудового дня. И после занятий наступает спокойствие!</p>
+        <p class="review__paragraph">Йога это отличный способ быстро и качественно расслабиться. Спасибо инструктору Марине.</p>
+      </blockquote>
+
+      <div class="review__author"><img src="#" alt="Сергей Попов" class="review__avatar" width="52" height="51"><b
+        class="review__author-name"></b>
+        <time class="review__time" datetime="2018-05-16">16 мая 2018</time>
+
+        <ul class="review__socials">
+          <li class="review__social social">
+            <a href="#" class="social__link">
+              <span class="visually-hiden">Сергей Попов Вконтакте</span>
+            </a>
+          </li>
+
+          <li class="review__social social">
+            <a href="#" class="social__link">Сергей Попов в Твиттер</a>
+          </li>
+        </ul>
+      </div>
     </li>
   </template>
 </body>
