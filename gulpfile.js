@@ -39,7 +39,6 @@ gulp.task('cssclean', function () {
 gulp.task('css', function () {
     return gulp.src([
         'source/sass/style.scss',
-        'source/sass/swiper.scss',
         'source/sass/normalize.scss'
     ])
         .pipe(plumber())
@@ -48,7 +47,7 @@ gulp.task('css', function () {
         .pipe(postcss([
             autoprefixer()
         ]))
-        .pipe(gulp.dest('build/css'))
+        .pipe(gulp.dest('build/css/'))
         .pipe(sourcemap.init())
         .pipe(csso())
         .pipe(rename({
