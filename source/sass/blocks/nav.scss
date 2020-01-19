@@ -1,0 +1,47 @@
+.nav__list {
+  display: none;
+}
+
+.nav__toggle {
+  position: relative;
+
+  padding: 0;
+  border: none;
+
+  background-color: $dark-on-light;
+
+  @media (max-width: $mobile-max-width) {
+    top: -12px;
+
+    width: 30px;
+    height: 1px;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+
+    position: absolute;
+
+    display: block;
+    height: 1px;
+
+    background-color: $dark-on-light;
+  }
+
+  &::before {
+    top: 6px;
+
+    @media (max-width: $mobile-max-width) {
+      width: 30px;
+    }
+  }
+
+  &::after {
+    top: 12px;
+
+    @media (max-width: $mobile-max-width) {
+      width: 20px;
+    }
+  }
+}

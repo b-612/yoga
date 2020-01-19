@@ -11,14 +11,23 @@ html {
 body {
   min-width: $mobile-min-width;
 
-  font-family: $daxline-pro;
+  font-family: $geometria;
   font-size: 14px;
   line-height: $body-lh;
   font-weight: normal;
-  color: $body-fc;
+  color: $dark-on-light;
+  word-break: break-word;
 
   background-color: $body-bg;
   -webkit-tap-highlight-color: transparent;
+
+  @media (max-width: $tablet-max-width) {
+    font-size: $body-tm-fs;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    font-size: $body-d-fs;
+  }
 }
 
 a {
@@ -39,14 +48,24 @@ img {
 }
 
 .container {
-  position: relative;
+  margin: 0 auto;
 
-  padding-left: 20px;
-  padding-right: 20px;
-
-  @media (min-width: $desktop-min-width) {
-    width: $container-max-width;
-    margin-left: auto;
-    margin-right: auto;
+  @media (max-width: $mobile-max-width) {
+    padding: 0 15px;
   }
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
 }

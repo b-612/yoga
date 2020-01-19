@@ -7,11 +7,21 @@ $desktop-max-width: 1447px;
 
 $container-mob-width: 290px;
 
+$geometria: ("Geometria", "Arial", "Helvetica", sans-serif);
+$geometria-bold: ("Geometria-Bold", "Arial", "Helvetica", sans-serif);
+$body-tm-fs: 10px;
+$body-d-fs: 14px;
+$body-lh: 1.5;
+$lh-min: 1;
+
+$body-bg: #fcf8fe;
 $dark-on-light: #8e80a9;
 $light-on-dark: #ffffff;
 $accent: #e65c7b;
+
 
 $header-phone-mt-fs: 12px;
 $header-phone-d-fs: 16px;
 $header-invitation-mt-fs: 10px;
 $header-invitation-d-fs: 14px;
+$header-slogan-m-fs: 67px;

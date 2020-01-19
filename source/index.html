@@ -1,47 +1,61 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
   <title>Yoga</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="format-detection" content="telephone=no">
+
+  <link rel="preload" href="css/normalize.min.css" as="style">
+  <link rel="preload" href="css/style.min.css" as="style">
+
+  <link href="css/normalize.min.css" rel="stylesheet">
+  <link href="css/style.min.css" rel="stylesheet">
 </head>
 <body>
   <header class="page-header">
 
-    <nav class="page-header__nav nav">
-      <ul class="nav__list">
-        <button class="nav__toggle">
-          <span class="visually-hidden">Переключить меню</span>
-        </button>
+    <div class="page-header__container container">
+      <div class="page-header__top">
 
-        <li class="nav__item">
-          <a href="#" class="nav__link">Направления</a>
-        </li>
+        <nav class="page-header__nav nav">
+          <button class="nav__toggle">
+            <span class="visually-hidden">Переключить меню</span>
+          </button>
 
-        <li class="nav__item">
-          <a href="#" class="nav__link">Абонементы</a>
-        </li>
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#" class="nav__link">Направления</a>
+            </li>
 
-        <li class="nav__item">
-          <a href="#" class="nav__link">Наша команда</a>
-        </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Абонементы</a>
+            </li>
 
-        <li class="nav__item">
-          <a href="#" class="nav__link">Отзывы</a>
-        </li>
-      </ul>
-    </nav>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Наша команда</a>
+            </li>
 
-    <a href="tel:88126901010" class="page-header__phone" aria-label="Наш номер телефона">8 (812) 690-10-10</a>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Отзывы</a>
+            </li>
+          </ul>
+        </nav>
 
-    <p class="page-header__slogan"></p>
+        <a href="tel:88126901010" class="page-header__phone" aria-label="Наш номер телефона">8 (812) 690-10-10</a>
+      </div>
 
-    <a href="#" class="page-header__logo logo">
-      <img src="img/logo.svg" alt="Логотип Yoga" class="logo__image" width="254" height="38">
-    </a>
+      <div class="page-header__slogan">
+        <img src="img/yoga-slogan.svg" alt="Почувствуй расслабление в своём теле" class="page-header__slogan-img-text" width="233" height="12">
+        Y o g a
+      </div>
 
-    <a href="#" class="page-header__invitation">Запишитесь на бесплатное пробное занятие</a>
+      <a href="#" class="page-header__invitation">Запишитесь на бесплатное пробное занятие</a>
+    </div>
+
   </header>
+
   <main>
     <section class="directions">
       <h2 class="directions__title">Направления</h2>

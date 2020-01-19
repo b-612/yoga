@@ -1,0 +1,137 @@
+.page-header {
+  background-repeat: no-repeat;
+  background-color: #fcf8fe;
+
+  @media (max-width: $mobile-min-width) {
+    padding-bottom: 97px;
+
+    background-image: url("../img/header-bg-mobile@1x.png");
+    background-size: 320px 336px;
+    background-position: top center;
+  }
+
+  @media (min-width: $mobile-min-width + 1) and (max-width: $mobile-max-width) {
+    padding-bottom: 84px;
+
+    background-image: url("../img/header-bg-tablet@1x.png");
+    background-size: 768px 475px;
+    background-position: bottom center;
+  }
+
+  @media (max-width: $mobile-max-width) {
+    padding-top: 19px;
+  }
+}
+
+.page-header__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.page-header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  @media (max-width: $mobile-max-width) {
+    margin-bottom: 62px;
+  }
+}
+
+.page-header__phone {
+  line-height: $body-lh;
+  color: $dark-on-light;
+
+  @media (max-width: $tablet-max-width) {
+    max-width: 230px;
+    margin-left: 20px;
+
+    font-size: $header-phone-mt-fs;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    font-size: $header-phone-d-fs;
+  }
+}
+
+.page-header__slogan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  line-height: $lh-min;
+  color: $light-on-dark;
+  text-transform: uppercase;
+  text-align: center;
+
+  @media (max-width: $mobile-max-width) {
+    margin-bottom: 17px;
+
+    font-size: $header-slogan-m-fs;
+  }
+}
+
+.page-header__invitation {
+  position: relative;
+
+  line-height: $body-lh;
+  color: $accent;
+
+  @media (max-width: $mobile-max-width) {
+    width: 175px;
+    margin-bottom: 10px;
+    padding-left: 37px;
+
+    line-height: 1.4;
+  }
+
+  @media (max-width: $tablet-max-width) {
+    font-size: $header-invitation-mt-fs;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    font-size: $header-invitation-d-fs;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+
+    position: absolute;
+  }
+
+  &::before {
+    left: 0;
+    top: 1px;
+
+    background-color: $accent;
+
+    @media (max-width: $mobile-max-width) {
+      width: 30px;
+      height: 26px;
+    }
+  }
+
+  &::after {
+    content: "";
+
+    top: 9px;
+    left: 13px;
+
+    background-image: url("../img/yoga-arrow.svg");
+    background-repeat: no-repeat;
+
+    filter:
+      drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.5))
+      drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+    @media (max-width: $mobile-max-width) {
+      width: 5px;
+      height: 9px;
+
+      background-size: 5px 9px;
+    }
+  }
+}
