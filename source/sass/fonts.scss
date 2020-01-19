@@ -1,22 +1,23 @@
 @font-face {
-  font-family: 'Geometria-Bold';
+  font-family: "Geometria-Bold";
   src:
-    local('Geometria-Bold'),
-    local('Geometria Bold'),
-    url('../fonts/geomeria-bold-webfont.woff2') format('woff2'),
-    url('../fonts/geomeria-bold-webfont.woff') format('woff');
+    local("Geometria-Bold"),
+    local("Geometria Bold"),
+    url("../fonts/geomeria-bold-webfont.woff2") format("woff2"),
+    url("../fonts/geomeria-bold-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Geometria-Medium';
+  font-family: "Geometria";
   src:
-    local('Geometria-Medium'),
-    local('Geometria Medium'),
-    url('../fonts/geomeria-medium-webfont.woff2') format('woff2'),
-    url('../fonts/geomeria-medium-webfont.woff') format('woff');
+    local("Geometria"),
+    local("Geometria-Medium"),
+    local("Geometria Medium"),
+    url("../fonts/geomeria-medium-webfont.woff2") format("woff2"),
+    url("../fonts/geomeria-medium-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
