@@ -9,6 +9,8 @@ html {
 }
 
 body {
+  position: relative;
+
   min-width: $mobile-min-width;
 
   font-family: $geometria;
@@ -68,4 +70,36 @@ img {
   clip-path: inset(100%);
   clip: rect(0, 0, 0, 0);
   overflow: hidden;
+}
+
+.body-anim-on {
+  left: 260px;
+
+  animation-name: body-slide-on;
+  animation-timing-function: ease-in;
+  animation-duration: 0.5s;
+}
+
+.body-anim-off {
+  animation-name: body-slide-off;
+  animation-timing-function: ease-in;
+  animation-duration: 0.5s;
+}
+
+@keyframes body-slide-on {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 260px;
+  }
+}
+
+@keyframes body-slide-off {
+  0% {
+    left: 260px;
+  }
+  100% {
+    left: 0;
+  }
 }
