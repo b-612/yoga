@@ -1,0 +1,41 @@
+.subscriptions {
+  @media (max-width: $mobile-max-width) {
+    padding-top: 15px;
+  }
+}
+
+.subscriptions__title {
+  @media (max-width: $mobile-max-width) {
+    margin-bottom: 27px;
+  }
+}
+
+.subscriptions__subscription-times {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  font-size: $subscr-time-btn-fs;
+
+  @media (max-width: $mobile-max-width) {
+    margin-bottom: 30px;
+  }
+}
+
+.subscriptions__time-btn {
+  color: $accent;
+}
+
+.subscriptions__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media (max-width: $mobile-max-width) {
+    margin-right: -20px;
+  }
+}
+
+.subscriptions__item {
+  margin: 0 20px 30px 0;
+}

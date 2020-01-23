@@ -8,7 +8,7 @@
     max-width: 539px;
   }
 
-  @media (min-width: $direction-mid-min) and (max-width: $direction-mid-max - 1){
+  @media (min-width: $mobile-mid-min) and (max-width: $mobile-mid-max){
     width: 100%;
   }
 }
