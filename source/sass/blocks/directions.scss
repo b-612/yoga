@@ -1,6 +1,13 @@
 .directions {
+  background-repeat: no-repeat;
+
   @media (max-width: $mobile-max-width) {
     margin-top: -49px;
+    padding-bottom: 15px;
+
+    background-image: url("../img/directions-bg-mob.png");
+    background-size: 216px 494px;
+    background-position: 0 25%;
   }
 }
 
