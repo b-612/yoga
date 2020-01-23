@@ -8,17 +8,20 @@
     background-image:
       url("../img/subscriptions-bg-mob.png"),
       url("../img/subscriptions-team-bg-mob.png");
+
     background-position:
       center bottom,
-      90% 107%;
+      13px 608px;
   }
 
   @media (min-width: $mobile-min-width + 1) and (max-width: $mobile-max-width) {
-    background-position: center center;
-  }
+    background-image:
+      url("../img/subscriptions-bg-tab.png"),
+      url("../img/subscriptions-team-bg-mob.png");
 
-  @media (min-width: $mobile-min-width + 1) and (max-width: $tablet-max-width) {
-    background-image: url("../img/subscriptions-bg-tab.png");
+    background-position:
+      center center,
+      center bottom -39px;
   }
 }
 
