@@ -8,11 +8,11 @@ $desktop-max-width: 1447px;
 $container-mob-width: 290px;
 
 $geometria: ("Geometria", "Arial", "Helvetica", sans-serif);
-$geometria-bold: ("Geometria-Bold", "Arial", "Helvetica", sans-serif);
 $body-tm-fs: 10px;
 $body-d-fs: 14px;
 $body-lh: 1.5;
 $lh-min: 1;
+$section-title-fs-m: 18px;
 
 $body-bg: #fcf8fe;
 $dark-on-light: #8e80a9;
@@ -28,3 +28,6 @@ $header-slogan-m-fs: 67px;
 
 $nav-mt-fs: 14px;
 $nav-item-border: 1px solid #7a6e92;
+
+$direction-mid-min: 581px;
+$direction-mid-max: 610px;

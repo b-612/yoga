@@ -53,7 +53,24 @@ img {
   margin: 0 auto;
 
   @media (max-width: $mobile-max-width) {
-    padding: 0 15px;
+    padding: 0 35px;
+  }
+
+  &--padding-small {
+    @media (max-width: $mobile-max-width) {
+      padding: 0 15px;
+    }
+  }
+}
+
+.section-title {
+  margin: 0;
+
+  font-family: $geometria;
+
+  @media (max-width: $mobile-max-width) {
+    font-size: $section-title-fs-m;
+    text-align: center;
   }
 }
 

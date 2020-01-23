@@ -1,0 +1,25 @@
+.directions {
+  @media (max-width: $mobile-max-width) {
+    margin-top: -49px;
+  }
+}
+
+.directions__title {
+
+  @media (max-width: $mobile-max-width) {
+    margin-bottom: 33px;
+  }
+}
+
+.directions__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-right: -20px;
+}
+
+.directions__item {
+  @media (max-width: $mobile-max-width) {
+    margin: 0 20px 29px 0;
+  }
+}
