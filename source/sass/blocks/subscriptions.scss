@@ -1,6 +1,21 @@
 .subscriptions {
+  background-repeat: no-repeat;
+
+  @media (max-width: $mobile-min-width) {
+    background-image: url("../img/subscriptions-bg-mob.png");
+    background-position: center bottom;
+  }
+
   @media (max-width: $mobile-max-width) {
     padding-top: 15px;
+  }
+
+  @media (min-width: $mobile-min-width + 1) and (max-width: $mobile-max-width) {
+    background-position: center center;
+  }
+
+  @media (min-width: $mobile-min-width + 1) and (max-width: $tablet-max-width) {
+    background-image: url("../img/subscriptions-bg-tab.png");
   }
 }
 
