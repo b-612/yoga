@@ -3,6 +3,8 @@
   flex-wrap: wrap;
   flex-shrink: 0;
 
+  box-shadow: 0 4px 25px rgba(142, 128, 169, 0.2);
+
   @media (max-width: $mobile-max-width) {
     width: 250px;
     max-width: 539px;
