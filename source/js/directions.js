@@ -50,11 +50,5 @@
     section.find('.directions__list').append(fragment);
   };
 
-
-
-  var doNothing = function () {
-
-  };
-
-  window.backend.getItems(DIRECTIONS_URL, makeDirections, doNothing);
+  window.backend.getItems(DIRECTIONS_URL, makeDirections, window.items.removeSection(section));
 })();

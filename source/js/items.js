@@ -82,9 +82,16 @@
     return picture;
   };
 
+  var removeSection = function (section) {
+    return function () {
+      section.remove();
+    }
+  };
+
   window.items = {
     makeElemOrAttr: makeElemOrAttr,
     makeItemImage: makeItemImage,
-    setImgAttr: setImgAttr
+    setImgAttr: setImgAttr,
+    removeSection: removeSection
   };
 })();
