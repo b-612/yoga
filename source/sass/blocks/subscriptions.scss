@@ -46,6 +46,15 @@
 .subscriptions__time-btn {
   color: $accent;
 
+  &:hover,
+  &:focus {
+    color: $accent-hover;
+  }
+
+  &:active {
+    color: $accent-pressed;
+  }
+
   &--current {
     border-bottom: 1px solid $accent;
   }

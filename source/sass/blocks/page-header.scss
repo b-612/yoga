@@ -135,4 +135,21 @@
       background-size: 5px 9px;
     }
   }
+
+  &:hover,
+  &:focus {
+    color: $accent-hover;
+
+    &::before {
+      background-color: $accent-hover;
+    }
+  }
+
+  &:active {
+    color: $accent-pressed;
+
+    &::before {
+      background-color: $accent-pressed;
+    }
+  }
 }

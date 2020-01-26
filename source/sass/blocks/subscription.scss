@@ -59,4 +59,13 @@
 
     text-align: center;
   }
+
+  &:hover,
+  &:focus {
+    background-color: $dark-on-light-hover;
+  }
+
+  &:active {
+    background-color: $dark-on-light-pressed;
+  }
 }
