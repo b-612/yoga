@@ -32,10 +32,10 @@
 
     window.items.setImgAttr($directionParam.IMAGE, directionData.image, directionData.title);
     $directionParam.LINK.before(window.items.makeItemImage($directionParam.IMAGE, directionData.image, window.util.deviceVersion, IMG_FORMATS));
-    window.items.makeElemOrAttr($directionParam.TITLE, [directionData.title], ['textContent']);
+    window.items.makeElemOrAttr($($directionParam.TITLE)[0], [directionData.title], ['textContent']);
     makeScheduleItems($directionParam.SCHEDULE_ITEM, directionData.schedule, $directionParam.SCHEDULE_LIST);
-    window.items.makeElemOrAttr($directionParam.TEACHER_NAME, [directionData.teacher], ['textContent']);
-    window.items.makeElemOrAttr($directionParam.LINK, [directionData.link], ['href']);
+    window.items.makeElemOrAttr($($directionParam.TEACHER_NAME)[0], [directionData.teacher], ['textContent']);
+    window.items.makeElemOrAttr($($directionParam.LINK)[0], [directionData.link], ['href']);
 
     return $($directionCard)[0];
   };
