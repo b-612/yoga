@@ -40,15 +40,7 @@
     return $($directionCard)[0];
   };
 
-  var makeDirections = function (itemsData) {
-    var fragment = window.util.fragment;
 
-    $.each(itemsData, function () {
-      fragment.append(makeDirection(this));
-    });
 
-    section.find('.directions__list').append(fragment);
-  };
-
-  window.backend.getItems(DIRECTIONS_URL, makeDirections, window.items.removeSection(section));
+  window.backend.getItems(DIRECTIONS_URL, window.items.makeItems, window.items.removeSection(section), makeDirection, section, 'directions__list');
 })();

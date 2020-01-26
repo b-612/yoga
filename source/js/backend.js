@@ -16,9 +16,11 @@
     dataType: requestParam.GET_DATA_TYPE
   });
 
-  var getItems = function (url, onSuccess, onError) {
+  var getItems = function (url, onSuccess, onError, makeItem, section, listClass) {
     $.ajax(url, {
-      success: onSuccess,
+      success: function (resp) {
+        onSuccess(resp, makeItem, section, listClass);
+      },
       error: onError
     })
   };

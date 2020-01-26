@@ -33,15 +33,5 @@
     return $($subscriptionCard)[0];
   };
 
-  var makeSubscriptions = function (itemsData) {
-    var fragment = window.util.fragment;
-
-    $.each(itemsData, function () {
-      fragment.append(makeSubscription(this));
-    });
-
-    section.find('.subscriptions__list').append(fragment);
-  };
-
-  window.backend.getItems(SUBSCRIPTIONS_URL, makeSubscriptions, window.items.removeSection(section));
+  window.backend.getItems(SUBSCRIPTIONS_URL, window.items.makeItems, window.items.removeSection(section), makeSubscription, section, 'subscriptions__list');
 })();

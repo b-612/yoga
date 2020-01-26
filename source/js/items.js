@@ -82,6 +82,16 @@
     return picture;
   };
 
+  var makeItems = function (itemsData, makeItem, section, listClass) {
+    var fragment = window.util.fragment;
+
+    $.each(itemsData, function () {
+      fragment.append(makeItem(this));
+    });
+
+    section.find('.' + listClass).append(fragment);
+  };
+
   var removeSection = function (section) {
     return function () {
       section.remove();
@@ -92,6 +102,7 @@
     makeElemOrAttr: makeElemOrAttr,
     makeItemImage: makeItemImage,
     setImgAttr: setImgAttr,
-    removeSection: removeSection
+    removeSection: removeSection,
+    makeItems: makeItems
   };
 })();
