@@ -45,6 +45,10 @@
 
 .subscriptions__time-btn {
   color: $accent;
+
+  &--current {
+    border-bottom: 1px solid $accent;
+  }
 }
 
 .subscriptions__list {

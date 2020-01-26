@@ -84,12 +84,18 @@
 
   var makeItems = function (itemsData, makeItem, section, listClass) {
     var fragment = window.util.fragment;
+    var list = section.find('.' + listClass);
 
     $.each(itemsData, function () {
       fragment.append(makeItem(this));
     });
 
-    section.find('.' + listClass).append(fragment);
+    if (section.hasClass('subscriptions') && window.subscriptions.onTimeBtnClickCounter > 1) {
+      list.empty().fadeOut(0);
+      list.append(fragment).fadeIn(1000);
+    } else {
+      section.find('.' + listClass).empty().append(fragment);
+    }
   };
 
   var removeSection = function (section) {
