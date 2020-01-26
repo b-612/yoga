@@ -36,6 +36,7 @@
   color: $accent;
 
   @media (max-width: $mobile-max-width) {
+    width: 145px;
     margin-bottom: 6px;
   }
 }

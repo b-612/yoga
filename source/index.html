@@ -86,35 +86,6 @@
         </ul>
 
         <ul class="subscriptions__list default-list">
-          <li class="subscriptions__item subscription">
-            <h3 class="subscription__title">Утро</h3>
-            <p class="subscription__text">
-              <span class="subscription__description">Посещение</span>
-              <span class="subscription__time">с 11:00 до 16:00</span>
-            </p>
-            <b class="subscription__price">1 300 Р</b>
-            <a href="" class="subscription__link">Заказать абонемент</a>
-          </li>
-
-          <li class="subscriptions__item subscription">
-            <h3 class="subscription__title">Утро</h3>
-            <p class="subscription__text">
-              <span class="subscription__description">Посещение</span>
-              <span class="subscription__time">с 11:00 до 16:00</span>
-            </p>
-            <b class="subscription__price">1 300 Р</b>
-            <a href="" class="subscription__link">Заказать абонемент</a>
-          </li>
-
-          <li class="subscriptions__item subscription">
-            <h3 class="subscription__title">Утро</h3>
-            <p class="subscription__text">
-              <span class="subscription__description">Посещение</span>
-              <span class="subscription__time">с 11:00 до 16:00</span>
-            </p>
-            <b class="subscription__price">1 300 Р</b>
-            <a href="" class="subscription__link">Заказать абонемент</a>
-          </li>
         </ul>
       </div>
     </section>
@@ -293,8 +264,11 @@
         <span class="subscription__description">Посещение</span>
         <span class="subscription__time">с 11:00 до 16:00</span>
       </p>
-      <b class="subscription__price">1 300 Р</b>
-      <a href="" class="subscription__link">Заказать абонемент</a>
+      <b class="subscription__price">
+        <span class="subscription__price-number">1 300</span>
+        Р
+      </b>
+      <a class="subscription__link">Заказать абонемент</a>
     </li>
   </template>
 
@@ -367,5 +341,6 @@
   <script src="js/backend.js"></script>
   <script src="js/items.js"></script>
   <script src="js/directions.js"></script>
+  <script src="js/subscription-cards.js"></script>
 </body>
 </html>
