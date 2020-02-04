@@ -1,0 +1,81 @@
+.team-member {
+  @media (max-width: $mobile-max-width) {
+    width: 230px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.team-member__header {
+  display: flex;
+  flex-wrap: wrap;
+
+  background-color: #ffffff;
+
+  @media (max-width: $mobile-max-width) {
+    margin-bottom: 21px;
+  }
+}
+
+.team-member__header-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.team-member__text-wrapper {
+  order: 1;
+
+  @media (max-width: $mobile-max-width) {
+    width: 109px;
+    padding: 16px 8px 11px 16px;
+  }
+}
+
+.team-member__title {
+  margin-top: 0;
+
+  font-weight: normal;
+  color: $accent;
+
+  @media (max-width: $mobile-max-width) {
+    margin-bottom: 6px;
+
+    font-size: $team-member-title-fs-m;
+  }
+}
+
+.team-member__status,
+.team-member__name {
+  display: block;
+}
+
+.team-member__avatar {
+  @media (max-width: $mobile-max-width) {
+    margin-left: 1px;
+  }
+}
+
+.team-member__socials {
+  @media (max-width: $mobile-max-width) {
+    padding-top: 20px;
+  }
+}
+
+.team-member__experience {
+  @media (max-width: $mobile-max-width) {
+    display: block;
+    margin-bottom: 11px;
+
+    color: $accent;
+  }
+}
+
+.team-member__description {
+  @media (max-width: $mobile-max-width) {
+    margin-top: 0;
+    margin-bottom: 6px;
+  }
+}

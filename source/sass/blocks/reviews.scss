@@ -1,0 +1,9 @@
+.reviews {
+  padding-top: 20px;
+}
+
+.reviews__title {
+  @media (max-width: $mobile-max-width) {
+    margin-bottom: 33px;
+  }
+}

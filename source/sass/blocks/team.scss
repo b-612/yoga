@@ -1,5 +1,11 @@
+.team {
+  @media (max-width: $mobile-max-width) {
+    padding-bottom: 30px;
+  }
+}
+
 .team__title {
   @media (max-width: $mobile-max-width) {
-    margin-top: -8px;
+    margin-bottom: 32px;
   }
 }

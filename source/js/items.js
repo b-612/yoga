@@ -91,7 +91,7 @@
     });
 
     if (section.hasClass('subscriptions') && window.subscriptions.onTimeBtnClickCounter > 1) {
-      list.empty().fadeOut(0);
+      list.empty().fadeOut(5);
       list.append(fragment).fadeIn(1000);
     } else {
       section.find('.' + listClass).empty().append(fragment);
