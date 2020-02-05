@@ -2,6 +2,7 @@
   background-color: $light-on-dark;
 
   @media (max-width: $mobile-max-width) {
+    max-width: 250px;
     padding: 59px 15px 28px;
   }
 }
@@ -78,5 +79,17 @@
 .review-socials__social {
   @media (max-width: $mobile-max-width) {
     margin-right: 11px;
+  }
+}
+
+.reviews__nav {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  @media (max-width: $mobile-max-width) {
+    margin-top: 28px;
+
+    font-size: $author-nav-fs-m;
   }
 }

@@ -2,8 +2,27 @@
   padding-top: 20px;
 }
 
+.reviews__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .reviews__title {
   @media (max-width: $mobile-max-width) {
     margin-bottom: 33px;
   }
 }
+
+.reviews__nav-page {
+  display: inline-block;
+
+  &--current {
+  margin-right: 3px;
+  }
+
+  &--all {
+    margin-left: 3px;
+  }
+}
+
