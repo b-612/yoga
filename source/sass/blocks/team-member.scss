@@ -1,6 +1,11 @@
 .team-member {
   @media (max-width: $mobile-max-width) {
-    width: 230px;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+
+  @media (min-width: $mobile-mid-max + 1) {
+    width: 250px;
   }
 
   &:focus {
@@ -60,7 +65,15 @@
 
 .team-member__socials {
   @media (max-width: $mobile-max-width) {
+    margin-left: auto;
+    margin-right: 20px;
     padding-top: 20px;
+  }
+}
+
+.team-member__social {
+  @media (max-width: $mobile-max-width) {
+    margin-bottom: 15px;
   }
 }
 
@@ -78,4 +91,26 @@
     margin-top: 0;
     margin-bottom: 6px;
   }
+}
+
+.team-member__social-link {
+  &:hover,
+  &:focus {
+    outline: none;
+
+    .team-member__social-icon {
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    .team-member__social-icon {
+      fill: #7869ac;
+    }
+  }
+}
+
+.team-member__social-icon {
+  fill: #8b7eac;
+  opacity: 0.65;
 }

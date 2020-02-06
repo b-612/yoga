@@ -3,6 +3,7 @@
 (function () {
   var screenWidth = {
     MOB_MIN: 320,
+    MOB_MID: 610,
     MOB_MAX: 767,
     TAB_MIN: 768,
     TAB_MAX: 1159,

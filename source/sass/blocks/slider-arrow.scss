@@ -1,0 +1,36 @@
+.slider-arrow {
+  position: absolute;
+
+  border: 1px solid $dark-on-light;
+
+  background-color: transparent;
+  background-image: url("../img/yoga-arrow-dark.svg");
+  background-repeat: no-repeat;
+  background-size: 5px 8px;
+  background-position: center;
+
+  &:hover,
+  &:focus {
+    background-color: $dark-on-light;
+    background-image: url("../img/yoga-arrow.svg");
+    outline: none;
+  }
+
+  &:active {
+    background-color: $dark-on-light-pressed;
+  }
+
+  &--prev {
+    transform: rotate(180deg);
+
+    @media (max-width: $mobile-max-width) {
+      left: -20px;
+    }
+  }
+
+  &--next {
+    @media (max-width: $mobile-max-width) {
+      right: -20px;
+    }
+  }
+}

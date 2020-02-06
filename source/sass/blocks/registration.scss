@@ -1,0 +1,123 @@
+.registration {
+  line-height: 1.4;
+
+  background-color: #ede9fb;
+  background-repeat: no-repeat;
+  background-position: center top ;
+
+
+  @media (max-width: $mobile-max-width) {
+    padding: 61px 0 50px;
+
+    background-image: url("../img/registration-bg-mob.jpg");
+  }
+
+  @media (min-width: $mobile-min-width + 1) and (max-width: $tablet-max-width) {
+
+  }
+
+  .container {
+    @media (max-width: $mobile-max-width) {
+      max-width: 480px;
+    }
+  }
+}
+
+.registration__title {
+  @media (max-width: $mobile-max-width) {
+    margin: 0 0 26px;
+    font-size: $registration-fs-m;
+  }
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.registration__input {
+  border: none;
+  border-bottom: 1px solid $dark-on-light;
+
+  background-color: transparent;
+
+  @media (max-width: $mobile-max-width) {
+    padding-bottom: 11px;
+
+    font-size: $reg-input-fs-m;
+      color: $reg-input-text-color;
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 30px;
+  }
+
+  &:-ms-input-placeholder {
+    font-weight: normal;
+    color: $reg-placeholder-color;
+  }
+
+  &:-moz-placeholder {
+    font-weight: normal;
+    color: $reg-placeholder-color;
+  }
+
+  &::-moz-placeholder {
+    font-weight: normal;
+    color: $reg-placeholder-color;
+  }
+
+  &::-webkit-input-placeholder {
+    font-weight: normal;
+    color: $reg-placeholder-color;
+  }
+
+  &:hover {
+    &:-ms-input-placeholder {
+      font-weight: normal;
+      color: $reg-placeholder-color-hover;
+    }
+
+    &:-moz-placeholder {
+      color: $reg-placeholder-color-hover;
+    }
+
+    &::-moz-placeholder {
+      color: $reg-placeholder-color-hover;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $reg-placeholder-color-hover;
+    }
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.registration__submit {
+  border: 0;
+
+  background-color: $accent;
+
+  @media (max-width: $mobile-max-width) {
+    margin: 34px 0 20px;
+    padding: 20px 10px;
+
+    font-size: $reg-input-fs-m;
+    color: $light-on-dark;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $accent-hover;
+    outline: none;
+
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: $accent-pressed;
+  }
+}
