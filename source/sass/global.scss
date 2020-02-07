@@ -92,6 +92,8 @@ img {
 .body-anim-on {
   left: 260px;
 
+  overflow: hidden;
+
   animation-name: body-slide-on;
   animation-timing-function: ease-in;
   animation-duration: 0.5s;
