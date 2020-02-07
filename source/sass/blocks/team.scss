@@ -1,6 +1,31 @@
 .team {
+  background-repeat: no-repeat;
+
   @media (max-width: $mobile-max-width) {
     padding-bottom: 30px;
+
+    background-position: left -15px;
+    background-size: 270px 300px;
+  }
+
+  &.webp {
+    @media (max-width: $mobile-max-width) {
+      background-image: url("../img/team-bg-mob@1x.webp");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/team-bg-mob@2x.webp");
+      }
+    }
+  }
+
+  &.no-webp {
+    @media (max-width: $mobile-max-width) {
+      background-image: url("../img/team-bg-mob@1x.png");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/team-bg-mob@2x.png");
+      }
+    }
   }
 }
 

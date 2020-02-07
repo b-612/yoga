@@ -5,9 +5,28 @@
     margin-top: -35px;
     padding-bottom: 15px;
 
-    background-image: url("../img/directions-bg-mob.png");
-    background-size: 216px 494px;
+    background-size: 216px 432px;
     background-position: 0 25%;
+  }
+
+  &.webp {
+    @media (max-width: $mobile-max-width) {
+      background-image: url("../img/directions-bg-mob@1x.webp");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/directions-bg-mob@2x.webp");
+      }
+    }
+  }
+
+  &.no-webp {
+    @media (max-width: $mobile-max-width) {
+      background-image: url("../img/directions-bg-mob@1x.png");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/directions-bg-mob@2x.png");
+      }
+    }
   }
 }
 

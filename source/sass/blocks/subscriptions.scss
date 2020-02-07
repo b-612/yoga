@@ -5,23 +5,46 @@
     padding-top: 15px;
     padding-bottom: 33px;
 
-    background-image:
-      url("../img/subscriptions-bg-mob.png"),
-      url("../img/subscriptions-team-bg-mob.png");
-
+    background-size:
+      1235px 709px,
+      307px 274px;
     background-position:
-      center bottom,
+      center center,
       13px 608px;
   }
 
   @media (min-width: $mobile-min-width + 1) and (max-width: $mobile-max-width) {
-    background-image:
-      url("../img/subscriptions-bg-tab.png"),
-      url("../img/subscriptions-team-bg-mob.png");
-
     background-position:
       center center,
       center bottom -39px;
+  }
+
+  &.webp {
+    @media (max-width: $mobile-max-width) {
+      background-image:
+        url("../img/subscriptions-bg-mob@1x.webp"),
+        url("../img/subscriptions-team-bg-mob@1x.webp");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image:
+          url("../img/subscriptions-bg-mob@2x.webp"),
+          url("../img/subscriptions-team-bg-mob@2x.webp");
+      }
+    }
+  }
+
+  &.no-webp {
+    @media (max-width: $mobile-max-width) {
+      background-image:
+        url("../img/subscriptions-bg-mob@1x.png"),
+        url("../img/subscriptions-team-bg-mob@1x.png");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image:
+          url("../img/subscriptions-bg-mob@2x.png"),
+          url("../img/subscriptions-team-bg-mob@2x.png");
+      }
+    }
   }
 }
 

@@ -9,11 +9,27 @@
   @media (max-width: $mobile-max-width) {
     padding: 61px 0 50px;
 
-    background-image: url("../img/registration-bg-mob.jpg");
+    background-size: 767px 391px;
   }
 
-  @media (min-width: $mobile-min-width + 1) and (max-width: $tablet-max-width) {
+  &.webp {
+    @media (max-width: $mobile-max-width) {
+      background-image: url("../img/registration-bg-mob@1x.webp");
 
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/registration-bg-mob@2x.webp");
+      }
+    }
+  }
+
+  &.no-webp {
+    @media (max-width: $mobile-max-width) {
+      background-image: url("../img/registration-bg-mob@1x.jpg");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/registration-bg-mob@2x.jpg");
+      }
+    }
   }
 
   .container {

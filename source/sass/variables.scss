@@ -7,6 +7,9 @@ $tablet-max-width: 1159px;
 $desktop-min-width: 1160px;
 $desktop-max-width: 1447px;
 
+$retina-dpi: 144dpi;
+$retina-dppx: 1.5dppx;
+
 $container-mob-width: 290px;
 
 $geometria: ("Geometria", "Arial", "Helvetica", sans-serif);
@@ -31,6 +34,7 @@ $header-phone-d-fs: 16px;
 $header-invitation-mt-fs: 10px;
 $header-invitation-d-fs: 14px;
 $header-slogan-m-fs: 67px;
+$header-bg-point-mob: 529px;
 
 $nav-mt-fs: 14px;
 $nav-item-border: 1px solid #7a6e92;
