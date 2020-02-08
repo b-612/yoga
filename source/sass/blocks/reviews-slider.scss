@@ -5,3 +5,10 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.reviews-slider__item-wrapper {
+  @media (max-width: $mobile-mid-max) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

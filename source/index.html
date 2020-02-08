@@ -109,14 +109,21 @@
                   <span class="team-member__practice">Ашатанга-йога</span>
                 </div>
 
-                <img src="img/sergey-popov.jpg" alt="Серёжа Попов" class="team-member__avatar" width="82" height="82">
+                <picture>
+                  <source type="image/webp" media="(min-width: 1300px)" srcset="img/nadezhda-shunty-desktop@1x.webp 1x, nadezhda-shunty-desktop@2x.webp 2x">
+                  <source type="image/webp" media="(min-width: 768px)" srcset="img/nadezhda-shunty-tablet@1x.webp 1x, img/nadezhda-shunty-tablet@2x.webp 2x">
+                  <source type="image/webp" srcset="img/nadezhda-shunty-mob@1x.webp 1x, img/nadezhda-shunty-mob@2x.webp 2x">
+                  <source media="(min-width: 1300px)" srcset="img/nadezhda-shunty-desktop@1x.jpg 1x, img/nadezhda-shunty-desktop@2x.jpg 2x">
+                  <source media="(min-width: 768px)" srcset="img/nadezhda-shunty-tablet@1x.jpg 1x, img/nadezhda-shunty-tablet@2x.jpg 2x">
+                  <img src="img/nadezhda-shunty-mob@1x.jpg" srcset="img/nadezhda-shunty-mob@2x.jpg" alt="Надежда Шанти" class="team-member__avatar" width="82" height="82">
+                </picture>
               </div>
 
               <ul class="team-member__socials default-list">
                 <li class="team-member__social">
                   <a href="#" class="team-member__social-link">
                     <svg class="team-member__social-icon team-member__social-icon--vk social-icon" width="16" height="10" role="img" aria-labelledby="heading-vk" focusable="false">
-                      <title id="heading-vk">Сергей Попов вконтакте</title>
+                      <title id="heading-vk">Надежда Шанти вконтакте</title>
                       <use xlink:href="img/sprite.svg#vk"></use>
                     </svg>
                   </a>
@@ -125,7 +132,7 @@
                 <li class="team-member__social">
                   <a href="#" class="team-member__social-link">
                     <svg class="team-member__social-icon team-member__social-icon--twitter social-icon" width="18" height="12" role="img" aria-labelledby="heading-twitter" focusable="false">
-                      <title id="heading-twitter">Сергей Попов в твиттер</title>
+                      <title id="heading-twitter">Надежда Шанти в твиттер</title>
                       <use xlink:href="img/sprite.svg#twitter"></use>
                     </svg>
                   </a>
@@ -134,8 +141,8 @@
             </div>
 
             <span class="team-member__experience">Опыт преподавания:
-            <span class="team-member__experience-time">8 лет</span>
-          </span>
+              <span class="team-member__experience-time">8 лет</span>
+            </span>
 
             <p class="team-member__description">Практикует с 2011 года, является сертифицированным инструктором по флоу- йоге. Большой опыт преподавания йоги для начинающих и продолжающих.</p>
             <p class="team-member__description">Обучался в Индии (International Association of Yoga: classical yoga, master of principles yoga therapy), Непале (опыт медитативных и дыхательных техник, проживание в Ашраме), Москва (Аштанга йога центр 108 А.Константинова), Московский центр классической йоги Виктора Бойко.</p>
@@ -209,17 +216,20 @@
             </blockquote>
 
             <div class="review__author">
-              <img src="img/sergey-popov-review.jpg" alt="Сергей Попов" class="review__avatar" width="52" height="51">
+              <picture>
+                <source type="image/webp" srcset="img/alisa-shishkina-review@1x.webp 1x, img/alisa-shishkina-review@2x.webp 2x">
+                <img src="img/alisa-shishkina-review@1x.jpg" srcset="img/alisa-shishkina-review@2x.jpg 2x" alt="Алиса Шишкина" class="review__avatar" width="52" height="51">
+              </picture>
 
               <div class="review__author-wrapper">
-                <b class="review__author-name">Серёжа Попов</b>
+                <b class="review__author-name">Алиса Шишкина</b>
                 <time class="review__time" datetime="2018-05-16">16 мая 2018</time>
 
                 <ul class="review__socials default-list">
                   <li class="review__social">
                     <a href="#" class="review__social-link">
                       <svg class="review__social-icon review__social-icon--vk social-icon" width="13" height="8" role="img" aria-labelledby="heading-vk-review-1" focusable="false">
-                        <title id="heading-vk-review-1">Сергей Попов вконтакте</title>
+                        <title id="heading-vk-review-1">Алиса Шишкина вконтакте</title>
                         <use xlink:href="img/sprite.svg#vk"></use>
                       </svg>
                     </a>
@@ -228,7 +238,7 @@
                   <li class="review__social">
                     <a href="#" class="review__social-link">
                       <svg class="review__social-icon review__social-icon--twitter social-icon" width="15" height="10" role="img" aria-labelledby="heading-twitter-review-1" focusable="false">
-                        <title id="heading-twitter-review-1">Сергей Попов вконтакте</title>
+                        <title id="heading-twitter-review-1">Алиса Шишкина в Твиттер</title>
                         <use xlink:href="img/sprite.svg#twitter"></use>
                       </svg>
                     </a>
@@ -405,69 +415,109 @@
 
   <!--Шаблон карточки члена команды преподавателей-->
   <template id="team-member">
-    <li class="team__item team-member">
+    <div class="team__item team-member">
       <div class="team-member__header">
 
         <div class="team-member__header-wrapper">
-          <h3 class="team-member__title"><span class="team-member__status">Инструктор</span><span
-            class="team-member__name">Серёжа Попов</span></h3>
-          <span class="team-member__practice">Ашатанга-йога</span>
+          <div class="team-member__text-wrapper">
+
+            <h3 class="team-member__title">
+              <span class="team-member__status">Инструктор</span>
+              <span class="team-member__name">Надежда Шанти</span>
+            </h3>
+
+            <span class="team-member__practice">Ашатанга-йога</span>
+          </div>
+
+          <picture>
+            <source type="image/webp" media="(min-width: 1300px)" srcset="img/nadezhda-shunty-desktop@1x.webp 1x, nadezhda-shunty-desktop@2x.webp 2x">
+            <source type="image/webp" media="(min-width: 768px)" srcset="img/nadezhda-shunty-tablet@1x.webp 1x, img/nadezhda-shunty-tablet@2x.webp 2x">
+            <source type="image/webp" srcset="img/nadezhda-shunty-mob@1x.webp 1x, img/nadezhda-shunty-mob@2x.webp 2x">
+            <source media="(min-width: 1300px)" srcset="img/nadezhda-shunty-desktop@1x.jpg 1x, img/nadezhda-shunty-desktop@2x.jpg 2x">
+            <source media="(min-width: 768px)" srcset="img/nadezhda-shunty-tablet@1x.jpg 1x, img/nadezhda-shunty-tablet@2x.jpg 2x">
+            <img src="img/nadezhda-shunty-mob@1x.jpg" srcset="img/nadezhda-shunty-mob@2x.jpg" alt="Надежда Шанти" class="team-member__avatar" width="82" height="82">
+          </picture>
         </div>
 
-        <ul class="team-member__socials socials">
-          <li class="team-member__social socials__social">
-            <a href="#" class="social__link">
-              <span class="visually-hidden">Сергей Попов Вконтакте</span>
+        <ul class="team-member__socials default-list">
+          <li class="team-member__social">
+            <a href="#" class="team-member__social-link">
+              <svg class="team-member__social-icon team-member__social-icon--vk social-icon" width="16" height="10" role="img" aria-labelledby="heading-vk-team-member" focusable="false">
+                <title id="heading-vk-team-member">Надежда Шанти вконтакте</title>
+                <use xlink:href="img/sprite.svg#vk"></use>
+              </svg>
             </a>
           </li>
 
-          <li class="team-member__social socials__social">
-            <a href="#" class="social__link">
-              <span class="visually-hidden">Сергей Попов на Фейсбук</span>
+          <li class="team-member__social">
+            <a href="#" class="team-member__social-link">
+              <svg class="team-member__social-icon team-member__social-icon--twitter social-icon" width="18" height="12" role="img" aria-labelledby="heading-twitter-team-member" focusable="false">
+                <title id="heading-twitter-team-member">Надежда Шанти в твиттер</title>
+                <use xlink:href="img/sprite.svg#twitter"></use>
+              </svg>
             </a>
           </li>
         </ul>
       </div>
 
-      <span class="team-member__experience">Опыт преподавания:
+      <span class="team-member__experience">
+        Опыт преподавания:
         <span class="team-member__experience-time">8 лет</span>
       </span>
 
-      <p class="team-member__description">Практикует с 2011 года, является сертифицированным инструктором по флоу- йоге. Большой опыт преподавания йоги для начинающих и продолжающих.</p>
-    </li>
+      <p class="team-member__description">Практикует с 2011 года, является сертифицированным инструктором по флоу-йоге. Большой опыт преподавания йоги для начинающих и продолжающих.</p>
+      <p class="team-member__description">Обучался в Индии (International Association of Yoga: classical yoga, master of principles yoga therapy), Непале (опыт медитативных и дыхательных техник, проживание в Ашраме), Москва (Аштанга йога центр 108 А.Константинова), Московский центр классической йоги Виктора Бойко.</p>
+      <p class="team-member__description">Сертифицированный инструктор по фитнесу и йоге (БГУФК), по массажу (Оздоровительный Витал – центр №401).</p>
+      <p class="team-member__description">Организатор и участник многочисленных конвенций и семинаров по йоге, медитативным техникам и здоровому питанию.</p>
+    </div>
   </template>
 
   <!--Шаблон карточки отзыва-->
   <template id="review">
-    <li class="reviews__item review">
+    <div class="reviews-slider__item review">
       <blockquote class="review__text">
         <p class="review__paragraph">Хожу на йогу вечером, чтобы расслабиться после  тяжелого трудового дня. И после занятий наступает спокойствие!</p>
         <p class="review__paragraph">Йога это отличный способ быстро и качественно расслабиться. Спасибо инструктору Марине.</p>
       </blockquote>
 
-      <div class="review__author"><img src="#" alt="Сергей Попов" class="review__avatar" width="52" height="51"><b
-        class="review__author-name"></b>
-        <time class="review__time" datetime="2018-05-16">16 мая 2018</time>
+      <div class="review__author">
+        <picture>
+          <source type="image/webp" srcset="img/alisa-shishkina-review@1x.webp 1x, img/alisa-shishkina-review@2x.webp 2x">
+          <img src="img/alisa-shishkina-review@1x.jpg" srcset="img/alisa-shishkina-review@2x.jpg 2x" alt="Алиса Шишкина" class="review__avatar" width="52" height="51">
+        </picture>
 
-        <ul class="review__socials socials">
-          <li class="review__social socials__social">
-            <a href="#" class="social__link">
-              <span class="visually-hidden">Сергей Попов Вконтакте</span>
-            </a>
-          </li>
+        <div class="review__author-wrapper">
+          <b class="review__author-name">Алиса Шишкина</b>
+          <time class="review__time" datetime="2018-05-16">16 мая 2018</time>
 
-          <li class="review__social socials__social">
-            <a href="#" class="social__link">
-              <span class="visually-hidden">Сергей Попов в Твиттер</span>
-            </a>
-          </li>
-        </ul>
+          <ul class="review__socials default-list">
+            <li class="review__social">
+              <a href="#" class="review__social-link">
+                <svg class="review__social-icon review__social-icon--vk social-icon" width="13" height="8" role="img" aria-labelledby="heading-vk-review" focusable="false">
+                  <title id="heading-vk-review">Алиса Шишкина вконтакте</title>
+                  <use xlink:href="img/sprite.svg#vk"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="review__social">
+              <a href="#" class="review__social-link">
+                <svg class="review__social-icon review__social-icon--twitter social-icon" width="15" height="10" role="img" aria-labelledby="heading-twitter-review" focusable="false">
+                  <title id="heading-twitter-review">Алиса Шишкина в Твиттер</title>
+                  <use xlink:href="img/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </li>
+    </div>
+    </div>
   </template>
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="js/has-webp.js"></script>
+  <script src="js/picturefill.min.js"></script>
+  <script src="js/has-webp.min.js"></script>
   <script src="js/util.js"></script>
   <script src="js/main-nav.js"></script>
   <script src="js/backend.js"></script>
