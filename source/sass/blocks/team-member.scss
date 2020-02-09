@@ -59,7 +59,11 @@
 
 .team-member__avatar {
   @media (max-width: $mobile-max-width) {
+    width: 82px;
+    height: 82px;
     margin-left: 1px;
+
+    background-color: #eae3f8;
   }
 }
 

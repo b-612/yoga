@@ -10,8 +10,11 @@
     return rv.promise();
   };
 
-  hasWebP().then(function() {
+  hasWebP().then(
+  function() {
+    $.noop();
   },
+
   function() {
     $('.page-header').removeClass('webp').addClass('no-webp');
     $('.directions').removeClass('webp').addClass('no-webp');

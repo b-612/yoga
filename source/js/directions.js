@@ -42,5 +42,5 @@
 
 
 
-  window.backend.getItems(DIRECTIONS_URL, window.items.makeItems, window.items.removeSection(section), makeDirection, section, 'directions__list');
+  window.backend.getItems(DIRECTIONS_URL, window.items.makeItems, window.items.removeSection(section), makeDirection, section, 'directions__list', null);
 })();

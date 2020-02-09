@@ -39,15 +39,15 @@
   var onTimeBtnClick = function (evt) {
     switch (true) {
       case $(evt.target).hasClass('subscriptions__time-btn--one-month') :
-        window.backend.getItems(SUBSCRIPTIONS_URL_ONE_MONTH, window.items.makeItems, window.items.removeSection(section), makeSubscription, section, 'subscriptions__list');
+        window.backend.getItems(SUBSCRIPTIONS_URL_ONE_MONTH, window.items.makeItems, window.items.removeSection(section), makeSubscription, section, 'subscriptions__list', null);
       break;
 
       case $(evt.target).hasClass('subscriptions__time-btn--six-months') :
-        window.backend.getItems(SUBSCRIPTIONS_URL_SIX_MONTH, window.items.makeItems, window.items.removeSection(section), makeSubscription, section, 'subscriptions__list');
+        window.backend.getItems(SUBSCRIPTIONS_URL_SIX_MONTH, window.items.makeItems, window.items.removeSection(section), makeSubscription, section, 'subscriptions__list', null);
         break;
 
       case $(evt.target).hasClass('subscriptions__time-btn--year') :
-        window.backend.getItems(SUBSCRIPTIONS_URL_YEAR, window.items.makeItems, window.items.removeSection(section), makeSubscription, section, 'subscriptions__list');
+        window.backend.getItems(SUBSCRIPTIONS_URL_YEAR, window.items.makeItems, window.items.removeSection(section), makeSubscription, section, 'subscriptions__list', null);
         break;
     }
 
