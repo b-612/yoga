@@ -21,12 +21,51 @@
   var makeAvatar = function (imageElement, imageData) {
     imageElement.attr('src', 'img/' + imageData + '-mob@1x.jpg');
     imageElement.attr('srcset', 'img/' + imageData + '-mob@2x.jpg 2x');
-    $(imageElement.parent()).find('source[media="(min-width: 768px)"][type != "image/webp"]').attr('srcset', 'img/' + imageData + '-tablet@1x.jpg 1x, img/' + imageData + '-tablet@2x.jpg 2x');
-    $(imageElement.parent()).find('source[media="(min-width: 1300px)"][type != "image/webp"]').attr('srcset', 'img/' + imageData + '-desktop@1x.jpg 1x, img/' + imageData + '-desktop@2x.jpg 2x');
-    $(imageElement.parent()).find('source[type="image/webp"][media != "(min-width: 768px)"][media != "(min-width: 1300px)"]').attr('srcset', 'img/' + imageData + '-mob@1x.webp 1x, img/' + imageData + '-mob@2x.webp 2x');
-    $(imageElement.parent()).find('source[media="(min-width: 768px)"][type = "image/webp"]').attr('srcset', 'img/' + imageData + '-tablet@1x.webp 1x, img/' + imageData + '-tablet@2x.webp 2x');
-    $(imageElement.parent()).find('source[media="(min-width: 1300px)"][type = "image/webp"]').attr('srcset', 'img/' + imageData + '-desktop@1x.webp 1x, img/' + imageData + '-desktop@2x.webp 2x');
+
+    $(imageElement.parent())
+      .find('source[media="(min-width: 768px)"][type != "image/webp"]')
+      .attr('srcset', 'img/' + imageData + '-tablet@1x.jpg 1x, img/' + imageData + '-tablet@2x.jpg 2x');
+
+    $(imageElement.parent())
+      .find('source[media="(min-width: 1300px)"][type != "image/webp"]')
+      .attr('srcset', 'img/' + imageData + '-desktop@1x.jpg 1x, img/' + imageData + '-desktop@2x.jpg 2x');
+
+    $(imageElement.parent())
+      .find('source[type="image/webp"][media != "(min-width: 768px)"][media != "(min-width: 1300px)"]')
+      .attr('srcset', 'img/' + imageData + '-mob@1x.webp 1x, img/' + imageData + '-mob@2x.webp 2x');
+
+    $(imageElement.parent())
+      .find('source[media="(min-width: 768px)"][type = "image/webp"]')
+      .attr('srcset', 'img/' + imageData + '-tablet@1x.webp 1x, img/' + imageData + '-tablet@2x.webp 2x');
+
+    $(imageElement.parent())
+      .find('source[media="(min-width: 1300px)"][type = "image/webp"]')
+      .attr('srcset', 'img/' + imageData + '-desktop@1x.webp 1x, img/' + imageData + '-desktop@2x.webp 2x');
   };
+
+  var makeSocial = function (socialElem, socialData) {
+    var socialItem = socialElem.parent();
+
+    socialElem.remove();
+    socialElem.attr('href', socialData);
+
+    socialElem.find('svg')
+      .attr('aria-labelledby', 'heading-' + socialElem.find('use').attr('xlink:href').split('#')[1] + '-user-' + makeSocial.counter);
+
+    socialElem.find('title')
+      .attr('id', 'heading-' + socialElem.find('use').attr('xlink:href').split('#')[1] + '-user-' + makeSocial.counter);
+
+    socialItem .append(socialElem);
+
+    window.setTimeout(function () {
+      var elemClone = socialElem.clone();
+      socialItem.empty();
+      socialItem .append(elemClone);
+    }, 0);
+
+  };
+
+  makeSocial.counter = 1;
 
   var makeTeamMember = function (teamMemberData) {
     var $memberCard = $($teamCardTemp).clone();
@@ -43,8 +82,9 @@
     window.items.makeElemOrAttr($($memberParam.MEMBER_NAME)[0], [teamMemberData.name], ['textContent']);
     window.items.makeElemOrAttr($($memberParam.MEMBER_PRACTICE)[0], [teamMemberData.practice], ['textContent']);
     makeAvatar($memberParam.MEMBER_IMAGE, teamMemberData.image);
-    window.items.makeElemOrAttr($($memberParam.LINK_VK)[0], [teamMemberData.vk], ['href']);
-    window.items.makeElemOrAttr($($memberParam.LINK_TWITTER)[0], [teamMemberData.twitter], ['href']);
+    makeSocial($memberParam.LINK_VK, teamMemberData.vk);
+    makeSocial($memberParam.LINK_TWITTER, teamMemberData.twitter);
+    makeSocial.counter++;
     window.items.makeElemOrAttr($($memberParam.EXPERIENCE_TIME)[0], [teamMemberData.experienceTime], ['textContent']);
     $($memberCard).find('.team-member__description').remove();
 
@@ -53,6 +93,18 @@
     });
 
     return $($memberCard)[0];
+  };
+
+  var replaceClonedSocials = function () {
+    var $oldAttr = 'heading';
+
+    $('.members-slider')
+      .find('.slick-cloned')
+      .find('.team-member__social-icon')
+      .each(function (i) {
+        $(this).attr('aria-labelledby', $oldAttr +  '#' + i);
+        $(this).find('title').attr('id', $oldAttr +  '#' + i);
+      })
   };
 
   var makeTeamSlider = function () {
@@ -88,6 +140,8 @@
         }
       ]
     });
+
+    replaceClonedSocials();
   };
 
   window.backend.getItems(TEAM_MEMBERS_URL, window.items.makeItems, window.items.removeSection($section), makeTeamMember, $section, 'members-slider', makeTeamSlider);

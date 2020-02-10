@@ -94,7 +94,7 @@ gulp.task ('svgsprite', function () {
 });
 
 gulp.task('jsmin', function () {
-    return gulp.src('source/js/*.js')
+    return gulp.src(['source/js/*.js'])
         .pipe(jsminify({
             ext:{
                 src:'.js',

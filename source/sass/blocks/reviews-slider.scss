@@ -7,6 +7,8 @@
 }
 
 .reviews-slider__item-wrapper {
+  outline: 0;
+
   @media (max-width: $mobile-mid-max) {
     padding-left: 20px;
     padding-right: 20px;
