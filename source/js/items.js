@@ -95,7 +95,7 @@
         list.empty().fadeOut(5);
         list.append(fragment).fadeIn(1000);
         break;
-      case listClass === 'members-slider' :
+      case listClass === 'members-slider' || listClass === 'reviews-slider' :
         section.find('.' + listClass).empty().append(fragment);
         makeSlider();
         break;

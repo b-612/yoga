@@ -4,6 +4,7 @@
   var TEAM_MEMBERS_URL = 'https://b-612.github.io/json/yoga/team.json';
 
   var $section = $('.team');
+  var $slider = $('.members-slider');
   var $teamCardTemp = $.parseHTML($('#team-member').html());
 
   var makeDescription = function (descriptionData, element) {
@@ -15,7 +16,7 @@
       description.push(nextElem);
     });
 
-    return description;
+    return Array.from(description);
   };
 
   var makeAvatar = function (imageElement, imageData) {
@@ -43,17 +44,17 @@
       .attr('srcset', 'img/' + imageData + '-desktop@1x.webp 1x, img/' + imageData + '-desktop@2x.webp 2x');
   };
 
-  var makeSocial = function (socialElem, socialData) {
+  var makeSocial = function (socialElem, socialData, sectionName) {
     var socialItem = socialElem.parent();
 
     socialElem.remove();
     socialElem.attr('href', socialData);
 
     socialElem.find('svg')
-      .attr('aria-labelledby', 'heading-' + socialElem.find('use').attr('xlink:href').split('#')[1] + '-user-' + makeSocial.counter);
+      .attr('aria-labelledby', sectionName + 'heading-' + socialElem.find('use').attr('xlink:href').split('#')[1] + '-user-' + makeSocial.counter);
 
     socialElem.find('title')
-      .attr('id', 'heading-' + socialElem.find('use').attr('xlink:href').split('#')[1] + '-user-' + makeSocial.counter);
+      .attr('id', sectionName + 'heading-' + socialElem.find('use').attr('xlink:href').split('#')[1] + '-user-' + makeSocial.counter);
 
     socialItem .append(socialElem);
 
@@ -65,7 +66,11 @@
 
   };
 
-  makeSocial.counter = 1;
+  var resetSocialCounter = function () {
+    makeSocial.counter = 1;
+  };
+
+  resetSocialCounter();
 
   var makeTeamMember = function (teamMemberData) {
     var $memberCard = $($teamCardTemp).clone();
@@ -82,8 +87,8 @@
     window.items.makeElemOrAttr($($memberParam.MEMBER_NAME)[0], [teamMemberData.name], ['textContent']);
     window.items.makeElemOrAttr($($memberParam.MEMBER_PRACTICE)[0], [teamMemberData.practice], ['textContent']);
     makeAvatar($memberParam.MEMBER_IMAGE, teamMemberData.image);
-    makeSocial($memberParam.LINK_VK, teamMemberData.vk);
-    makeSocial($memberParam.LINK_TWITTER, teamMemberData.twitter);
+    makeSocial($memberParam.LINK_VK, teamMemberData.vk, 'team');
+    makeSocial($memberParam.LINK_TWITTER, teamMemberData.twitter, 'team');
     makeSocial.counter++;
     window.items.makeElemOrAttr($($memberParam.EXPERIENCE_TIME)[0], [teamMemberData.experienceTime], ['textContent']);
     $($memberCard).find('.team-member__description').remove();
@@ -95,12 +100,11 @@
     return $($memberCard)[0];
   };
 
-  var replaceClonedSocials = function () {
-    var $oldAttr = 'heading';
+  var replaceClonedSocials = function (sectionName, slider, socialIconClass) {
+    var $oldAttr = sectionName + 'heading';
 
-    $('.members-slider')
-      .find('.slick-cloned')
-      .find('.team-member__social-icon')
+    slider.find('.slick-cloned')
+      .find('.' + socialIconClass)
       .each(function (i) {
         $(this).attr('aria-labelledby', $oldAttr +  '#' + i);
         $(this).find('title').attr('id', $oldAttr +  '#' + i);
@@ -141,8 +145,15 @@
       ]
     });
 
-    replaceClonedSocials();
+    replaceClonedSocials('team', $slider, 'team-member__social-icon');
   };
 
   window.backend.getItems(TEAM_MEMBERS_URL, window.items.makeItems, window.items.removeSection($section), makeTeamMember, $section, 'members-slider', makeTeamSlider);
+
+  window.team = {
+    makeDescription: makeDescription,
+    makeSocial: makeSocial,
+    resetSocialCounter: resetSocialCounter,
+    replaceClonedSocials: replaceClonedSocials
+  }
 })();
