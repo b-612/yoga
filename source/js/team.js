@@ -44,14 +44,17 @@
       .attr('srcset', 'img/' + imageData + '-desktop@1x.webp 1x, img/' + imageData + '-desktop@2x.webp 2x');
   };
 
-  var makeSocial = function (socialElem, socialData, sectionName) {
+  var makeSocial = function (socialElem, socialData, socialName, sectionName, authorName) {
     var socialItem = socialElem.parent();
+    var svg = socialElem.find('svg');
+    var title = svg.find('title');
 
     socialElem.remove();
     socialElem.attr('href', socialData);
 
-    socialElem.find('svg')
-      .attr('aria-labelledby', sectionName + 'heading-' + socialElem.find('use').attr('xlink:href').split('#')[1] + '-user-' + makeSocial.counter);
+    svg.attr('aria-labelledby', sectionName + 'heading-' + socialElem.find('use').attr('xlink:href').split('#')[1] + '-user-' + makeSocial.counter);
+
+    title.text(authorName + ' ' + socialName);
 
     socialElem.find('title')
       .attr('id', sectionName + 'heading-' + socialElem.find('use').attr('xlink:href').split('#')[1] + '-user-' + makeSocial.counter);
@@ -87,8 +90,8 @@
     window.items.makeText($memberParam.MEMBER_NAME, teamMemberData.name);
     window.items.makeText($memberParam.MEMBER_PRACTICE, teamMemberData.practice);
     makeAvatar($memberParam.MEMBER_IMAGE, teamMemberData.image);
-    makeSocial($memberParam.LINK_VK, teamMemberData.vk, 'team');
-    makeSocial($memberParam.LINK_TWITTER, teamMemberData.twitter, 'team');
+    makeSocial($memberParam.LINK_VK, teamMemberData.vk, 'Вконтакте', 'team', teamMemberData.name);
+    makeSocial($memberParam.LINK_TWITTER, teamMemberData.twitter, 'в Твиттер', 'team', teamMemberData.name);
     makeSocial.counter++;
     window.items.makeText($memberParam.EXPERIENCE_TIME, teamMemberData.experienceTime);
     $($memberCard).find('.team-member__description').remove();
@@ -107,8 +110,8 @@
     slider.find('.slick-cloned')
       .find('.' + socialIconClass)
       .each(function (i) {
-        $(this).attr('aria-labelledby', $oldAttr +  '#' + i);
-        $(this).find('title').attr('id', $oldAttr +  '#' + i);
+        $(this).attr('aria-labelledby', $oldAttr +  '-' + i);
+        $(this).find('title').attr('id', $oldAttr +  '-' + i);
       })
   };
 
@@ -146,7 +149,9 @@
       ]
     });
 
-    replaceClonedSocials('team', $slider, 'team-member__social-icon');
+    window.setTimeout(function () {
+      replaceClonedSocials('team', $slider, 'team-member__social-icon');
+    }, 0);
   };
 
   window.backend.getItems(TEAM_MEMBERS_URL, window.items.makeItems, window.items.removeSection($section), makeTeamMember, $section, 'members-slider', makeTeamSlider);

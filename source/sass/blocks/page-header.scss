@@ -27,10 +27,10 @@
     }
 
     @media (min-width: $header-bg-point-mob + 1) {
-      background-image: url("../img/header-bg-tablet@1x.webp");
+      background-image: url("../img/header-bg-mobile-max@1x.webp");
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-        background-image: url("../img/header-bg-tablet@2x.webp");
+        background-image: url("../img/header-bg-mobile-max@2x.webp");
       }
     }
   }

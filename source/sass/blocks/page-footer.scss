@@ -1,5 +1,5 @@
 .page-footer {
-  padding: 42px 0 23px;
+  padding-bottom: 23px;
 
   color: $light-on-dark;
 
@@ -63,7 +63,7 @@
 
   @media (max-width: $mobile-max-width) {
     width: 250px;
-    margin-bottom: 20px;
+    margin-bottom: 7px;
     padding-right: 20px;
   }
 }

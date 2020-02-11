@@ -64,8 +64,8 @@
     window.team.makeDescription(reviewData.review, $($reviewParam.DESCRIPTION)[0]).forEach(function (current) {
       $reviewParam.TEXT.append(current);
     });
-    window.team.makeSocial($reviewParam.LINK_VK, reviewData.vk, 'reviews');
-    window.team.makeSocial($reviewParam.LINK_TWITTER, reviewData.twitter, 'reviews');
+    window.team.makeSocial($reviewParam.LINK_VK, reviewData.vk, 'Вконтакте', 'reviews', reviewData.authorName);
+    window.team.makeSocial($reviewParam.LINK_TWITTER, reviewData.twitter, 'в Твиттер', 'reviews', reviewData.authorName);
     window.team.makeSocial.counter++;
 
     return $($reviewCard)[0];
@@ -74,7 +74,11 @@
   var makePaginationCurrent = function (currentSlide) {
     var $currentPage = $('.reviews__nav-page--current');
 
-    $currentPage.text(currentSlide + 1);
+    if (screen.width >= 610 && currentSlide >= 2) {
+      $currentPage.text(Math.ceil((currentSlide + 1) / 2));
+    } else {
+      $currentPage.text(currentSlide + 1);
+    }
   };
 
   var makePaginationAll = function () {
@@ -82,6 +86,12 @@
     var $slides = $('.reviews-slider__item-wrapper:not(.slick-cloned)');
 
     $allPages.text($slides.length);
+
+    if (screen.width >= 610 && $slides.length > 1) {
+      $allPages.text(Math.ceil($slides.length / 2));
+    } else {
+      $allPages.text($slides.length);
+    }
   };
 
   var makeReviewsSlider = function () {
@@ -128,5 +138,9 @@
 
   $slider.on('afterChange', function(event, slick, currentSlide, nextSlide) {
     makePaginationCurrent(currentSlide);
+  });
+
+  $(window).resize(function () {
+    makePaginationAll();
   });
 })();
