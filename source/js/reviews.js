@@ -57,7 +57,7 @@
       DESCRIPTION: $($reviewCard).find('.review__paragraph')
     };
 
-    window.items.makeElemOrAttr($($reviewParam.AUTHOR_NAME)[0], [reviewData.authorName], ['textContent']);
+    window.items.makeText($reviewParam.AUTHOR_NAME, reviewData.authorName);
     makeTime($reviewParam.TIME, reviewData.time);
     makeAuthorImage($reviewParam.AUTHOR_IMAGE, reviewData.image);
     $($reviewCard).find('.review__paragraph').remove();

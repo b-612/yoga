@@ -11,10 +11,10 @@
 
   var makeTime = function (subscriptionData, textElem, timeElem) {
     if (subscriptionData.isTimeLimit) {
-      $(timeElem)[0].textContent = 'с ' + subscriptionData.startTime + ' до ' + subscriptionData.endTime;
+      timeElem.text('с ' + subscriptionData.startTime + ' до ' + subscriptionData.endTime);
     } else {
-      $(textElem)[0].textContent = 'Посещение не ограничено по времени';
-      $(timeElem)[0].remove();
+      textElem.text('Посещение не ограничено по времени');
+      timeElem.remove();
     }
   };
 
@@ -28,10 +28,10 @@
       ORDER_LINK: $($subscriptionCard).find('.subscription__link')
     };
 
-    window.items.makeElemOrAttr($($subscriptionParam.TITLE)[0], [subscriptionData.title], ['textContent']);
+    window.items.makeText($subscriptionParam.TITLE, subscriptionData.title);
     makeTime(subscriptionData, $subscriptionParam.TEXT, $subscriptionParam.TIME);
-    window.items.makeElemOrAttr($($subscriptionParam.PRICE)[0], [subscriptionData.price], ['textContent']);
-    window.items.makeElemOrAttr($($subscriptionParam.ORDER_LINK)[0], [subscriptionData.orderLink], ['href']);
+    window.items.makeText($subscriptionParam.PRICE, subscriptionData.price);
+    window.items.makeHref($subscriptionParam.ORDER_LINK, subscriptionData.orderLink);
 
     return $($subscriptionCard)[0];
   };

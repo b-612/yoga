@@ -84,16 +84,17 @@
       DESCRIPTION: $($memberCard).find('.team-member__description')
     };
 
-    window.items.makeElemOrAttr($($memberParam.MEMBER_NAME)[0], [teamMemberData.name], ['textContent']);
-    window.items.makeElemOrAttr($($memberParam.MEMBER_PRACTICE)[0], [teamMemberData.practice], ['textContent']);
+    window.items.makeText($memberParam.MEMBER_NAME, teamMemberData.name);
+    window.items.makeText($memberParam.MEMBER_PRACTICE, teamMemberData.practice);
     makeAvatar($memberParam.MEMBER_IMAGE, teamMemberData.image);
     makeSocial($memberParam.LINK_VK, teamMemberData.vk, 'team');
     makeSocial($memberParam.LINK_TWITTER, teamMemberData.twitter, 'team');
     makeSocial.counter++;
-    window.items.makeElemOrAttr($($memberParam.EXPERIENCE_TIME)[0], [teamMemberData.experienceTime], ['textContent']);
+    window.items.makeText($memberParam.EXPERIENCE_TIME, teamMemberData.experienceTime);
     $($memberCard).find('.team-member__description').remove();
 
-    makeDescription(teamMemberData.description, $($memberParam.DESCRIPTION)[0]).forEach(function (current) {
+    makeDescription(teamMemberData.description, $memberParam.DESCRIPTION[0])
+      .forEach(function (current) {
         $memberCard.append(current);
     });
 

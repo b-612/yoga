@@ -12,6 +12,22 @@
     }
   };
 
+  var makeText = function (element, data) {
+    if (data) {
+      element.text(data);
+    } else {
+      element.remove();
+    }
+  };
+
+  var makeHref = function (element, data) {
+    if (data) {
+      element.attr('href', data);
+    } else {
+      element.remove();
+    }
+  };
+
   var makeSources = function (deviceVersions, imageData, imgFormats) {
     if (imageData) {
       var sources = [];
@@ -111,7 +127,8 @@
   };
 
   window.items = {
-    makeElemOrAttr: makeElemOrAttr,
+    makeText: makeText,
+    makeHref: makeHref,
     makeItemImage: makeItemImage,
     setImgAttr: setImgAttr,
     removeSection: removeSection,
