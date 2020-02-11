@@ -36,13 +36,13 @@
   &.no-webp {
     @media (max-width: $mobile-max-width) {
       background-image:
-        url("../img/subscriptions-bg-mob@1x.png"),
-        url("../img/subscriptions-team-bg-mob@1x.png");
+        url("../img/subscriptions-bg-mob@1x.jpg"),
+        url("../img/subscriptions-team-bg-mob@1x.jpg");
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
         background-image:
-          url("../img/subscriptions-bg-mob@2x.png"),
-          url("../img/subscriptions-team-bg-mob@2x.png");
+          url("../img/subscriptions-bg-mob@2x.jpg"),
+          url("../img/subscriptions-team-bg-mob@2x.jpg");
       }
     }
   }
