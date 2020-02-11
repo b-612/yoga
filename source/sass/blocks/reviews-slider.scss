@@ -4,9 +4,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+  .slick-track {
+    display: flex;
+  }
 }
 
-.reviews-slider__item-wrapper {
+.reviews-slider__item-wrapper.slick-slide {
+  display: flex;
+  height: auto;
+
   outline: 0;
 
   @media (max-width: $mobile-mid-max) {

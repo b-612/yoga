@@ -11,10 +11,6 @@
     min-width: 250px;
     padding: 21px 20px 31px;
   }
-
-  @media (min-width: $mobile-mid-min) and (max-width: $mobile-mid-max) {
-    width: 100%;
-  }
 }
 
 .subscription__title {

@@ -114,8 +114,7 @@
             slidesToScroll: 1,
             infinite: true,
             dots: false,
-            draggable: true,
-            adaptiveHeight: true
+            draggable: true
           }
         }
       ]
