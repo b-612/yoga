@@ -17,7 +17,7 @@
     '12': 'декабря'
   };
 
-  var $section = $('.reviews');
+  var section = $('.reviews');
   var $slider = $('.reviews__slider');
   var $reviewCardTemp = $.parseHTML($('#review').html());
 
@@ -134,9 +134,19 @@
     makePaginationAll();
   };
 
-  window.backend.getItems(REVIEWS_URL, window.items.makeItems, window.items.removeSection($section), makeReview, $section, 'reviews-slider', makeReviewsSlider);
+  var InquiryParam = {
+    URL: REVIEWS_URL,
+    ON_SUCCESS: window.items.makeItems,
+    ON_ERROR: window.items.removeSection,
+    MAKE_ITEM: makeReview,
+    SECTION: section,
+    LIST_CLASS: 'reviews-slider',
+    MAKE_SLIDER: makeReviewsSlider
+  };
 
-  $slider.on('afterChange', function(event, slick, currentSlide, nextSlide) {
+  window.backend.getItems(InquiryParam);
+
+  $slider.on('afterChange', function(event, slick, currentSlide) {
     makePaginationCurrent(currentSlide);
   });
 

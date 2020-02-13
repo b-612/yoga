@@ -36,18 +36,31 @@
     return $($subscriptionCard)[0];
   };
 
+  var InquiryParam = {
+    URL: SUBSCRIPTIONS_URL_ONE_MONTH,
+    ON_SUCCESS: window.items.makeItems,
+    ON_ERROR: window.items.removeSection,
+    MAKE_ITEM: makeSubscription,
+    SECTION: section,
+    LIST_CLASS: 'subscriptions__list',
+    MAKE_SLIDER: null
+  };
+
   var onTimeBtnClick = function (evt) {
     switch (true) {
       case $(evt.target).hasClass('subscriptions__time-btn--one-month') :
-        window.backend.getItems(SUBSCRIPTIONS_URL_ONE_MONTH, window.items.makeItems, window.items.removeSection(section), makeSubscription, section, 'subscriptions__list', null);
+        InquiryParam.URL = SUBSCRIPTIONS_URL_ONE_MONTH;
+        window.backend.getItems(InquiryParam);
       break;
 
       case $(evt.target).hasClass('subscriptions__time-btn--six-months') :
-        window.backend.getItems(SUBSCRIPTIONS_URL_SIX_MONTH, window.items.makeItems, window.items.removeSection(section), makeSubscription, section, 'subscriptions__list', null);
+        InquiryParam.URL = SUBSCRIPTIONS_URL_SIX_MONTH;
+        window.backend.getItems(InquiryParam);
         break;
 
       case $(evt.target).hasClass('subscriptions__time-btn--year') :
-        window.backend.getItems(SUBSCRIPTIONS_URL_YEAR, window.items.makeItems, window.items.removeSection(section), makeSubscription, section, 'subscriptions__list', null);
+        InquiryParam.URL = SUBSCRIPTIONS_URL_YEAR;
+        window.backend.getItems(InquiryParam);
         break;
     }
 

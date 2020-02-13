@@ -16,12 +16,12 @@
     dataType: requestParam.GET_DATA_TYPE
   });
 
-  var getItems = function (url, onSuccess, onError, makeItem, section, listClass, makeSlider) {
-    $.ajax(url, {
+  var getItems = function (itemParams) {
+    $.ajax(itemParams.URL, {
       success: function (resp) {
-        onSuccess(resp, makeItem, section, listClass, makeSlider);
+        itemParams.ON_SUCCESS(resp, itemParams.MAKE_ITEM, itemParams.SECTION, itemParams.LIST_CLASS, itemParams.MAKE_SLIDER);
       },
-      error: onError
+      error: itemParams.ON_ERROR(itemParams.SECTION)
     })
   };
 

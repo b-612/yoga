@@ -3,7 +3,7 @@
 (function () {
   var TEAM_MEMBERS_URL = 'https://b-612.github.io/json/yoga/team.json';
 
-  var $section = $('.team');
+  var section = $('.team');
   var $slider = $('.members-slider');
   var $teamCardTemp = $.parseHTML($('#team-member').html());
 
@@ -154,7 +154,17 @@
     }, 0);
   };
 
-  window.backend.getItems(TEAM_MEMBERS_URL, window.items.makeItems, window.items.removeSection($section), makeTeamMember, $section, 'members-slider', makeTeamSlider);
+  var InquiryParam = {
+    URL: TEAM_MEMBERS_URL,
+    ON_SUCCESS: window.items.makeItems,
+    ON_ERROR: window.items.removeSection,
+    MAKE_ITEM: makeTeamMember,
+    SECTION: section,
+    LIST_CLASS: 'members-slider',
+    MAKE_SLIDER: makeTeamSlider
+  };
+
+  window.backend.getItems(InquiryParam);
 
   window.team = {
     makeDescription: makeDescription,

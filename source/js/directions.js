@@ -40,7 +40,17 @@
     return $($directionCard)[0];
   };
 
+  // url, onSuccess, onError, makeItem, section, listClass, makeSlider
 
+  var InquiryParam = {
+    URL: DIRECTIONS_URL,
+    ON_SUCCESS: window.items.makeItems,
+    ON_ERROR: window.items.removeSection,
+    MAKE_ITEM: makeDirection,
+    SECTION: section,
+    LIST_CLASS: 'directions__list',
+    MAKE_SLIDER: null
+  };
 
-  window.backend.getItems(DIRECTIONS_URL, window.items.makeItems, window.items.removeSection(section), makeDirection, section, 'directions__list', null);
+  window.backend.getItems(InquiryParam);
 })();
