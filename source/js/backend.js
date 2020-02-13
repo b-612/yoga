@@ -11,7 +11,7 @@
   };
 
   $.ajaxSetup({
-    type: requestParam.GET_REQUEST,
+    method: requestParam.GET_REQUEST,
     timeout: requestParam.REQUEST_TIMEOUT,
     dataType: requestParam.GET_DATA_TYPE
   });

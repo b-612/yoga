@@ -94,6 +94,12 @@
 
 .page-footer__social-icon {
   fill: #ffffff;
+
+  &--vk {
+    @media (max-width: $mobile-max-width) {
+      margin-top: 3px;
+    }
+}
 }
 
 .page-footer__copyright {

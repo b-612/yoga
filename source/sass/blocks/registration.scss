@@ -35,6 +35,8 @@
 
   .container {
     @media (max-width: $mobile-max-width) {
+      position: relative;
+
       display: flex;
       flex-direction: column;
       max-width: 480px;
@@ -67,6 +69,47 @@
     @media (max-width: $mobile-max-width) {
        margin-bottom: 30px;
     }
+  }
+}
+
+.registration__send-icon {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+
+  border-radius: 50%;
+
+  background-repeat: no-repeat;
+
+  @media (max-width: $mobile-max-width) {
+    width: 100px;
+    height: 100px;
+
+    transform: translateX(-50%);
+
+    background-size: 90px 90px;
+  }
+
+  &--progress {
+    background-position: center;
+
+    @media (max-width: $mobile-max-width) {
+      background-image: url("../img/form-send.svg");
+    }
+  }
+
+  &--success {
+    background-color: yellowgreen;
+    background-image: url("../img/form-success.svg");
+    background-position: center 25px;
+    background-size: 60px 60px;
+  }
+
+  &--error {
+    background-color: #c90000;
+    background-image: url("../img/form-error.svg");
+    background-size: 50px 50px;
+    background-position: center;
   }
 }
 
@@ -129,7 +172,7 @@
 }
 
 input.registration__error-message {
-  border-bottom-color: #e50101;
+  border-bottom-color: $reg-valid-error-color;
 }
 
 span.registration__error-message {
@@ -138,7 +181,7 @@ span.registration__error-message {
 
   width: 100%;
 
-  color: #e50101;
+  color: $reg-valid-error-color;
 
   @media (max-width: $mobile-max-width) {
     bottom: -20px;
@@ -168,5 +211,57 @@ span.registration__error-message {
 
   &:active {
     background-color: $accent-pressed;
+  }
+}
+
+.registration__message-text-wrapper {
+  position: absolute;
+  left: 50%;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  transform: translateX(-50%);
+
+  @media (max-width: $mobile-max-width) {
+    bottom: 40px;
+  }
+}
+
+.registration__message {
+  text-align: center;
+  color: #8373a1;
+
+  @media (max-width: $mobile-max-width) {
+    margin-bottom: 10px;
+
+    font-size: 14px;
+  }
+}
+
+.registration__further-actions {
+  border: none;
+
+  color: #e65c7b;
+
+  background-color: transparent;
+  cursor: pointer;
+
+  @media (max-width: $mobile-max-width) {
+   margin-bottom: 20px;
+
+    font-size: 14px;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+    outline: none;
+  }
+
+  &:active {
+    color: #c74562;
+    text-decoration: none;
   }
 }
