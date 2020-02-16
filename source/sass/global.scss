@@ -56,6 +56,11 @@ img {
     padding: 0 35px;
   }
 
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    min-width: 623px;
+    width: 80%;
+  }
+
   &--padding-small {
     @media (max-width: $mobile-max-width) {
       padding: 0 15px;
