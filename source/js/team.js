@@ -83,6 +83,7 @@
       MEMBER_IMAGE: $($memberCard).find('.team-member__avatar'),
       LINK_VK: $($memberCard).find('.team-member__social-link--vk'),
       LINK_TWITTER: $($memberCard).find('.team-member__social-link--twitter'),
+      DESC_TITLE: $($memberCard).find('.team-member__description-title'),
       EXPERIENCE_TIME: $($memberCard).find('.team-member__experience-time'),
       DESCRIPTION: $($memberCard).find('.team-member__description')
     };
@@ -93,12 +94,13 @@
     makeSocial($memberParam.LINK_VK, teamMemberData.vk, 'Вконтакте', 'team', teamMemberData.name);
     makeSocial($memberParam.LINK_TWITTER, teamMemberData.twitter, 'в Твиттер', 'team', teamMemberData.name);
     makeSocial.counter++;
+    window.items.makeText($memberParam.DESC_TITLE, teamMemberData.name);
     window.items.makeText($memberParam.EXPERIENCE_TIME, teamMemberData.experienceTime);
     $($memberCard).find('.team-member__description').remove();
 
     makeDescription(teamMemberData.description, $memberParam.DESCRIPTION[0])
       .forEach(function (current) {
-        $memberCard.append(current);
+        $memberCard.find('.team-member__description-wrapper').append(current);
     });
 
     return $($memberCard)[0];

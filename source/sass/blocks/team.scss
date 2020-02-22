@@ -8,6 +8,13 @@
     background-size: 270px 300px;
   }
 
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    min-height: 485px;
+    padding-bottom: 40px;
+    background-position: left 43px;
+    background-size: 268px auto;
+  }
+
   &.webp {
     @media (max-width: $mobile-max-width) {
       background-image: url("../img/team-bg-mob@1x.webp");
@@ -16,14 +23,30 @@
         background-image: url("../img/team-bg-mob@2x.webp");
       }
     }
+
+    @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+      background-image: url("../img/team-bg-tablet@1x.webp");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/team-bg-tablet@2x.webp");
+      }
+    }
   }
 
   &.no-webp {
     @media (max-width: $mobile-max-width) {
-      background-image: url("../img/team-bg-mob@1x.png");
+      background-image: url("../img/team-bg-mob@1x.jpg");
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-        background-image: url("../img/team-bg-mob@2x.png");
+        background-image: url("../img/team-bg-mob@2x.jpg");
+      }
+    }
+
+    @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+      background-image: url("../img/team-bg-tablet@1x.jpg");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/team-bg-tablet@2x.jpg");
       }
     }
   }
@@ -32,5 +55,10 @@
 .team__title {
   @media (max-width: $mobile-max-width) {
     margin-bottom: 32px;
+  }
+
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    margin-top: -54px;
+    margin-bottom: 28px;
   }
 }

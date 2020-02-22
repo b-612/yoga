@@ -14,17 +14,32 @@
     height: 31px;
   }
 
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    bottom: -40px;
+    margin-left: 50%;
+    margin-right: 50%;
+    transform: translateX(-50%);
+  }
+
   &--prev {
     transform: rotate(180deg);
 
     @media (max-width: $mobile-max-width) {
       left: -20px;
     }
+
+    @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+      left: -50px;
+    }
   }
 
   &--next {
     @media (max-width: $mobile-max-width) {
       right: -20px;
+    }
+
+    @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+      right: -50px;
     }
   }
 }

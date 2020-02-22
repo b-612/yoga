@@ -17,7 +17,7 @@
   }
 
   picture {
-    background-color: #dadada;
+    background-color: $reserve-image-bg;
   }
 
   &:first-of-type {
@@ -87,7 +87,7 @@
 }
 
 .direction__image {
-  background-color: #e3e3e1;
+  background-color: $reserve-image-bg;
 
   @media (max-width: $mobile-max-width) {
     width: 250px;

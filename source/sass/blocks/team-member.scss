@@ -8,8 +8,21 @@
     width: 250px;
   }
 
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    padding-top: 36px;
+  }
+
   &:focus {
     outline: none;
+  }
+
+  &.slick-slide {
+    @media (min-width: $tablet-min-width) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: center;
+    }
   }
 }
 
@@ -21,6 +34,17 @@
 
   @media (max-width: $mobile-max-width) {
     margin-bottom: 21px;
+  }
+
+  @media (min-width: $tablet-min-width) {
+    position: relative;
+  }
+
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    width: 254px;
+    min-height: 67px;
+    margin-left: 18px;
+    padding: 9px 10px 10px 83px;
   }
 }
 
@@ -42,13 +66,12 @@
 .team-member__title {
   margin-top: 0;
 
+  font-size: $team-member-title-fs-mt;
   font-weight: normal;
   color: $accent;
 
   @media (max-width: $mobile-max-width) {
     margin-bottom: 6px;
-
-    font-size: $team-member-title-fs-m;
   }
 }
 
@@ -58,12 +81,21 @@
 }
 
 .team-member__avatar {
+  background-color: $reserve-image-bg;
+
   @media (max-width: $mobile-max-width) {
     width: 82px;
     height: 82px;
     margin-left: 1px;
+  }
 
-    background-color: #eae3f8;
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    position: absolute;
+    top: -36px;
+    left: -18px;
+
+    width: 91px;
+    height: 91px;
   }
 }
 
@@ -73,20 +105,54 @@
     margin-right: 20px;
     padding-top: 20px;
   }
+
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    margin: 12px 10px 0 auto;
+  }
 }
 
 .team-member__social {
   @media (max-width: $mobile-max-width) {
     margin-bottom: 15px;
   }
+
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    margin-bottom: 5px;
+  }
+}
+
+.team-member__description-wrapper {
+  @media (min-width: $tablet-min-width) {
+    width: 49.5%;
+    margin-left: 40px;
+  }
+}
+
+.team-member__description-title {
+  @media (max-width: $mobile-max-width) {
+    display: none;
+  }
+
+  @media (min-width: $tablet-min-width) {
+    display: block;
+  }
+
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    margin-top: -6px;
+    font-size: 16px;
+  }
 }
 
 .team-member__experience {
+  color: $accent;
+
   @media (max-width: $mobile-max-width) {
     display: block;
     margin-bottom: 11px;
+  }
 
-    color: $accent;
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    font-size: 12px;
   }
 }
 
