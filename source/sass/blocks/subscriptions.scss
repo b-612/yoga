@@ -19,6 +19,18 @@
       center bottom -39px;
   }
 
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    padding-top: 74px;
+    padding-bottom: 150px;
+
+    background-size:
+      238px 193px,
+      100%;
+    background-position:
+      bottom 14% right 10%,
+      left 142px;
+  }
+
   &.webp {
     @media (max-width: $mobile-max-width) {
       background-image:
@@ -31,18 +43,30 @@
           url("../img/subscriptions-team-bg-mob@2x.webp");
       }
     }
+
+    @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+      background-image:
+        url("../img/subscriptions-team-bg-tablet@1x.webp"),
+        url("../img/subscriptions-bg-tablet@1x.webp");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image:
+          url("../img/subscriptions-team-bg-tablet@2x.webp")
+          url("../img/subscriptions-bg-tablet@2x.webp");
+      }
+    }
   }
 
   &.no-webp {
     @media (max-width: $mobile-max-width) {
       background-image:
-        url("../img/subscriptions-bg-mob@1x.jpg"),
-        url("../img/subscriptions-team-bg-mob@1x.jpg");
+        url("../img/subscriptions-team-bg-mob@1x.jpg"),
+        url("../img/subscriptions-bg-mob@1x.jpg");
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
         background-image:
-          url("../img/subscriptions-bg-mob@2x.jpg"),
-          url("../img/subscriptions-team-bg-mob@2x.jpg");
+          url("../img/subscriptions-team-bg-mob@2x.jpg")
+          url("../img/subscriptions-bg-mob@2x.jpg");
       }
     }
   }
@@ -52,17 +76,34 @@
   @media (max-width: $mobile-max-width) {
     margin-bottom: 27px;
   }
+
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    margin-bottom: 12px;
+  }
 }
 
 .subscriptions__subscription-times {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
 
   font-size: $subscr-time-btn-fs;
 
   @media (max-width: $mobile-max-width) {
+    justify-content: space-around;
     margin-bottom: 30px;
+  }
+
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    justify-content: center;
+    margin-left: -32px;
+    margin-bottom: 31px;
+  }
+}
+
+.subscriptions__time-item {
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    margin-left: 32px;
+    margin-bottom: 10px;
   }
 }
 
@@ -91,8 +132,16 @@
   @media (max-width: $mobile-max-width) {
     margin-right: -20px;
   }
+
+  @media (min-width: $tablet-min-width) {
+    align-items: flex-start;
+  }
 }
 
 .subscriptions__item {
   margin: 0 20px 28px 0;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
 }

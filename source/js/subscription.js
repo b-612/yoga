@@ -36,9 +36,37 @@
     return $($subscriptionCard)[0];
   };
 
+  var onItemHover = function (evt) {
+    if ($(evt.currentTarget).hasClass('subscription')) {
+      $('.subscription').not(this)
+        .removeClass('subscription--best')
+        .find('.subscription__link').fadeOut(300, function () {
+          $(this).hide();
+        });
+      $(evt.currentTarget).addClass('subscription--best')
+        .find('.subscription__link')
+        .fadeIn(300, function () {
+          $(this).show();
+        });
+    }
+  };
+
+  var setItemsListeners = function () {
+    $('.subscription').hover(onItemHover);
+    $('.subscription').focus(onItemHover);
+  };
+
+  var setBestSubscr = function () {
+    $('.subscription:eq(1)').addClass('subscription--best');
+  };
+
   var InquiryParam = {
     URL: SUBSCRIPTIONS_URL_ONE_MONTH,
-    ON_SUCCESS: window.items.makeItems,
+    ON_SUCCESS: {
+      makeItems: window.items.makeItems,
+      setTheBest: setBestSubscr,
+      setItemsListeners: setItemsListeners
+    },
     ON_ERROR: window.items.removeSection,
     MAKE_ITEM: makeSubscription,
     SECTION: section,
@@ -51,17 +79,20 @@
       case $(evt.target).hasClass('subscriptions__time-btn--one-month') :
         InquiryParam.URL = SUBSCRIPTIONS_URL_ONE_MONTH;
         window.backend.getItems(InquiryParam);
+        setBestSubscr();
       break;
 
       case $(evt.target).hasClass('subscriptions__time-btn--six-months') :
         InquiryParam.URL = SUBSCRIPTIONS_URL_SIX_MONTH;
         window.backend.getItems(InquiryParam);
-        break;
+        setBestSubscr();
+      break;
 
       case $(evt.target).hasClass('subscriptions__time-btn--year') :
         InquiryParam.URL = SUBSCRIPTIONS_URL_YEAR;
         window.backend.getItems(InquiryParam);
-        break;
+        setBestSubscr();
+      break;
     }
 
     window.subscriptions.onTimeBtnClickCounter++;

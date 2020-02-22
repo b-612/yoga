@@ -1,4 +1,6 @@
 .direction {
+  position: relative;
+
   display: flex;
   flex-wrap: wrap;
   flex-shrink: 0;
@@ -13,6 +15,75 @@
   @media (min-width: $mobile-mid-min) and (max-width: $mobile-mid-max) {
     width: 100%;
   }
+
+  picture {
+    background-color: #dadada;
+  }
+
+  &:first-of-type {
+    @media (min-width: $tablet-min-width) {
+      width: 40%;
+      margin-left: auto;
+      margin-right: 3%;
+    }
+
+    picture {
+      @media (min-width: $tablet-min-width) {
+        width: 100%;
+      }
+    }
+
+    .direction__image {
+      @media (min-width: $tablet-min-width) {
+        width: 100%;
+        min-height: 209px;
+      }
+    }
+
+    .direction__wrapper {
+      @media (min-width: $tablet-min-width) {
+        width: 67%;
+      }
+    }
+  }
+
+  &:not(:first-of-type) {
+    @media (min-width: $tablet-min-width) {
+      width: 57%;
+      margin-bottom: 20px;
+      margin-right: auto;
+    }
+
+    .direction__wrapper {
+      @media (min-width: $tablet-min-width) {
+        width: 59%;
+      }
+    }
+
+    picture {
+      @media (min-width: $tablet-min-width) {
+        width: 41%;
+      }
+    }
+
+    .direction__image {
+      @media (min-width: $tablet-min-width) {
+        min-width: 148px;
+        width: 100%;
+      }
+    }
+
+    .direction__link {
+      @media (min-width: $tablet-min-width) {
+        position: absolute;
+        right: 20px;
+        bottom: 25px;
+
+        width: 30px;
+        height: 20px;
+      }
+    }
+  }
 }
 
 .direction__image {
@@ -22,6 +93,10 @@
     width: 250px;
     min-height: 100px;
     margin-bottom: -5px;
+  }
+
+  @media (min-width: $tablet-min-width) {
+    margin-bottom: -4px;
   }
 }
 
@@ -35,12 +110,17 @@
     min-width: 207px;
     padding: 14px 20px 7px;
   }
+
+  @media (min-width: $tablet-min-width) {
+    flex-grow: 1;
+    padding: 17px 20px 18px;
+  }
 }
 
 .direction__title {
   margin-top: 0;
 
-  @media (max-width: $mobile-max-width) {
+  @media (max-width: $tablet-max-width) {
     margin-bottom: 4px;
   }
 }
@@ -52,9 +132,15 @@
 }
 
 .direction__teacher {
-  margin-top: 0;
-
   color: $accent;
+
+  @media (max-width: $mobile-max-width) {
+    margin-top: 0;
+  }
+
+  @media (min-width: $tablet-min-width) {
+    margin: 5px 0 0;
+  }
 }
 
 .direction__teacher-label {

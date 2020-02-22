@@ -72,10 +72,17 @@ img {
   margin: 0;
 
   font-family: $geometria;
+  text-align: center;
+  font-weight: normal;
 
   @media (max-width: $mobile-max-width) {
     font-size: $section-title-fs-m;
-    text-align: center;
+  }
+
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    margin-bottom: 33px;
+
+    font-size: $section-title-fs-t;
   }
 }
 

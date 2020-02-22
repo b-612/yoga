@@ -7,9 +7,32 @@
   background-color: $light-on-dark;
   box-shadow: 0 4px 25px rgba(142, 128, 169, 0.2);
 
+  transition-property: width, height;
+  transition-duration: 300ms;
+
   @media (max-width: $mobile-max-width) {
     min-width: 250px;
     padding: 21px 20px 31px;
+  }
+
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    width: 28.3%;
+    padding: 30px 10px 23px;
+  }
+
+  &--best {
+    transition-delay: 300ms;
+
+    @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+      width: 35.5%;
+      padding-bottom: 38px;
+    }
+
+    .subscription__link {
+      @media (min-width: $tablet-min-width) {
+        display: block;
+      }
+    }
   }
 }
 
@@ -20,6 +43,14 @@
     margin-bottom: 9px;
 
     font-size: $subscr-title-m-fs;
+  }
+
+  @media (min-width: $tablet-min-width) {
+    font-size: $subscr-title-td-fs;
+  }
+
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    margin-bottom: 6px;
   }
 }
 
@@ -35,16 +66,27 @@
     width: 145px;
     margin-bottom: 6px;
   }
+
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    width: 145px;
+  }
 }
 
 .subscription__price {
   @media (max-width: $mobile-max-width) {
     font-size: $subscr-price-m-fs;
   }
+
+  @media (min-width: $tablet-min-width) {
+    margin-bottom: auto;
+
+    font-size: $subscr-price-td-fs;
+  }
 }
 
 .subscription__link {
   color: $light-on-dark;
+  text-align: center;
 
   background-color: $dark-on-light;
 
@@ -53,7 +95,16 @@
     margin-top: 18px;
     padding: 9px 10px 10px;
 
-    text-align: center;
+  }
+
+  @media (min-width: $tablet-min-width) {
+    display: none;
+  }
+
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    min-width: 100px;
+    margin-top: 12px;
+    padding: 10px 24px;
   }
 
   &:hover,

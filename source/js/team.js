@@ -156,7 +156,9 @@
 
   var InquiryParam = {
     URL: TEAM_MEMBERS_URL,
-    ON_SUCCESS: window.items.makeItems,
+    ON_SUCCESS: {
+      makeItems: window.items.makeItems
+    },
     ON_ERROR: window.items.removeSection,
     MAKE_ITEM: makeTeamMember,
     SECTION: section,

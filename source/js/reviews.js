@@ -136,7 +136,9 @@
 
   var InquiryParam = {
     URL: REVIEWS_URL,
-    ON_SUCCESS: window.items.makeItems,
+    ON_SUCCESS: {
+      makeItems: window.items.makeItems
+    },
     ON_ERROR: window.items.removeSection,
     MAKE_ITEM: makeReview,
     SECTION: section,

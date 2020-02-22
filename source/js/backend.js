@@ -19,8 +19,17 @@
   var getItems = function (itemParams) {
     $.ajax(itemParams.URL, {
       success: function (resp) {
-        itemParams.ON_SUCCESS(resp, itemParams.MAKE_ITEM, itemParams.SECTION, itemParams.LIST_CLASS, itemParams.MAKE_SLIDER);
+        itemParams.ON_SUCCESS.makeItems(resp, itemParams.MAKE_ITEM, itemParams.SECTION, itemParams.LIST_CLASS, itemParams.MAKE_SLIDER);
+
+        if (itemParams.ON_SUCCESS.setTheBest) {
+          itemParams.ON_SUCCESS.setTheBest();
+        }
+
+        if (itemParams.ON_SUCCESS.setItemsListeners) {
+          itemParams.ON_SUCCESS.setItemsListeners();
+        }
       },
+
       error: itemParams.ON_ERROR(itemParams.SECTION)
     })
   };
