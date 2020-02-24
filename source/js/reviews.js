@@ -103,20 +103,11 @@
       accessibility: true,
       zIndex: 1000,
       speed: 300,
-      slidesToShow: 1,
-      slidesToScroll: 1,
+      slidesToShow: 2,
+      slidesToScroll: 2,
       appendArrows: '.reviews__nav',
 
       responsive: [
-        {
-          breakpoint: window.util.screenWidth.MOB_MAX,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            infinite: true,
-            dots: false
-          }
-        },
         {
           breakpoint: window.util.screenWidth.MOB_MID,
           settings: {

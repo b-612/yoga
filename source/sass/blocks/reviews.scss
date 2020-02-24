@@ -7,6 +7,10 @@
   @media (max-width: $mobile-max-width) {
     margin-bottom: 33px;
   }
+
+  @media (min-width: $tablet-min-width) {
+    margin-bottom: 12px;
+  }
 }
 
 .reviews__slider {
@@ -21,16 +25,29 @@
     height: 20px;
   }
 
+  @media (min-width: $tablet-min-width) {
+      top: -2px;
+    }
+
   &--prev {
+    transform: rotate(180deg);
+
     @media (max-width: $mobile-max-width) {
       left: 64px;
-      transform: rotate(180deg);
+    }
+
+    @media (min-width: $tablet-min-width) {
+      margin-left: -35px;
     }
   }
 
   &--next {
     @media (max-width: $mobile-max-width) {
       right: 63px;
+    }
+
+    @media (min-width: $tablet-min-width) {
+      margin-left: 35px;
     }
   }
 }

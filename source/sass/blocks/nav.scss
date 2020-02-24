@@ -191,6 +191,12 @@
   }
 }
 
+.nav__toggle-text {
+  @media (max-width: $mobile-max-width) {
+    display: none;
+  }
+}
+
 .nav__list {
   position: fixed;
   top: 0;

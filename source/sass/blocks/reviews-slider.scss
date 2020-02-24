@@ -5,6 +5,10 @@
   flex-wrap: wrap;
   justify-content: center;
 
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    margin-bottom: 20px;
+  }
+
   .slick-track {
     display: flex;
   }
@@ -19,5 +23,17 @@
   @media (max-width: $mobile-mid-max) {
     padding-left: 20px;
     padding-right: 20px;
+  }
+}
+
+.reviews-slider__item-wrapper:nth-of-type(even) .review {
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    margin-right: 20px;
+  }
+}
+
+.reviews-slider__item-wrapper:nth-of-type(odd) .review {
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    margin-left: 20px;
   }
 }
