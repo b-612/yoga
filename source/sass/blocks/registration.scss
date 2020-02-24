@@ -5,12 +5,16 @@
   background-repeat: no-repeat;
   background-position: center top;
 
-
   @media (max-width: $mobile-max-width) {
     margin-bottom: 41px;
     padding: 61px 0 50px;
 
     background-size: 767px 391px;
+  }
+
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    padding-top: 67px;
+    padding-bottom: 69px;
   }
 
   &.webp {
@@ -21,35 +25,57 @@
         background-image: url("../img/registration-bg-mob@2x.webp");
       }
     }
+
+    @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+      background-image: url("../img/registration-bg-tablet@1x.webp");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/registration-bg-tablet@2x.webp");
+      }
+    }
   }
 
   &.no-webp {
     @media (max-width: $mobile-max-width) {
-      background-image: url("../img/registration-bg-mob@1x.jpg");
+      background-image: url("../img/registration-bg-tablet@1x.jpg");
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-        background-image: url("../img/registration-bg-mob@2x.jpg");
+        background-image: url("../img/registration-bg-tablet@2x.jpg");
       }
     }
   }
 
   .container {
-    @media (max-width: $mobile-max-width) {
-      position: relative;
+    position: relative;
 
-      display: flex;
-      flex-direction: column;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: $mobile-max-width) {
       max-width: 480px;
+    }
+
+    @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+      min-width: 407px;
+      width: 50%;
+      max-width: 469px;
     }
   }
 }
 
 .registration__title {
+  margin-top: 0;
+
   color: $dark-on-light;
 
   @media (max-width: $mobile-max-width) {
-    margin: 0 0 26px;
-    font-size: $registration-fs-m;
+    margin-bottom: 26px;
+    font-size: $registration-title-fs-m;
+  }
+
+  @media (min-width: $tablet-min-width) {
+    margin-bottom: 41px;
+    font-size: $registration-title-fs-td;
   }
 }
 
@@ -77,6 +103,7 @@
   left: 50%;
 
   border-radius: 50%;
+  transform: translateX(-50%);
 
   background-repeat: no-repeat;
 
@@ -86,9 +113,14 @@
     width: 100px;
     height: 100px;
 
-    transform: translateX(-50%);
-
     background-size: 90px 90px;
+  }
+
+  @media (min-width: $tablet-min-width) {
+    top: 60px;
+
+    width: 140px;
+    height: 140px;
   }
 
   &--progress {
@@ -102,8 +134,15 @@
   &--success {
     background-color: yellowgreen;
     background-image: url("../img/form-success.svg");
-    background-position: center 25px;
     background-size: 60px 60px;
+
+    @media (max-width: $mobile-max-width) {
+      background-position: center 25px;
+    }
+
+    @media (min-width: $tablet-min-width) {
+      background-position: center;
+    }
   }
 
   &--error {
@@ -115,17 +154,23 @@
 }
 
 .registration__input {
+  width: 100%;
   border: none;
   border-bottom: 1px solid $dark-on-light;
+
+  font-size: $reg-input-fs;
 
   background-color: transparent;
 
   @media (max-width: $mobile-max-width) {
-    width: 100%;
     padding-bottom: 11px;
 
-    font-size: $reg-input-fs-m;
     color: $reg-input-text-color;
+  }
+
+  @media (min-width: $tablet-min-width) {
+    margin-bottom: 47px;
+    padding-bottom: 9px;
   }
 
   &:-ms-input-placeholder {
@@ -187,19 +232,27 @@ span.registration__error-message {
   @media (max-width: $mobile-max-width) {
     bottom: -20px;
   }
+
+  @media (min-width: $tablet-min-width) {
+    top: 35px;
+  }
 }
 
 .registration__submit {
+  padding: 20px 10px;
   border: 0;
+
+  font-size: $reg-input-fs;
+  color: $light-on-dark;
 
   background-color: $accent;
 
   @media (max-width: $mobile-max-width) {
     margin: 34px 0 20px;
-    padding: 20px 10px;
+  }
 
-    font-size: $reg-input-fs-m;
-    color: $light-on-dark;
+  @media (min-width: $tablet-min-width) {
+    margin-top: 10px;
   }
 
   &:hover,
@@ -227,6 +280,12 @@ span.registration__error-message {
 
   @media (max-width: $mobile-max-width) {
     bottom: 20px;
+  }
+
+  @media (min-width: $tablet-min-width) {
+    top: 230px;
+
+    font-size: $reg-input-fs;
   }
 }
 
