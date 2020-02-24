@@ -29,10 +29,17 @@
   &--opened {
     .nav__toggle {
       position: fixed;
-      top: 10px;
       z-index: 3;
 
       outline: none;
+
+      @media (max-width: $mobile-max-width) {
+        top: 10px;
+      }
+
+      @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+        top: 35px;
+      }
 
       &:hover,
       &:focus {
@@ -55,7 +62,13 @@
     }
 
     .nav__toggle-line {
-      top: 0;
+      @media (max-width: $mobile-max-width) {
+        top: 0;
+      }
+
+      @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+        top: 6px;
+      }
 
       transform: rotate(45deg);
 
@@ -90,6 +103,7 @@
 
   background-color: transparent;
   outline: none;
+  cursor: pointer;
 
   @media (max-width: $mobile-max-width) {
     width: 30px;
@@ -114,6 +128,10 @@
       &::after {
         background-color: $light-on-dark;
       }
+    }
+
+    .nav__toggle-text {
+      color: $dark-on-light-hover;
     }
   }
 
