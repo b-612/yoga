@@ -99,6 +99,7 @@
   };
 
   var makeItems = function (itemsData, makeItem, section, listClass, makeSlider) {
+    var itemsArgs = arguments;
     var fragment = window.util.fragment;
     var list = section.find('.' + listClass);
 
@@ -108,13 +109,42 @@
 
     switch (true) {
       case section.hasClass('subscriptions') && window.subscriptions.onTimeBtnClickCounter > 1 :
-        list.empty().fadeOut(5);
-        list.append(fragment).fadeIn(1000);
+        if (screen.width >= window.util.screenWidth.TAB_MIN) {
+          list.animate({
+              opacity: 0,
+              marginLeft: '-10000px'
+            },
+            300, function () {
+              $(this).empty()
+                .append(fragment);
+
+              itemsArgs[itemsArgs.length - 2]();
+              itemsArgs[itemsArgs.length - 1]();
+
+              $(this).animate({
+                opacity: 1,
+                marginLeft: 0
+              }, 300);
+            });
+        } else {
+          list.animate({
+              opacity: 0
+            },
+            300, function () {
+              $(this).empty()
+                .append(fragment)
+                .animate({
+                opacity: 1,
+              }, 500);
+            });
+        }
         break;
+
       case listClass === 'members-slider' || listClass === 'reviews-slider' :
         section.find('.' + listClass).empty().append(fragment);
         makeSlider();
         break;
+
       default :
         section.find('.' + listClass).empty().append(fragment);
     }

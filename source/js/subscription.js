@@ -52,8 +52,10 @@
   };
 
   var setItemsListeners = function () {
-    $('.subscription').hover(onItemHover);
-    $('.subscription').focus(onItemHover);
+    if (screen.width >= window.util.screenWidth.TAB_MIN) {
+      $('.subscription').hover(onItemHover);
+      $('.subscription').focus(onItemHover);
+    }
   };
 
   var setBestSubscr = function () {
@@ -71,7 +73,7 @@
     MAKE_ITEM: makeSubscription,
     SECTION: section,
     LIST_CLASS: 'subscriptions__list',
-    MAKE_SLIDER: null
+    MAKE_SLIDER: null,
   };
 
   var onTimeBtnClick = function (evt) {
@@ -79,19 +81,16 @@
       case $(evt.target).hasClass('subscriptions__time-btn--one-month') :
         InquiryParam.URL = SUBSCRIPTIONS_URL_ONE_MONTH;
         window.backend.getItems(InquiryParam);
-        setBestSubscr();
       break;
 
       case $(evt.target).hasClass('subscriptions__time-btn--six-months') :
         InquiryParam.URL = SUBSCRIPTIONS_URL_SIX_MONTH;
         window.backend.getItems(InquiryParam);
-        setBestSubscr();
       break;
 
       case $(evt.target).hasClass('subscriptions__time-btn--year') :
         InquiryParam.URL = SUBSCRIPTIONS_URL_YEAR;
         window.backend.getItems(InquiryParam);
-        setBestSubscr();
       break;
     }
 

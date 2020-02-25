@@ -61,7 +61,7 @@
 
     socialItem .append(socialElem);
 
-    window.setTimeout(function () {
+    setTimeout(function () {
       var elemClone = socialElem.clone();
       socialItem.empty();
       socialItem .append(elemClone);
@@ -151,7 +151,7 @@
       ]
     });
 
-    window.setTimeout(function () {
+    setTimeout(function () {
       replaceClonedSocials('team', $slider, 'team-member__social-icon');
     }, 0);
   };

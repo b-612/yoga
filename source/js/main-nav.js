@@ -24,7 +24,7 @@
     if (onToggleClick.isClicked) {
       $body.toggleClass('body-anim-off');
       $navList.toggleClass('nav__list--animation-off');
-      window.setTimeout(function () {
+      setTimeout(function () {
         $body.removeClass('body-anim-off');
         $navList.removeClass('nav__list--animation-off');
         $body.removeAttr('style');
