@@ -28,7 +28,6 @@
   };
 
   var onTryBtnClick = function () {
-    console.log('Сработало');
     var $removingElements = $('.registration__send-icon, .registration__message-text-wrapper');
     var form = $('.registration__form')[0];
     var $startElements = $('.registration__form, .registration__title');
@@ -38,6 +37,7 @@
       $removingElements.remove();
       form.reset();
       $startElements.fadeIn(300);
+      $('.registration .container').removeAttr('style');
     }, 300)
   };
 
