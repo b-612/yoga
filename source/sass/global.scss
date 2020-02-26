@@ -12,6 +12,8 @@ body {
   position: relative;
 
   min-width: $mobile-min-width;
+  max-width: 1920px;
+  margin: 0 auto;
 
   font-family: $geometria;
   font-size: 14px;
@@ -56,9 +58,12 @@ img {
     padding: 0 35px;
   }
 
+  @media (min-width: $tablet-min-width) {
+    width: 80.5%;
+  }
+
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     min-width: 623px;
-    width: 80%;
   }
 
   &--padding-small {

@@ -24,6 +24,12 @@
     padding-bottom: 116px;
   }
 
+  @media (min-width: $desktop-min-width) {
+    padding-top: 65px;
+
+    background-position: bottom center;
+  }
+
   &.webp {
     background-repeat: no-repeat;
 
@@ -48,6 +54,14 @@
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
         background-image: url("../img/header-bg-tablet@2x.webp");
+      }
+    }
+
+    @media (min-width: $desktop-min-width) {
+      background-image: url("../img/header-bg-desktop@1x.webp");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/header-bg-desktop@2x.webp");
       }
     }
   }
@@ -76,6 +90,14 @@
         background-image: url("../img/header-bg-tablet@2x.jpg");
       }
     }
+
+    @media (min-width: $desktop-min-width) {
+      background-image: url("../img/header-bg-desktop@1x.jpg");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/header-bg-desktop@2x.jpg");
+      }
+    }
   }
 }
 
@@ -99,6 +121,10 @@
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     align-items: flex-start;
     margin-bottom: 50px;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    margin-bottom: 102px;
   }
 }
 
@@ -149,12 +175,31 @@
     font-size: 144px;
     letter-spacing: 4px;
   }
+
+  @media (min-width: $desktop-min-width) {
+    margin-bottom: 6px;
+
+    letter-spacing: 6px;
+  }
+
+  @media (min-width: $desktop-min-width) and (max-width: $desktop-max-width - 1) {
+    font-size: 19vw;
+  }
+
+  @media (min-width: $desktop-max-width) {
+    font-size: 265px;
+  }
 }
 
 .page-header__slogan-img-text {
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     width: 310px;
     margin-left: -40px;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    width: 582px;
+    margin-bottom: -8px;
   }
 }
 
@@ -186,6 +231,11 @@
   }
 
   @media (min-width: $desktop-min-width) {
+    width: 300px;
+    margin-bottom: 70px;
+    padding-top: 6px;
+    padding-left: 70px;
+
     font-size: $header-invitation-d-fs;
   }
 
@@ -205,6 +255,11 @@
     @media (max-width: $tablet-max-width) {
       width: 30px;
       height: 26px;
+    }
+
+    @media (min-width: $desktop-min-width) {
+      width: 56px;
+      height: 48px;
     }
   }
 
@@ -226,6 +281,16 @@
       height: 9px;
 
       background-size: 5px 9px;
+    }
+
+    @media (min-width: $desktop-min-width) {
+      top: 16px;
+      left: 24px;
+
+      width: 9px;
+      height: 17px;
+
+      background-size: 9px 17px;
     }
   }
 
@@ -276,8 +341,8 @@
   }
 }
 
-.page-header__social-item {
-  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+.page-header__social {
+  @media (min-width: $tablet-min-width) {
     margin-right: 10px;
   }
 }
@@ -300,8 +365,7 @@
 }
 
 .page-header__social-icon {
-  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
-    margin-right: 10px;
+  @media (min-width: $tablet-min-width) {
     fill: $dark-on-light;
   }
 }
@@ -311,5 +375,9 @@
     max-width: 400px;
 
     font-size: 12px;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    font-size: 16px;
   }
 }

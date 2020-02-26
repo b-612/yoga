@@ -89,6 +89,12 @@
       }
     }
 
+    .nav__toggle-text {
+      @media (min-width: $desktop-min-width) {
+        top: -14px;
+      }
+    }
+
     .nav__list {
       display: block;
     }
@@ -110,13 +116,21 @@
     height: 30px;
   }
 
-  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+  @media (min-width: $tablet-min-width) {
     display: flex;
     flex-wrap: wrap;
+
+    color: $dark-on-light;
+  }
+
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     width: 200px;
 
     font-size: 14px;
-    color: $dark-on-light;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    font-size: 16px;
   }
 
   &:hover,
@@ -149,6 +163,7 @@
 
 .nav__toggle-line {
   position: relative;
+  top: -3px;
 
   display: block;
   height: 1px;
@@ -166,6 +181,11 @@
 
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     width: 13px;
+    margin-right: 10px;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    width: 24px;
     margin-right: 10px;
   }
 
@@ -193,6 +213,12 @@
 
       width: 13px;
     }
+
+    @media (min-width: $desktop-min-width) {
+      top: 6px;
+
+      width: 24px;
+    }
   }
 
   &::after {
@@ -204,7 +230,14 @@
 
     @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
       top: 8px;
+
       width: 8px;
+    }
+
+    @media (min-width: $desktop-min-width) {
+      top: 13px;
+
+      width: 15px;
     }
   }
 }
@@ -212,6 +245,11 @@
 .nav__toggle-text {
   @media (max-width: $mobile-max-width) {
     display: none;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    position: relative;
+    top: -5px;
   }
 }
 
