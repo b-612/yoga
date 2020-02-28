@@ -16,6 +16,20 @@
     background-position: 7% 41px;
   }
 
+  @media (min-width: $desktop-min-width) {
+    padding-top: 111px;
+  }
+
+  @media (min-width: $desktop-min-width) and (max-width: $desktop-max-width) {
+    background-size: 82% auto;
+    background-position: 60% 167px;
+  }
+
+  @media (min-width: $desktop-max-width) {
+    background-size: 1172px 554px;
+    background-position: center 159px;
+  }
+
   &.webp {
     @media (max-width: $mobile-max-width) {
       background-image: url("../img/directions-bg-mob@1x.webp");
@@ -30,6 +44,14 @@
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
         background-image: url("../img/directions-bg-tablet@2x.webp");
+      }
+    }
+
+    @media (min-width: $desktop-min-width) {
+      background-image: url("../img/directions-bg-desktop@1x.webp");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/directions-bg-desktop@2x.webp");
       }
     }
   }
@@ -50,12 +72,24 @@
         background-image: url("../img/directions-bg-tablet@2x.jpg");
       }
     }
+
+    @media (min-width: $desktop-min-width) {
+      background-image: url("../img/directions-bg-desktop@1x.png");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/directions-bg-desktop@2x.png");
+      }
+    }
   }
 }
 
 .directions__title {
   @media (max-width: $mobile-max-width) {
     margin-bottom: 33px;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    margin-bottom: 52px;
   }
 }
 
@@ -76,6 +110,11 @@
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     max-height: 436px;
   }
+
+  @media (min-width: $desktop-min-width) {
+    max-height: 550px;
+    margin-left: -3%;
+  }
 }
 
 .directions__item {
@@ -91,7 +130,6 @@
 
   @media (min-width: $tablet-min-width) {
     display: block;
-    width: 57%;
     margin-left: auto;
     padding: 9px 20px 11px;
 
@@ -101,6 +139,16 @@
     box-shadow: 0 4px 25px rgba(142, 128, 169, 0.2);
 
     transform: translateY(-100%);
+  }
+
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    width: 57%;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    width: 45.32%;
+    max-width: 525px;
+    margin-left: 43.5%;
   }
 
   &:hover,

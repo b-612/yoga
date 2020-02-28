@@ -89,6 +89,10 @@ img {
 
     font-size: $section-title-fs-t;
   }
+
+  @media (min-width: $desktop-min-width) {
+    font-size: $section-title-fs-d;
+  }
 }
 
 @-webkit-keyframes autofill {
