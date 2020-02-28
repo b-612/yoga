@@ -66,6 +66,10 @@ img {
     min-width: 623px;
   }
 
+  @media (min-width: $desktop-min-width) {
+    max-width: $desktop-container-max-width;
+  }
+
   &--padding-small {
     @media (max-width: $mobile-max-width) {
       padding: 0 15px;
