@@ -61,4 +61,8 @@
     margin-top: -54px;
     margin-bottom: 28px;
   }
+
+  @media (min-width: $desktop-min-width) {
+    margin-top: -209px;
+  }
 }

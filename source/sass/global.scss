@@ -15,7 +15,7 @@ body {
   max-width: 1920px;
   margin: 0 auto;
 
-  font-family: $geometria;
+  font-family: $geometria-font-stack;
   font-size: 14px;
   line-height: $body-lh;
   font-weight: normal;
@@ -80,7 +80,7 @@ img {
 .section-title {
   margin: 0;
 
-  font-family: $geometria;
+  font-family: $geometria-font-stack;
   text-align: center;
   font-weight: normal;
 

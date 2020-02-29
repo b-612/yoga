@@ -20,12 +20,22 @@
     padding: 30px 10px 23px;
   }
 
+  @media (min-width: $desktop-min-width) {
+    width: 23%;
+    padding: 53px 10px 43px;
+  }
+
   &--best {
     transition-delay: 300ms;
 
     @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
       width: 35.5%;
       padding-bottom: 38px;
+    }
+
+    @media (min-width: $desktop-min-width) {
+      width: 29%;
+      padding-bottom: 57px;
     }
 
     .subscription__link {
@@ -70,6 +80,12 @@
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     width: 145px;
   }
+
+  @media (min-width: $desktop-min-width) {
+    width: 170px;
+      margin-bottom: 17px;
+    font-size: 12px;
+  }
 }
 
 .subscription__price {
@@ -79,8 +95,15 @@
 
   @media (min-width: $tablet-min-width) {
     margin-bottom: auto;
+  }
 
-    font-size: $subscr-price-td-fs;
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    font-size: $subscr-price-t-fs;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    margin-bottom: auto;
+    font-size: $subscr-price-d-fs;
   }
 }
 
@@ -102,9 +125,17 @@
   }
 
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
-    min-width: 100px;
+    width: 100px;
     margin-top: 12px;
     padding: 10px 24px;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    width: 220px;
+    margin-top: 26px;
+    padding: 15px 15px 19px;
+
+    font-size: 12px;
   }
 
   &:hover,

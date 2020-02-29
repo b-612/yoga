@@ -13,7 +13,7 @@ $retina-dppx: 1.5dppx;
 
 $container-mob-width: 290px;
 
-$geometria: ("Geometria", "Arial", "Helvetica", sans-serif);
+$geometria-font-stack: ("Geometria", "Arial", "Helvetica", sans-serif);
 $body-tm-fs: 10px;
 $body-d-fs: 14px;
 $body-lh: 1.5;
@@ -51,7 +51,8 @@ $subscr-time-btn-fs: 12px;
 $subscr-title-m-fs: 16px;
 $subscr-title-td-fs: 18px;
 $subscr-price-m-fs: 18px;
-$subscr-price-td-fs: 21px;
+$subscr-price-t-fs: 21px;
+$subscr-price-d-fs: 30px;
 
 $team-member-title-fs-mt: 10px;
 
