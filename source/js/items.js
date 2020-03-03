@@ -111,8 +111,7 @@
       case section.hasClass('subscriptions') && window.subscriptions.onTimeBtnClickCounter > 1 :
         if (screen.width >= window.util.screenWidth.TAB_MIN) {
           var listHeight = list.height();
-          list.height(listHeight);
-          list.animate({
+          list.css('min-height', listHeight).animate({
               opacity: 0
             },
             300, function () {

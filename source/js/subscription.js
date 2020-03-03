@@ -71,7 +71,11 @@
     ON_SUCCESS: {
       makeItems: window.items.makeItems,
       setTheBest: setStartBest,
-      setItemsListeners: setItemsListeners
+      setItemsListeners: setItemsListeners,
+      setListHeight: function () {
+        var startHeight = $('.subscriptions__list').height();
+        $('.subscriptions__list').css('min-height', startHeight);
+      }
     },
     ON_ERROR: window.items.removeSection,
     MAKE_ITEM: makeSubscription,
@@ -110,15 +114,30 @@
     });
   };
 
+  var onWindowResize = function () {
+    $('.subscriptions__list').css('min-height', '');
+    $subscriptionBtn[0].click();
+  };
+
   setBtnsListeners();
 
   $(window).resize(function () {
-    $('.subscriptions__list').css('height', '');
+    switch (true) {
+      case screen.width >= window.util.screenWidth.TAB_MIN && window.subscriptions.lastWindowWidth < window.util.screenWidth.TAB_MIN :
+          onWindowResize();
+          break;
 
-    if (screen.width >= window.util.screenWidth.TAB_MIN && window.subscriptions.lastWindowWidth < window.util.screenWidth.TAB_MIN) {
-      $subscriptionBtn[0].click();
-    } else if (screen.width < window.util.screenWidth.TAB_MIN && window.subscriptions.lastWindowWidth >= window.util.screenWidth.TAB_MIN) {
-      $subscriptionBtn[0].click();
+      case screen.width < window.util.screenWidth.TAB_MIN && window.subscriptions.lastWindowWidth >= window.util.screenWidth.TAB_MIN :
+          onWindowResize();
+          break;
+
+      case screen.width <= window.util.screenWidth.TAB_MAX && window.subscriptions.lastWindowWidth > window.util.screenWidth.TAB_MAX && screen.width >= window.util.screenWidth.TAB_MIN :
+          onWindowResize();
+          break;
+
+      case screen.width > window.util.screenWidth.TAB_MAX && window.subscriptions.lastWindowWidth <= window.util.screenWidth.TAB_MAX :
+        onWindowResize();
+        break;
     }
 
     window.subscriptions.lastWindowWidth = screen.width;
