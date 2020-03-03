@@ -17,7 +17,6 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-    min-height: 726px;
     margin-top: 41px;
     padding-top: 100px;
     padding-left: 10%;
@@ -218,12 +217,11 @@
 
 .page-footer .container.page-footer__copyright-wrapper {
   @media (min-width: $desktop-min-width) {
-    position: absolute;
-    bottom: 10px;
+    position: relative;
     left: 50%;
 
-    width: 77%;
     order: 2;
+    margin-top: 180px;
 
     transform: translateX(-50%);
   }
@@ -267,7 +265,7 @@
 
   @media (min-width: $desktop-min-width) {
     order: 1;
-    width: 250px;
+    width: 450px;
 
     text-align: right;
   }
