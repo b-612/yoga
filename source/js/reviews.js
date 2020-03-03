@@ -105,17 +105,23 @@
       speed: 300,
       slidesToShow: 2,
       slidesToScroll: 2,
-      appendArrows: '.reviews__nav',
 
       responsive: [
         {
           breakpoint: window.util.screenWidth.MOB_MID,
           settings: {
+            appendArrows: '.reviews__nav',
             slidesToShow: 1,
             slidesToScroll: 1,
             infinite: true,
             dots: false,
             draggable: true
+          }
+        },
+        {
+          breakpoint: window.util.screenWidth.TAB_MAX,
+          settings: {
+            appendArrows: '.reviews__nav'
           }
         }
       ]

@@ -16,9 +16,16 @@
   },
 
   function() {
-    $('.page-header').removeClass('webp').addClass('no-webp');
-    $('.directions').removeClass('webp').addClass('no-webp');
-    $('.subscriptions').removeClass('webp').addClass('no-webp');
-    $('.team').removeClass('webp').addClass('no-webp');
+    var elemsWithWebp = [
+      'page-header',
+      'directions',
+      'subscriptions',
+      'team',
+      'page-footer'
+    ];
+
+    elemsWithWebp.each(function () {
+      this.removeClass('webp').addClass('no-webp');
+    });
   });
 })();

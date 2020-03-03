@@ -40,12 +40,10 @@
     if ($(evt.currentTarget).hasClass('subscription')) {
       $('.subscription').not(this)
         .removeClass('subscription--best')
-        .find('.subscription__link').fadeOut(300, function () {
-          $(this).hide();
-        });
+        .find('.subscription__link').hide();
       $(evt.currentTarget).addClass('subscription--best')
         .find('.subscription__link')
-        .fadeIn(300, function () {
+        .slideDown(300, function () {
           $(this).show();
         });
     }
@@ -53,20 +51,26 @@
 
   var setItemsListeners = function () {
     if (screen.width >= window.util.screenWidth.TAB_MIN) {
-      $('.subscription').hover(onItemHover);
-      $('.subscription').focus(onItemHover);
+      $('.subscription').hover(onItemHover).focus(onItemHover);
     }
   };
 
-  var setBestSubscr = function () {
+  var setStartBest = function () {
     $('.subscription:eq(1)').addClass('subscription--best');
+
+    if (screen.width >= window.util.screenWidth.TAB_MIN) {
+      $('.subscription')
+        .not('.subscription:eq(1)')
+        .find('.subscription__link')
+        .hide();
+    }
   };
 
   var InquiryParam = {
     URL: SUBSCRIPTIONS_URL_ONE_MONTH,
     ON_SUCCESS: {
       makeItems: window.items.makeItems,
-      setTheBest: setBestSubscr,
+      setTheBest: setStartBest,
       setItemsListeners: setItemsListeners
     },
     ON_ERROR: window.items.removeSection,
@@ -108,8 +112,21 @@
 
   setBtnsListeners();
 
+  $(window).resize(function () {
+    $('.subscriptions__list').css('height', '');
+
+    if (screen.width >= window.util.screenWidth.TAB_MIN && window.subscriptions.lastWindowWidth < window.util.screenWidth.TAB_MIN) {
+      $subscriptionBtn[0].click();
+    } else if (screen.width < window.util.screenWidth.TAB_MIN && window.subscriptions.lastWindowWidth >= window.util.screenWidth.TAB_MIN) {
+      $subscriptionBtn[0].click();
+    }
+
+    window.subscriptions.lastWindowWidth = screen.width;
+  });
+
   window.subscriptions = {
-    onTimeBtnClickCounter: 0
+    onTimeBtnClickCounter: 0,
+    lastWindowWidth: screen.width
   };
 
   $subscriptionBtn[0].click();

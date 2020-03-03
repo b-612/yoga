@@ -11,11 +11,37 @@
   @media (min-width: $tablet-min-width) {
     margin-bottom: 12px;
   }
+
+  @media (min-width: $desktop-min-width) {
+    margin-top: -300px;
+    margin-bottom: 19px;
+  }
 }
 
 .reviews__slider {
   @media (max-width: $mobile-max-width) {
     margin-top: -35px;
+  }
+
+  .reviews__btn {
+    @media (min-width: $desktop-min-width) {
+      background-color: $dark-on-light;
+      background-image: url("../img/yoga-arrow.svg");
+      border-color: transparent;
+    }
+
+    &:hover,
+    &:focus {
+      @media (min-width: $desktop-min-width) {
+        background-color: $dark-on-light-hover;
+      }
+    }
+
+    &:active {
+      @media (min-width: $desktop-min-width) {
+        background-color: $dark-on-light-pressed;
+      }
+    }
   }
 }
 
@@ -25,9 +51,14 @@
     height: 20px;
   }
 
-  @media (min-width: $tablet-min-width) {
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
       top: -2px;
-    }
+  }
+
+  @media (min-width: $desktop-min-width) {
+    top: 172px;
+    z-index: 1;
+  }
 
   &--prev {
     transform: rotate(180deg);
@@ -36,8 +67,12 @@
       left: 64px;
     }
 
-    @media (min-width: $tablet-min-width) {
+    @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
       margin-left: -35px;
+    }
+
+    @media (min-width: $desktop-min-width) {
+      left: 10px;
     }
   }
 
@@ -46,8 +81,12 @@
       right: 63px;
     }
 
-    @media (min-width: $tablet-min-width) {
+    @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
       margin-left: 35px;
+    }
+
+    @media (min-width: $desktop-min-width) {
+      right: 5px;
     }
   }
 }

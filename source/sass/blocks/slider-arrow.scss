@@ -6,13 +6,23 @@
   background-color: transparent;
   background-image: url("../img/yoga-arrow-dark.svg");
   background-repeat: no-repeat;
-  background-size: 5px 8px;
   background-position: center;
   cursor: pointer;
 
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     width: 30px;
     height: 20px;
+  }
+
+  @media (max-width: $tablet-max-width) {
+    background-size: 5px 8px;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    width: 45px;
+    height: 30px;
+
+    background-size: 8px 13px;
   }
 
   &:hover,

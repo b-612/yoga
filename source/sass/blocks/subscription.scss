@@ -30,7 +30,6 @@
 
     @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
       width: 35.5%;
-      padding-bottom: 38px;
     }
 
     @media (min-width: $desktop-min-width) {
@@ -125,7 +124,7 @@
   }
 
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
-    width: 100px;
+    width: 170px;
     margin-top: 12px;
     padding: 10px 24px;
   }

@@ -46,6 +46,15 @@
     margin-left: 18px;
     padding: 9px 10px 10px 83px;
   }
+
+  @media (min-width: $desktop-min-width) {
+    width: 399px;
+    min-height: 105px;
+    margin-top: 55px;
+    margin-left: 80px;
+    margin: 60px 67px 40px 48px;
+    padding: 20px 20px 10px 143px;
+  }
 }
 
 .team-member__header-wrapper {
@@ -61,17 +70,29 @@
     width: 109px;
     padding: 16px 8px 11px 16px;
   }
+
+  @media (min-width: $desktop-min-width) {
+    width: 180px;
+    margin-right: 10px;
+  }
 }
 
 .team-member__title {
   margin-top: 0;
 
-  font-size: $team-member-title-fs-mt;
   font-weight: normal;
   color: $accent;
 
   @media (max-width: $mobile-max-width) {
     margin-bottom: 6px;
+  }
+
+  @media (max-width: $tablet-max-width) {
+    font-size: $team-member-title-fs-mt;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    font-size: $team-member-title-fs-d;
   }
 }
 
@@ -90,12 +111,22 @@
   }
 
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
-    position: absolute;
     top: -36px;
     left: -18px;
 
     width: 91px;
     height: 91px;
+  }
+
+  @media (min-width: $tablet-min-width) {
+    position: absolute;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    top: -55px;
+    left: -22px;
+
+    width: 143px;
   }
 }
 
@@ -109,6 +140,11 @@
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     margin: 12px 10px 0 auto;
   }
+
+  @media (min-width: $desktop-min-width) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .team-member__social {
@@ -119,12 +155,20 @@
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     margin-bottom: 5px;
   }
+
+  @media (min-width: $desktop-min-width) {
+    margin-right: 5px;
+  }
 }
 
 .team-member__description-wrapper {
-  @media (min-width: $tablet-min-width) {
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     width: 49.5%;
     margin-left: 40px;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    width: 44%;
   }
 }
 
@@ -139,7 +183,14 @@
 
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     margin-top: -6px;
+
     font-size: 16px;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    margin-bottom: 8px;
+
+    font-size: 18px;
   }
 }
 
@@ -154,12 +205,21 @@
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     font-size: 12px;
   }
+
+  @media (min-width: $desktop-min-width) {
+    display: block;
+    margin-bottom: 24px;
+  }
 }
 
 .team-member__description {
   @media (max-width: $mobile-max-width) {
     margin-top: 0;
     margin-bottom: 6px;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    font-size: 12px;
   }
 }
 

@@ -1,7 +1,6 @@
 .registration {
   line-height: 1.4;
 
-  background-color: #ede9fb;
   background-repeat: no-repeat;
   background-position: center top;
 
@@ -12,12 +11,22 @@
     background-size: 767px 391px;
   }
 
+  @media (max-width: $tablet-max-width) {
+    background-color: #ede9fb;
+  }
+
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     margin-bottom: 75px;
     padding-top: 67px;
     padding-bottom: 69px;
 
     background-size: 1159px 475px;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    order: 1;
+    width: 40%;
+    margin-top: 67px;
   }
 
   &.webp {

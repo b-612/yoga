@@ -16,9 +16,16 @@
 
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     bottom: -40px;
+  }
+
+  @media (min-width: $tablet-min-width) {
     margin-left: 50%;
     margin-right: 50%;
     transform: translateX(-50%);
+  }
+
+  @media (min-width: $desktop-min-width) {
+    bottom: -60px;
   }
 
   &--prev {
@@ -31,6 +38,10 @@
     @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
       left: -50px;
     }
+
+    @media (min-width: $desktop-min-width) {
+      left: -65px;
+    }
   }
 
   &--next {
@@ -40,6 +51,10 @@
 
     @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
       right: -50px;
+    }
+
+    @media (min-width: $desktop-min-width) {
+      right: -65px;
     }
   }
 }

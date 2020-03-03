@@ -15,6 +15,20 @@
     background-size: 268px auto;
   }
 
+  @media (min-width: $desktop-min-width) {
+    padding-bottom: 420px;
+  }
+
+  @media (min-width: $desktop-min-width) {
+
+    background-size:
+      28% auto,
+      30% auto;
+    background-position:
+      0 0,
+      96% 20%;
+  }
+
   &.webp {
     @media (max-width: $mobile-max-width) {
       background-image: url("../img/team-bg-mob@1x.webp");
@@ -29,6 +43,18 @@
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
         background-image: url("../img/team-bg-tablet@2x.webp");
+      }
+    }
+
+    @media (min-width: $desktop-min-width) {
+      background-image:
+        url("../img/team-bg-desktop@1x.webp"),
+        url("../img/subscriptions-team-bg-desktop@1x.webp");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image:
+          url("../img/team-bg-desktop@2x.webp"),
+          url("../img/subscriptions-team-bg-desktop@2x.webp");
       }
     }
   }
@@ -49,6 +75,18 @@
         background-image: url("../img/team-bg-tablet@2x.jpg");
       }
     }
+
+    @media (min-width: $desktop-min-width) {
+      background-image:
+        url("../img/team-bg-desktop@1x.png"),
+        url("../img/subscriptions-team-bg-desktop@1x.png");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image:
+        url("../img/team-bg-desktop@2x.png"),
+        url("../img/subscriptions-team-bg-desktop@2x.png");
+      }
+    }
   }
 }
 
@@ -64,5 +102,6 @@
 
   @media (min-width: $desktop-min-width) {
     margin-top: -209px;
+    margin-bottom: 52px;
   }
 }

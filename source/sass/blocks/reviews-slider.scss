@@ -9,6 +9,12 @@
     margin-bottom: 20px;
   }
 
+  @media (min-width: $desktop-min-width) {
+    width: 67%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .slick-track {
     display: flex;
   }
@@ -28,12 +34,20 @@
 
 .reviews-slider__item-wrapper:nth-of-type(even) .review {
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
-    margin-right: 20px;
+    margin-right: 5%;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    margin-left: 10px;
   }
 }
 
 .reviews-slider__item-wrapper:nth-of-type(odd) .review {
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
-    margin-left: 20px;
+    margin-left: 5%;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    margin-right: 10px;
   }
 }

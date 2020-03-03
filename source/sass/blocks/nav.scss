@@ -70,6 +70,10 @@
         top: 6px;
       }
 
+      @media(min-width: $desktop-min-width) {
+        top: -6px;
+      }
+
       transform: rotate(45deg);
 
       background-color: #ffffff;

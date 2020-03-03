@@ -11,10 +11,15 @@
   }
 
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
-    margin: 20px 10px;
+    margin: 20px 10px 40px;
     padding: 73px 60px 27px 87px;
 
     font-size: $review-text-t-fs;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    margin: 30px;
+    padding: 73px 40px 20px 90px;
   }
 }
 
@@ -22,6 +27,10 @@
   position: relative;
 
   margin: 0;
+
+  @media (min-width: $desktop-min-width) {
+    font-size: 12px;
+  }
 
   &::before {
     content: "";
@@ -65,12 +74,10 @@
 }
 
 .review__author-wrapper {
+  margin-left: 13px;
+
   @media (max-width: $mobile-max-width) {
     width: 155px;
-  }
-
-  @media (max-width: $tablet-max-width) {
-    margin-left: 13px;
   }
 }
 
@@ -84,19 +91,21 @@
     width: 150px;
     margin-top: -4px;
 
-    font-size: $author-name-fs-m;
+    font-size: $author-name-fs;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    font-size: $author-name-fs;
   }
 }
 
 .review__time {
   display: block;
 
+  font-size: 10px;
+
   @media (max-width: $mobile-max-width) {
     margin-bottom: 10px;
-  }
-
-  @media (max-width: $tablet-max-width) {
-    font-size: 10px;
   }
 
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
@@ -112,6 +121,10 @@
 .review__social {
   @media (max-width: $tablet-max-width) {
     margin-right: 11px;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    margin-right: 5px;
   }
 }
 
@@ -149,5 +162,9 @@
     margin: -6px auto 0;
 
     font-size: 12px;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    display: none;
   }
 }

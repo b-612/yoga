@@ -110,20 +110,19 @@
     switch (true) {
       case section.hasClass('subscriptions') && window.subscriptions.onTimeBtnClickCounter > 1 :
         if (screen.width >= window.util.screenWidth.TAB_MIN) {
+          var listHeight = list.height();
+          list.height(listHeight);
           list.animate({
-              opacity: 0,
-              marginLeft: '-10000px'
+              opacity: 0
             },
             300, function () {
-              $(this).empty()
-                .append(fragment);
+              $(this).empty().append(fragment);
 
               itemsArgs[itemsArgs.length - 2]();
               itemsArgs[itemsArgs.length - 1]();
 
               $(this).animate({
-                opacity: 1,
-                marginLeft: 0
+                opacity: 1
               }, 300);
             });
         } else {
