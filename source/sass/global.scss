@@ -12,7 +12,7 @@ body {
   position: relative;
 
   min-width: $mobile-min-width;
-  max-width: 1920px;
+  max-width: $body-max-width;
   margin: 0 auto;
 
   font-family: $geometria-font-stack;
@@ -128,8 +128,6 @@ input:-webkit-autofill {
 
 .body-anim-on {
   left: 260px;
-
-  overflow: hidden;
 
   animation-name: body-slide-on;
   animation-timing-function: ease-in;

@@ -27,7 +27,7 @@
   @media (min-width: $desktop-min-width) {
     padding-top: 65px;
 
-    background-position: bottom center;
+    background-position: left bottom;
     background-size: 100% auto;
   }
 
@@ -126,6 +126,12 @@
 
   @media (min-width: $desktop-min-width) {
     margin-bottom: 102px;
+  }
+}
+
+.page-header__nav {
+  @media (min-width: $desktop-min-width) {
+    position: relative;
   }
 }
 
