@@ -119,7 +119,7 @@
           }
         },
         {
-          breakpoint: window.util.screenWidth.TAB_MAX,
+          breakpoint: window.util.screenWidth.TAB_MAX + 1,
           settings: {
             appendArrows: '.reviews__nav'
           }

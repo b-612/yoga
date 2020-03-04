@@ -221,9 +221,16 @@
     left: 50%;
 
     order: 2;
-    margin-top: 180px;
 
     transform: translateX(-50%);
+  }
+
+  @media (min-width: $desktop-min-width) and (max-width: $footer-line-breakpoint) {
+    margin-top: 130px;
+  }
+
+  @media(min-width: $footer-line-breakpoint + 1) {
+    margin-top: 180px;
   }
 }
 
