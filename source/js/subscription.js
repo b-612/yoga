@@ -5,7 +5,7 @@
   var SUBSCRIPTIONS_URL_SIX_MONTH = 'https://b-612.github.io/json/yoga/subscriptionSixMonths.json';
   var SUBSCRIPTIONS_URL_YEAR = 'https://b-612.github.io/json/yoga/subscriptionYear.json';
 
-  var section = $('.subscriptions');
+  var $section = $('.subscriptions');
   var $subscriptionCardTemp = $.parseHTML($('#subscription').html());
   var $subscriptionBtn = $('.subscriptions__time-btn');
 
@@ -79,7 +79,7 @@
     },
     ON_ERROR: window.items.removeSection,
     MAKE_ITEM: makeSubscription,
-    SECTION: section,
+    SECTION: $section,
     LIST_CLASS: 'subscriptions__list',
     MAKE_SLIDER: null,
   };
