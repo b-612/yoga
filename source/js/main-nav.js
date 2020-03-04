@@ -14,13 +14,21 @@
 
     headerTop.css('min-height', topHeight);
     mainNav.toggleClass('nav--opened');
-    $body.toggleClass('body-anim-on');
-    navList.toggleClass('nav__list--animation-on');
+    $body.toggleClass('body-anim-on').css('overflow-x', 'hidden');
+    navList.toggleClass('nav__list--animation-on')
+      .fadeIn(500, function () {
+        $(this).css('display', 'block');
+    });
 
     if (onToggleClick.isClicked) {
       headerTop.css('min-height', '');
-      $body.toggleClass('body-anim-off');
-      navList.toggleClass('nav__list--animation-off');
+      $body.toggleClass('body-anim-off')
+        .css('overflow-x', '')
+        .removeAttr('style');
+      navList.toggleClass('nav__list--animation-off')
+        .fadeOut(500, function () {
+          $(this).css('display', '');
+      });
       setTimeout(function () {
         $body.removeClass('body-anim-off');
         navList.removeClass('nav__list--animation-off');

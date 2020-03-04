@@ -98,10 +98,6 @@
         top: -14px;
       }
     }
-
-    .nav__list {
-      display: block;
-    }
   }
 }
 
@@ -276,6 +272,13 @@
     font-size: $nav-mt-fs;
   }
 
+  @media (min-width: $body-max-width + 1) {
+    min-width: 260px;
+    width: calc(((100vw - 1920px) / 2) + 260px - 7px);
+
+    text-align: right;
+  }
+
   &--animation-on {
     left: 0;
 
@@ -294,7 +297,7 @@
 }
 
 .nav__item {
-  padding: 15px 30px 15px 30px;
+  padding: 15px 50px 15px 30px;
 
   border-bottom: $nav-item-border;
 }

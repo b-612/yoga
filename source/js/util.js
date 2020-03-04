@@ -7,7 +7,8 @@
     MOB_MAX: 768,
     TAB_MIN: 768,
     TAB_MAX: 1159,
-    DESK_MIN: 1160
+    DESK_MIN: 1160,
+    DESK_MAX: 1920
   };
 
   var deviceVersion = {
