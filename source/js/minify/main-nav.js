@@ -6,17 +6,21 @@
   var navList = mainNav.find('.nav__list');
   var navToggle = mainNav.find('.nav__toggle');
   var headerTop = $body.find('.page-header__top');
+  var $navItems = $('.nav__link');
 
   mainNav.removeClass('nav--no-js');
 
   var onToggleClick = function () {
+    var NAV_TIMEOUT = 500;
+    var NAV_OPENED_MARGIN = 20;
+
     var topHeight = headerTop.height();
 
     headerTop.css('min-height', topHeight);
     mainNav.toggleClass('nav--opened');
     $body.toggleClass('body-anim-on').css('overflow-x', 'hidden');
     navList.toggleClass('nav__list--animation-on')
-      .fadeIn(500, function () {
+      .fadeIn(NAV_TIMEOUT, function () {
         $(this).css('display', 'block');
     });
 
@@ -26,26 +30,27 @@
         .css('overflow-x', '')
         .removeAttr('style');
       navList.toggleClass('nav__list--animation-off')
-        .fadeOut(500, function () {
+        .fadeOut(NAV_TIMEOUT, function () {
           $(this).css('display', '');
       });
+
       setTimeout(function () {
         $body.removeClass('body-anim-off');
         navList.removeClass('nav__list--animation-off');
         $body.removeAttr('class');
         onToggleClick.isClicked = false;
-      }, 501);
+      }, NAV_TIMEOUT);
     }
 
-    if (screen.width > window.util.screenWidth.TAB_MAX) {
+    if (screen.width > window.util.screenWidth.TAB_MIN) {
       if (!onToggleClick.isClicked) {
         mainNav.animate({
-          left: '-7vw'
-        }, 500);
+          left: -(mainNav.offset().left - NAV_OPENED_MARGIN) + 'px'
+        }, NAV_TIMEOUT);
       } else {
         mainNav.animate({
           left: 0
-        }, 500);
+        }, NAV_TIMEOUT);
       }
     }
 
@@ -71,6 +76,21 @@
       }
     }
   };
+
+  var onNavLinkClick = function (evt) {
+    var SCROLL_DURATION = 700;
+    var OFFSET_TOP_PLUS = -20;
+
+    evt.preventDefault();
+    onToggleClick();
+    $('html, body').animate({
+      scrollTop: $(`.${$(evt.target).attr('id')}`)
+        .find('.section-title')
+        .offset().top + OFFSET_TOP_PLUS + 'px'
+    }, SCROLL_DURATION);
+  };
+
+  $navItems.click(onNavLinkClick);
 
   navToggle.click(function () {
     onToggleClick();

@@ -105,7 +105,7 @@
 
   &:not(:last-of-type) {
     @media (max-width: $mobile-max-width) {
-       margin-bottom: 30px;
+      margin-bottom: 30px;
     }
   }
 }
@@ -308,7 +308,7 @@ span.registration__error-message {
   @media (max-width: $mobile-max-width) {
     margin-bottom: 10px;
 
-    font-size: 14px;
+    font-size: $reg-message-fs-m;
   }
 }
 
@@ -321,9 +321,9 @@ span.registration__error-message {
   cursor: pointer;
 
   @media (max-width: $mobile-max-width) {
-   margin-bottom: 20px;
+    margin-bottom: 20px;
 
-    font-size: 14px;
+    font-size: $reg-further-actions-fs-m;
   }
 
   &:hover,

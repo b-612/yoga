@@ -14,7 +14,7 @@
     margin: 20px 10px 40px;
     padding: 73px 60px 27px 87px;
 
-    font-size: $review-text-t-fs;
+    font-size: $review-text-fs;
   }
 
   @media (min-width: $desktop-min-width) {
@@ -29,7 +29,7 @@
   margin: 0;
 
   @media (min-width: $desktop-min-width) {
-    font-size: 12px;
+    font-size: $review-text-fs;
   }
 
   &::before {
@@ -102,7 +102,7 @@
 .review__time {
   display: block;
 
-  font-size: 10px;
+  font-size: $review-time-fs;
 
   @media (max-width: $mobile-max-width) {
     margin-bottom: 10px;
@@ -148,23 +148,4 @@
 .review__social-icon {
   fill: #8b7eac;
   opacity: 0.65;
-}
-
-.reviews__nav {
-  position: relative;
-
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-
-  @media (max-width: $mobile-max-width) {
-    max-width: 230px;
-    margin: -6px auto 0;
-
-    font-size: 12px;
-  }
-
-  @media (min-width: $desktop-min-width) {
-    display: none;
-  }
 }

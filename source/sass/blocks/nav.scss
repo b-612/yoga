@@ -126,11 +126,11 @@
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     width: 200px;
 
-    font-size: 14px;
+    font-size: $nav-mt-fs;
   }
 
   @media (min-width: $desktop-min-width) {
-    font-size: 16px;
+    font-size: $nav-d-fs;
   }
 
   &:hover,

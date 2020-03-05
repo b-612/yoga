@@ -50,7 +50,7 @@
       }
     }
 
-     @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
       background-image: url("../img/header-bg-tablet@1x.webp");
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
@@ -130,7 +130,7 @@
 }
 
 .page-header__nav {
-  @media (min-width: $desktop-min-width) {
+  @media (min-width: $tablet-min-width) {
     position: relative;
   }
 }
@@ -179,7 +179,7 @@
 
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     padding-left: 20px;
-    font-size: 144px;
+    font-size: $header-slogan-t-fs;
     letter-spacing: 4px;
   }
 
@@ -190,11 +190,11 @@
   }
 
   @media (min-width: $desktop-min-width) and (max-width: $desktop-max-width - 1) {
-    font-size: 19vw;
+    font-size: $header-slogan-d-fs;
   }
 
   @media (min-width: $desktop-max-width) {
-    font-size: 265px;
+    font-size: $header-slogan-max-fs;
   }
 }
 
@@ -229,8 +229,6 @@
     margin-top: -3px;
     margin-left: 53px;
     padding-left: 37px;
-
-    font-size: 10px;
   }
 
   @media (max-width: $tablet-max-width) {
@@ -381,10 +379,10 @@
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     max-width: 400px;
 
-    font-size: 12px;
+    font-size: $header-city-fs-t;
   }
 
   @media (min-width: $desktop-min-width) {
-    font-size: 16px;
+    font-size: $header-city-fs-d;
   }
 }

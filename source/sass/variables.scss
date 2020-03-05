@@ -34,20 +34,26 @@ $accent-hover: #db326d;
 $accent-pressed: #c92964;
 $reserve-image-bg: #d2cbe0;
 
-
 $header-phone-mt-fs: 12px;
 $header-phone-d-fs: 16px;
 $header-invitation-mt-fs: 10px;
 $header-invitation-d-fs: 14px;
 $header-slogan-m-fs: 67px;
+$header-slogan-t-fs: 144px;
+$header-slogan-d-fs: 19vw;
+$header-slogan-max-fs: 265px;
 $header-bg-point-mob: 529px;
+$header-city-fs-t: 12px;
+$header-city-fs-d: 16px;
 
 $nav-mt-fs: 14px;
+$nav-d-fs: 16px;
 $nav-item-border: 1px solid #7a6e92;
 
 $direction-title-fs-d: 16px;
 $direction-title-fs-mt: 12px;
 $direction-schedule-fs-d: 12px;
+$direction-teacher-fs-d: 12px;
 
 $subscr-time-btn-fs: 12px;
 $subscr-title-m-fs: 16px;
@@ -55,14 +61,22 @@ $subscr-title-td-fs: 18px;
 $subscr-price-m-fs: 18px;
 $subscr-price-t-fs: 21px;
 $subscr-price-d-fs: 30px;
+$subscr-text-d-fs: 12px;
+$subscr-link-d-fs: 12px;
 
 $team-member-title-fs-mt: 10px;
 $team-member-title-fs-d: 12px;
+$team-member-description-title-fs-t: 16px;
+$team-member-description-title-fs-d: 18px;
+$team-member-description-fs-d: 12px;
+$team-member-experience-title-fs-t: 12px;
 
 $author-name-fs: 12px;
 $author-nav-fs-m: 12px;
 
-$review-text-t-fs: 12px;
+$reviews-nav-fs-m: 12px;
+$review-text-fs: 12px;
+$review-time-fs: 10px;
 
 $registration-title-fs-m: 20px;
 $registration-title-fs-td: 30px;
@@ -71,7 +85,12 @@ $reg-placeholder-color-hover: #a19bc7;
 $reg-input-fs: 14px;
 $reg-input-text-color: #7f7f7f;
 $reg-valid-error-color: #e50101;
+$reg-message-fs-m: 14px;
+$reg-further-actions-fs-m: 14px;
 
 $footer-bg-color: #8373a1;
 $footer-info-title-fs: 14px;
 $footer-info-data-fs: 12px;
+$footer-copyright-fs-m: 12px;
+$footer-copyright-fs-t: 14px;
+$footer-phone-fs-m: 14px;

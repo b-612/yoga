@@ -84,7 +84,7 @@
   @media (min-width: $desktop-min-width) {
     width: 170px;
     margin-bottom: 17px;
-    font-size: 12px;
+    font-size: $subscr-text-d-fs;
   }
 }
 
@@ -134,7 +134,7 @@
     margin-top: 26px;
     padding: 15px 15px 19px;
 
-    font-size: 12px;
+    font-size: $subscr-link-d-fs;
   }
 
   &:hover,

@@ -184,13 +184,13 @@
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     margin-top: -6px;
 
-    font-size: 16px;
+    font-size: $team-member-description-title-fs-t;
   }
 
   @media (min-width: $desktop-min-width) {
     margin-bottom: 8px;
 
-    font-size: 18px;
+    font-size: $team-member-description-title-fs-d;
   }
 }
 
@@ -203,7 +203,7 @@
   }
 
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
-    font-size: 12px;
+    font-size: $team-member-experience-title-fs-t;
   }
 
   @media (min-width: $desktop-min-width) {
@@ -219,7 +219,7 @@
   }
 
   @media (min-width: $desktop-min-width) {
-    font-size: 12px;
+    font-size: $team-member-description-fs-d;
   }
 }
 

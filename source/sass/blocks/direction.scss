@@ -51,7 +51,7 @@
       }
 
       @media (min-width: $desktop-min-width) {
-        min-height: 315px;
+        min-height: 249px;
       }
     }
 
@@ -139,7 +139,7 @@
   }
 
   @media (min-width: $desktop-min-width) {
-    min-height: 181px;
+    min-height: 139px;
     margin-bottom: -6px;
   }
 }
@@ -209,7 +209,7 @@
   }
 
   @media (min-width: $desktop-min-width) {
-    font-size: 12px;
+    font-size: $direction-teacher-fs-d;
   }
 }
 

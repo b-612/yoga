@@ -99,6 +99,8 @@
   };
 
   var makeItems = function (itemsData, makeItem, section, listClass, makeSlider) {
+    var ANIMATION_TIME = 300;
+
     var itemsArgs = arguments;
     var fragment = window.util.fragment;
     var list = section.find('.' + listClass);
@@ -114,7 +116,7 @@
           list.css('min-height', listHeight).animate({
               opacity: 0
             },
-            300, function () {
+            ANIMATION_TIME, function () {
               $(this).empty().append(fragment);
 
               itemsArgs[itemsArgs.length - 2]();
@@ -122,18 +124,18 @@
 
               $(this).animate({
                 opacity: 1
-              }, 300);
+              }, ANIMATION_TIME);
             });
         } else {
           list.animate({
               opacity: 0
             },
-            300, function () {
+            ANIMATION_TIME, function () {
               $(this).empty()
                 .append(fragment)
                 .animate({
                 opacity: 1,
-              }, 500);
+              }, ANIMATION_TIME);
             });
         }
         break;

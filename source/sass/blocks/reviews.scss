@@ -18,6 +18,25 @@
   }
 }
 
+.reviews__nav {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  @media (max-width: $mobile-max-width) {
+    max-width: 230px;
+    margin: -6px auto 0;
+
+    font-size: $reviews-nav-fs-m;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    display: none;
+  }
+}
+
 .reviews__slider {
   @media (max-width: $mobile-max-width) {
     margin-top: -35px;
