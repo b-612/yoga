@@ -37,13 +37,15 @@
   };
 
   var onItemHover = function (evt) {
+    var ANIMATION_TIME = 300;
+
     if ($(evt.currentTarget).hasClass('subscription')) {
       $('.subscription').not(this)
         .removeClass('subscription--best')
         .find('.subscription__link').hide();
       $(evt.currentTarget).addClass('subscription--best')
         .find('.subscription__link')
-        .slideDown(300, function () {
+        .slideDown(ANIMATION_TIME, function () {
           $(this).show();
         });
     }

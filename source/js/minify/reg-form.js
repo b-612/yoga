@@ -1,6 +1,8 @@
 'use strict';
 
 (function () {
+  var ANIMATION_TIME = 300;
+
   var $form = $('.registration__form');
 
   var setPrevElems = function () {
@@ -24,7 +26,7 @@
     elements.TEXT_WRAPPER.append(elements.MESSAGE);
     elements.TEXT_WRAPPER.append(elements.FURTHER_ACTIONS);
     window.util.fragment.append(elements.TEXT_WRAPPER);
-    $('.registration .container').append(window.util.fragment).fadeIn(300);
+    $('.registration .container').append(window.util.fragment).fadeIn(ANIMATION_TIME);
   };
 
   var onTryBtnClick = function () {
@@ -32,13 +34,13 @@
     var form = $('.registration__form')[0];
     var $startElements = $('.registration__form, .registration__title');
 
-    $removingElements.fadeOut(300);
+    $removingElements.fadeOut(ANIMATION_TIME);
     setTimeout(function () {
       $removingElements.remove();
       form.reset();
-      $startElements.fadeIn(300);
+      $startElements.fadeIn(ANIMATION_TIME);
       $('.registration .container').removeAttr('style');
-    }, 300)
+    }, ANIMATION_TIME)
   };
 
   var setTryBtnCallback = function () {
@@ -51,30 +53,30 @@
     var elements = setPrevElems();
     var $icon = $('.registration__send-icon');
 
-    $icon.fadeOut(300);
+    $icon.fadeOut(ANIMATION_TIME);
     setTimeout(function () {
       $icon.removeClass('registration__send-icon--progress')
         .addClass('registration__send-icon--success')
-        .fadeIn(300);
+        .fadeIn(ANIMATION_TIME);
 
       editAndPushElements(elements, 'Ваша заявка была успешно отправлена', 'Отправить ещё одну заявку');
       setTryBtnCallback();
-    }, 300);
+    }, ANIMATION_TIME);
   };
 
   var onSendError = function () {
     var elements = setPrevElems();
     var $icon = $('.registration__send-icon');
 
-    $icon.fadeOut(300);
+    $icon.fadeOut(ANIMATION_TIME);
     setTimeout(function () {
       $icon.removeClass('registration__send-icon--progress')
         .addClass('registration__send-icon--error')
-        .fadeIn(300);
+        .fadeIn(ANIMATION_TIME);
 
       editAndPushElements(elements, 'Что-то пошло не так...', 'Попробовать ещё раз');
       setTryBtnCallback();
-    }, 300);
+    }, ANIMATION_TIME);
   };
 
   var onSubmitSend = function () {
@@ -84,7 +86,7 @@
     var progressIcon = document.createElement('div');
 
     $container.height(startHeight);
-    $startContent.fadeOut(300);
+    $startContent.fadeOut(ANIMATION_TIME);
     $(progressIcon).attr('class', 'registration__send-icon registration__send-icon--progress');
     $container.append(progressIcon);
   };

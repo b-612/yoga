@@ -74,7 +74,7 @@
   var makePaginationCurrent = function (currentSlide) {
     var $currentPage = $('.reviews__nav-page--current');
 
-    if (screen.width >= 610 && currentSlide >= 2) {
+    if (screen.width >= window.util.screenWidth.MOB_MID && currentSlide >= 2) {
       $currentPage.text(Math.ceil((currentSlide + 1) / 2));
     } else {
       $currentPage.text(currentSlide + 1);
@@ -87,7 +87,7 @@
 
     $allPages.text($slides.length);
 
-    if (screen.width >= 610 && $slides.length > 1) {
+    if (screen.width >= window.util.screenWidth.MOB_MID && $slides.length > 1) {
       $allPages.text(Math.ceil($slides.length / 2));
     } else {
       $allPages.text($slides.length);
