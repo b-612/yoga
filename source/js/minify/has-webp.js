@@ -17,15 +17,19 @@
 
   function() {
     var elemsWithWebp = [
-      'page-header',
-      'directions',
-      'subscriptions',
-      'team',
-      'page-footer'
+      $('.page-header'),
+      $('.directions'),
+      $('.subscriptions'),
+      $('.team'),
+      $('.page-footer')
     ];
 
     elemsWithWebp.each(function () {
       this.removeClass('webp').addClass('no-webp');
     });
   });
+
+  window.has = {
+    hasWebP: hasWebP
+  }
 })();
