@@ -101,6 +101,8 @@
     const ANIMATION_TIME = 300;
 
     const itemsArgs = arguments;
+    const setTheBest = itemsArgs[itemsArgs.length - 2];
+    const setItemsListeners = itemsArgs[itemsArgs.length - 1];
     const fragment = window.util.fragment;
     const list = section.find('.' + listClass);
 
@@ -119,8 +121,8 @@
               $(this).empty();
               this.appendChild(fragment);
 
-              itemsArgs[itemsArgs.length - 2]();
-              itemsArgs[itemsArgs.length - 1]();
+              setTheBest();
+              setItemsListeners();
 
               $(this).animate({
                 opacity: 1
