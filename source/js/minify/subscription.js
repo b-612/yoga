@@ -1,15 +1,16 @@
 'use strict';
 
 (function () {
-  var SUBSCRIPTIONS_URL_ONE_MONTH = 'https://b-612.github.io/json/yoga/subscriptionOneMonth.json';
-  var SUBSCRIPTIONS_URL_SIX_MONTH = 'https://b-612.github.io/json/yoga/subscriptionSixMonths.json';
-  var SUBSCRIPTIONS_URL_YEAR = 'https://b-612.github.io/json/yoga/subscriptionYear.json';
+  const DEBOUNCE_INTERVAL = 200;
+  const SUBSCRIPTIONS_URL_ONE_MONTH = 'https://b-612.github.io/json/yoga/subscriptionOneMonth.json';
+  const SUBSCRIPTIONS_URL_SIX_MONTH = 'https://b-612.github.io/json/yoga/subscriptionSixMonths.json';
+  const SUBSCRIPTIONS_URL_YEAR = 'https://b-612.github.io/json/yoga/subscriptionYear.json';
 
-  var $section = $('.subscriptions');
-  var $subscriptionCardTemp = $.parseHTML($('#subscription').html());
-  var $subscriptionBtn = $('.subscriptions__time-btn');
+  const $section = $('.subscriptions');
+  const $subscriptionCardTemp = $.parseHTML($('#subscription').html());
+  const $subscriptionBtn = $('.subscriptions__time-btn');
 
-  var makeTime = function (subscriptionData, textElem, timeElem) {
+  const makeTime = (subscriptionData, textElem, timeElem) => {
     if (subscriptionData.isTimeLimit) {
       timeElem.text('с ' + subscriptionData.startTime + ' до ' + subscriptionData.endTime);
     } else {
@@ -18,9 +19,9 @@
     }
   };
 
-  var makeSubscription = function (subscriptionData) {
-    var $subscriptionCard = $($subscriptionCardTemp).clone();
-    var $subscriptionParam = {
+  const makeSubscription = (subscriptionData) => {
+    const $subscriptionCard = $($subscriptionCardTemp).clone();
+    const $subscriptionParam = {
       TITLE: $($subscriptionCard).find('.subscription__title'),
       TEXT: $($subscriptionCard).find('.subscription__description'),
       TIME: $($subscriptionCard).find('.subscription__time'),
@@ -36,11 +37,11 @@
     return $($subscriptionCard)[0];
   };
 
-  var onItemHover = function (evt) {
-    var ANIMATION_TIME = 300;
+  const onItemHover = window.util.debounce(function (evt) {
+    const ANIMATION_TIME = 300;
 
     if ($(evt.currentTarget).hasClass('subscription')) {
-      $('.subscription').not(this)
+      $('.subscription').not($(evt.currentTarget))
         .removeClass('subscription--best')
         .find('.subscription__link').hide();
       $(evt.currentTarget).addClass('subscription--best')
@@ -49,15 +50,15 @@
           $(this).show();
         });
     }
-  };
+  }, DEBOUNCE_INTERVAL);
 
-  var setItemsListeners = function () {
+  const setItemsListeners = () => {
     if (screen.width >= window.util.screenWidth.TAB_MIN) {
-      $('.subscription').hover(onItemHover).focus(onItemHover);
+      $('.subscription').on('mouseenter', onItemHover).focus(onItemHover);
     }
   };
 
-  var setStartBest = function () {
+  const setStartBest = () => {
     $('.subscription:eq(1)').addClass('subscription--best');
 
     if (screen.width >= window.util.screenWidth.TAB_MIN) {
@@ -68,14 +69,14 @@
     }
   };
 
-  var InquiryParam = {
+  const InquiryParam = {
     URL: SUBSCRIPTIONS_URL_ONE_MONTH,
     ON_SUCCESS: {
       makeItems: window.items.makeItems,
       setTheBest: setStartBest,
       setItemsListeners: setItemsListeners,
-      setListHeight: function () {
-        var startHeight = $('.subscriptions__list').height();
+      setListHeight: () => {
+        const startHeight = $('.subscriptions__list').height();
         $('.subscriptions__list').css('min-height', startHeight);
       }
     },
@@ -86,7 +87,7 @@
     MAKE_SLIDER: null,
   };
 
-  var onTimeBtnClick = function (evt) {
+  const onTimeBtnClick = (evt) => {
     switch (true) {
       case $(evt.target).hasClass('subscriptions__time-btn--one-month') :
         InquiryParam.URL = SUBSCRIPTIONS_URL_ONE_MONTH;
@@ -107,8 +108,8 @@
     window.subscriptions.onTimeBtnClickCounter++;
   };
 
-  var setBtnsListeners = function () {
-    $subscriptionBtn.click(function (evt) {
+  const setBtnsListeners = () => {
+    $subscriptionBtn.click((evt) => {
       evt.preventDefault();
       $subscriptionBtn.removeClass('subscriptions__time-btn--current');
       $(evt.target).addClass('subscriptions__time-btn--current');
@@ -116,7 +117,7 @@
     });
   };
 
-  var onWindowResize = function () {
+  const onWindowResize = () => {
     $('.subscriptions__list').css('min-height', '');
     $subscriptionBtn[0].click();
   };

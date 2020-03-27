@@ -1,8 +1,8 @@
 'use strict';
 
 (function () {
-  var makeElemOrAttr = function (itemElem, dataElemArr, itemElemOrAttrArr) {
-    for (var i = 0; i < dataElemArr.length; i++) {
+  const makeElemOrAttr = (itemElem, dataElemArr, itemElemOrAttrArr) => {
+    for (let i = 0; i < dataElemArr.length; i++) {
       if (dataElemArr[i]) {
         itemElem[itemElemOrAttrArr[i]] = dataElemArr[i];
       } else {
@@ -12,7 +12,7 @@
     }
   };
 
-  var makeText = function (element, data) {
+  const makeText = (element, data) => {
     if (data) {
       element.text(data);
     } else {
@@ -20,7 +20,7 @@
     }
   };
 
-  var makeHref = function (element, data) {
+  const makeHref = (element, data) => {
     if (data) {
       element.attr('href', data);
     } else {
@@ -28,14 +28,13 @@
     }
   };
 
-  var makeSources = function (deviceVersions, imageData, imgFormats) {
+  const makeSources = (deviceVersions, imageData, imgFormats) => {
     if (imageData) {
-      var sources = [];
+      const sources = [];
 
       $.each(deviceVersions, function (i, device) {
-
         $.each(imgFormats, function (j, format) {
-          var source = document.createElement('source');
+          const source = document.createElement('source');
 
           if (format === 'webp') {
             if (i !== 'mob') {
@@ -72,52 +71,53 @@
       });
 
       return sources;
-    } else {
-      return null;
     }
+
+    return null;
   };
 
-  var setImgAttr = function (imgElem, imgData, title) {
-    imgElem.attr('src', 'img/' + imgData + 'mob@1x.jpg');
-    imgElem.attr('srcset', 'img/' + imgData + 'mob@2x.jpg 2x');
+  const setImgAttr = (imgElem, imgData, title) => {
+    imgElem.attr('src', 'img/' + imgData + '-mob@1x.jpg');
+    imgElem.attr('srcset', 'img/' + imgData + '-mob@2x.jpg 2x');
     imgElem.attr('alt', title);
     imgElem.attr('width', '250');
     imgElem.attr('height', '200');
   };
 
-  var makeItemImage = function (imgElem, imageData, deviceVersions, imgFormats) {
-    var picture = document.createElement('picture');
+  const makeItemImage = (imgElem, imageData, deviceVersions, imgFormats) => {
+    const picture = document.createElement('picture');
 
 
     $.each(makeSources(deviceVersions, imageData, imgFormats), function () {
       picture.append(this);
     });
 
-    picture.append($(imgElem)[0]);
+    picture.appendChild($(imgElem)[0]);
 
     return picture;
   };
 
-  var makeItems = function (itemsData, makeItem, section, listClass, makeSlider) {
-    var ANIMATION_TIME = 300;
+  const makeItems = function (itemsData, makeItem, section, listClass, makeSlider) {
+    const ANIMATION_TIME = 300;
 
-    var itemsArgs = arguments;
-    var fragment = window.util.fragment;
-    var list = section.find('.' + listClass);
+    const itemsArgs = arguments;
+    const fragment = window.util.fragment;
+    const list = section.find('.' + listClass);
 
     $.each(itemsData, function () {
-      fragment.append(makeItem(this));
+      fragment.appendChild(makeItem(this));
     });
 
     switch (true) {
       case section.hasClass('subscriptions') && window.subscriptions.onTimeBtnClickCounter > 1 :
         if (screen.width >= window.util.screenWidth.TAB_MIN) {
-          var listHeight = list.height();
+          const listHeight = list.height();
           list.css('min-height', listHeight).animate({
               opacity: 0
             },
             ANIMATION_TIME, function () {
-              $(this).empty().append(fragment);
+              $(this).empty();
+              this.appendChild(fragment);
 
               itemsArgs[itemsArgs.length - 2]();
               itemsArgs[itemsArgs.length - 1]();
@@ -127,31 +127,31 @@
               }, ANIMATION_TIME);
             });
         } else {
-          list.animate({
-              opacity: 0
-            },
-            ANIMATION_TIME, function () {
-              $(this).empty()
-                .append(fragment)
-                .animate({
-                opacity: 1,
-              }, ANIMATION_TIME);
-            });
+        list.animate({
+            opacity: 0
+          },
+          ANIMATION_TIME, function () {
+            $(this).empty();
+            this.appendChild(fragment);
+            $(this).animate({
+              opacity: 1,
+            }, ANIMATION_TIME);
+          });
         }
         break;
 
       case listClass === 'members-slider' || listClass === 'reviews-slider' :
-        section.find('.' + listClass).empty().append(fragment);
+        section.find('.' + listClass).empty()[0].appendChild(fragment);
         makeSlider();
         break;
 
       default :
-        section.find('.' + listClass).empty().append(fragment);
+        section.find('.' + listClass).empty()[0].appendChild(fragment);
     }
   };
 
-  var removeSection = function (section) {
-    return function () {
+  const removeSection = (section) => {
+    return () => {
       section.remove();
     }
   };

@@ -1,20 +1,20 @@
 'use strict';
 
 (function () {
-  var $body = $('body');
-  var mainNav = $body.find('.nav');
-  var navList = mainNav.find('.nav__list');
-  var navToggle = mainNav.find('.nav__toggle');
-  var headerTop = $body.find('.page-header__top');
-  var $navItems = $('.nav__link');
+  const $body = $('body');
+  const mainNav = $body.find('.nav');
+  const navList = mainNav.find('.nav__list');
+  const navToggle = mainNav.find('.nav__toggle');
+  const headerTop = $body.find('.page-header__top');
+  const $navItems = $('.nav__link');
 
   mainNav.removeClass('nav--no-js');
 
-  var onToggleClick = function () {
-    var NAV_TIMEOUT = 500;
-    var NAV_OPENED_MARGIN = 20;
+  const onToggleClick = () => {
+    const NAV_TIMEOUT = 500;
+    const NAV_OPENED_MARGIN = 20;
 
-    var topHeight = headerTop.height();
+    const topHeight = headerTop.height();
 
     headerTop.css('min-height', topHeight);
     mainNav.toggleClass('nav--opened');
@@ -55,7 +55,7 @@
     }
 
     if (screen.width <= window.util.screenWidth.TAB_MAX) {
-      var howScroll = $(window).scrollTop();
+      const howScroll = $(window).scrollTop();
 
       if (!onToggleClick.isClicked) {
         $body.off('scroll').css({
@@ -77,9 +77,9 @@
     }
   };
 
-  var onNavLinkClick = function (evt) {
-    var SCROLL_DURATION = 700;
-    var OFFSET_TOP_PLUS = -20;
+  const onNavLinkClick = (evt) => {
+    const SCROLL_DURATION = 700;
+    const OFFSET_TOP_PLUS = -20;
 
     evt.preventDefault();
     onToggleClick();
@@ -92,7 +92,7 @@
 
   $navItems.click(onNavLinkClick);
 
-  navToggle.click(function () {
+  navToggle.click(() => {
     onToggleClick();
 
     if (!onToggleClick.isClicked) {

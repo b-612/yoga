@@ -1,7 +1,7 @@
 'use strict';
 
 (function () {
-  var screenWidth = {
+  const screenWidth = {
     MOB_MIN: 320,
     MOB_MID: 610,
     MOB_MAX: 768,
@@ -19,9 +19,24 @@
 
   var fragment = document.createDocumentFragment();
 
+  const debounce = (cb, interval) => {
+    var lastTimeout = null;
+
+    return function () {
+      var parameters = arguments;
+      if (lastTimeout) {
+        window.clearTimeout(lastTimeout);
+      }
+      lastTimeout = window.setTimeout(function () {
+        cb.apply(null, parameters);
+      }, interval);
+    };
+  };
+
   window.util = {
     screenWidth: screenWidth,
     deviceVersion: deviceVersion,
-    fragment: fragment
+    fragment: fragment,
+    debounce: debounce
   };
 })();

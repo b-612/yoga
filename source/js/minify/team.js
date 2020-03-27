@@ -1,17 +1,17 @@
 'use strict';
 
 (function () {
-  var TEAM_MEMBERS_URL = 'https://b-612.github.io/json/yoga/team.json';
+  const TEAM_MEMBERS_URL = 'https://b-612.github.io/json/yoga/team.json';
 
-  var section = $('.team');
-  var $slider = $('.members-slider');
-  var $teamCardTemp = $.parseHTML($('#team-member').html());
+  const section = $('.team');
+  const $slider = $('.members-slider');
+  const $teamCardTemp = $.parseHTML($('#team-member').html());
 
-  var makeDescription = function (descriptionData, element) {
-    var description = [];
+  const makeDescription = (descriptionData, element) => {
+    const description = [];
 
-    descriptionData.forEach(function (current) {
-      var nextElem = $(element).clone();
+    descriptionData.forEach((current) => {
+      const nextElem = $(element).clone();
       nextElem.text(current);
       description.push(nextElem);
     });
@@ -19,65 +19,86 @@
     return Array.from(description);
   };
 
-  var makeAvatar = function (imageElement, imageData) {
-    imageElement.attr('src', 'img/' + imageData + '-mob@1x.jpg');
-    imageElement.attr('srcset', 'img/' + imageData + '-mob@2x.jpg 2x');
+  const makeAvatar = (imageElement, imageData) => {
+    imageElement.attr('src', `img/${imageData}-mob@1x.jpg`);
+    imageElement.attr('srcset', `img/${imageData}-mob@2x.jpg 2x`);
 
     $(imageElement.parent())
       .find('source[media="(min-width: 768px)"][type != "image/webp"]')
-      .attr('srcset', 'img/' + imageData + '-tablet@1x.jpg 1x, img/' + imageData + '-tablet@2x.jpg 2x');
+      .attr(
+        'srcset',
+        `img/${imageData}-tablet@1x.jpg 1x, img/${imageData}-tablet@2x.jpg 2x`
+      );
 
     $(imageElement.parent())
       .find('source[media="(min-width: 1300px)"][type != "image/webp"]')
-      .attr('srcset', 'img/' + imageData + '-desktop@1x.jpg 1x, img/' + imageData + '-desktop@2x.jpg 2x');
+      .attr(
+        'srcset',
+        `img/${imageData}-desktop@1x.jpg 1x, img/${imageData}-desktop@2x.jpg 2x`
+      );
 
     $(imageElement.parent())
       .find('source[type="image/webp"][media != "(min-width: 768px)"][media != "(min-width: 1300px)"]')
-      .attr('srcset', 'img/' + imageData + '-mob@1x.webp 1x, img/' + imageData + '-mob@2x.webp 2x');
+      .attr(
+        'srcset',
+        `img/${imageData}-mob@1x.webp 1x, img/${imageData}-mob@2x.webp 2x`
+      );
 
     $(imageElement.parent())
       .find('source[media="(min-width: 768px)"][type = "image/webp"]')
-      .attr('srcset', 'img/' + imageData + '-tablet@1x.webp 1x, img/' + imageData + '-tablet@2x.webp 2x');
+      .attr(
+        'srcset',
+        `img/${imageData}-tablet@1x.webp 1x, img/${imageData}-tablet@2x.webp 2x`
+      );
 
     $(imageElement.parent())
       .find('source[media="(min-width: 1300px)"][type = "image/webp"]')
-      .attr('srcset', 'img/' + imageData + '-desktop@1x.webp 1x, img/' + imageData + '-desktop@2x.webp 2x');
+      .attr(
+        'srcset',
+        `img/${imageData}-desktop@1x.webp 1x, img/${imageData}-desktop@2x.webp 2x`
+      );
   };
 
-  var makeSocial = function (socialElem, socialData, socialName, sectionName, authorName) {
-    var socialItem = socialElem.parent();
-    var svg = socialElem.find('svg');
-    var title = svg.find('title');
+  const makeSocial = (socialElem, socialData, socialName, sectionName, authorName) => {
+    const socialItem = socialElem.parent();
+    const svg = socialElem.find('svg');
+    const title = svg.find('title');
 
     socialElem.remove();
     socialElem.attr('href', socialData);
 
-    svg.attr('aria-labelledby', sectionName + 'heading-' + socialElem.find('use').attr('xlink:href').split('#')[1] + '-user-' + makeSocial.counter);
+    svg.attr(
+      'aria-labelledby',
+      `${sectionName}heading-${socialElem.find('use').attr('xlink:href').split('#')[1]}-user-${makeSocial.counter}`
+    );
 
-    title.text(authorName + ' ' + socialName);
+    title.text(`${authorName} ${socialName}`);
 
     socialElem.find('title')
-      .attr('id', sectionName + 'heading-' + socialElem.find('use').attr('xlink:href').split('#')[1] + '-user-' + makeSocial.counter);
+      .attr(
+        'id',
+        `${sectionName}heading-${socialElem.find('use').attr('xlink:href').split('#')[1]}-user-${makeSocial.counter}`
+      );
 
-    socialItem .append(socialElem);
+    socialItem.append(socialElem);
 
-    setTimeout(function () {
-      var elemClone = socialElem.clone();
+    setTimeout(() => {
+      const elemClone = socialElem.clone();
       socialItem.empty();
       socialItem .append(elemClone);
     }, 0);
 
   };
 
-  var resetSocialCounter = function () {
+  const resetSocialCounter = () => {
     makeSocial.counter = 1;
   };
 
   resetSocialCounter();
 
-  var makeTeamMember = function (teamMemberData) {
-    var $memberCard = $($teamCardTemp).clone();
-    var $memberParam = {
+  const makeTeamMember = (teamMemberData) => {
+    const $memberCard = $($teamCardTemp).clone();
+    const $memberParam = {
       MEMBER_NAME: $($memberCard).find('.team-member__name'),
       MEMBER_PRACTICE: $($memberCard).find('.team-member__practice'),
       MEMBER_IMAGE: $($memberCard).find('.team-member__avatar'),
@@ -99,15 +120,15 @@
     $($memberCard).find('.team-member__description').remove();
 
     makeDescription(teamMemberData.description, $memberParam.DESCRIPTION[0])
-      .forEach(function (current) {
+      .forEach((current) => {
         $memberCard.find('.team-member__description-wrapper').append(current);
     });
 
     return $($memberCard)[0];
   };
 
-  var replaceClonedSocials = function (sectionName, slider, socialIconClass) {
-    var $oldAttr = sectionName + 'heading';
+  const replaceClonedSocials = (sectionName, slider, socialIconClass) => {
+    const $oldAttr = sectionName + 'heading';
 
     slider.find('.slick-cloned')
       .find('.' + socialIconClass)
@@ -117,7 +138,7 @@
       })
   };
 
-  var makeTeamSlider = function () {
+  const makeTeamSlider = () => {
     $('.members-slider').slick({
       dots: false,
       prevArrow: '<button class="members-slider__btn members-slider__btn--prev slider-arrow" type="button"><span class="visually-hidden">Предыдущий участник</span></button>',
@@ -151,12 +172,12 @@
       ]
     });
 
-    setTimeout(function () {
+    setTimeout(() => {
       replaceClonedSocials('team', $slider, 'team-member__social-icon');
     }, 0);
   };
 
-  var InquiryParam = {
+  const InquiryParam = {
     URL: TEAM_MEMBERS_URL,
     ON_SUCCESS: {
       makeItems: window.items.makeItems

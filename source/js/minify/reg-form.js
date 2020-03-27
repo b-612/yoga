@@ -1,12 +1,12 @@
 'use strict';
 
 (function () {
-  var ANIMATION_TIME = 300;
+  const ANIMATION_TIME = 300;
 
-  var $form = $('.registration__form');
+  const $form = $('.registration__form');
 
-  var setPrevElems = function () {
-    var Element = {
+  const setPrevElems = () => {
+    const Element = {
       MESSAGE: document.createElement('span'),
       FURTHER_ACTIONS: document.createElement('button'),
       TEXT_WRAPPER: document.createElement('div')
@@ -20,7 +20,7 @@
     return Element;
   };
 
-  var editAndPushElements = function (elements, messageText, furtherText) {
+  const editAndPushElements = (elements, messageText, furtherText) => {
     $(elements.MESSAGE).text(messageText);
     $(elements.FURTHER_ACTIONS).text(furtherText);
     elements.TEXT_WRAPPER.append(elements.MESSAGE);
@@ -29,61 +29,69 @@
     $('.registration .container').append(window.util.fragment).fadeIn(ANIMATION_TIME);
   };
 
-  var onTryBtnClick = function () {
-    var $removingElements = $('.registration__send-icon, .registration__message-text-wrapper');
-    var form = $('.registration__form')[0];
-    var $startElements = $('.registration__form, .registration__title');
+  const onTryBtnClick = () => {
+    const $removingElements = $('.registration__send-icon, .registration__message-text-wrapper');
+    const $form = $('.registration__form')[0];
+    const $startElements = $('.registration__form, .registration__title');
 
-    $removingElements.fadeOut(ANIMATION_TIME);
-    setTimeout(function () {
+    $removingElements.fadeOut(ANIMATION_TIME, () => {
       $removingElements.remove();
-      form.reset();
+      $form.reset();
       $startElements.fadeIn(ANIMATION_TIME);
       $('.registration .container').removeAttr('style');
-    }, ANIMATION_TIME)
+    });
   };
 
-  var setTryBtnCallback = function () {
-    $('.registration__further-actions').click(function () {
+  const setTryBtnCallback = () => {
+    $('.registration__further-actions').click(() => {
       onTryBtnClick();
     });
   };
 
-  var onSendSuccess = function () {
-    var elements = setPrevElems();
-    var $icon = $('.registration__send-icon');
+  const showMessage = (elements, icon, addClass, messageText, furtherText) => {
+    icon.removeClass('registration__send-icon--progress')
+      .addClass(addClass)
+      .fadeIn(ANIMATION_TIME);
 
-    $icon.fadeOut(ANIMATION_TIME);
-    setTimeout(function () {
-      $icon.removeClass('registration__send-icon--progress')
-        .addClass('registration__send-icon--success')
-        .fadeIn(ANIMATION_TIME);
-
-      editAndPushElements(elements, 'Ваша заявка была успешно отправлена', 'Отправить ещё одну заявку');
-      setTryBtnCallback();
-    }, ANIMATION_TIME);
+    editAndPushElements(elements, messageText, furtherText);
+    setTryBtnCallback();
   };
 
-  var onSendError = function () {
-    var elements = setPrevElems();
-    var $icon = $('.registration__send-icon');
+  const onSendSuccess = () => {
+    const elements = setPrevElems();
+    const $icon = $('.registration__send-icon');
 
-    $icon.fadeOut(ANIMATION_TIME);
-    setTimeout(function () {
-      $icon.removeClass('registration__send-icon--progress')
-        .addClass('registration__send-icon--error')
-        .fadeIn(ANIMATION_TIME);
-
-      editAndPushElements(elements, 'Что-то пошло не так...', 'Попробовать ещё раз');
-      setTryBtnCallback();
-    }, ANIMATION_TIME);
+    $icon.fadeOut(ANIMATION_TIME, () => {
+      showMessage(
+        elements,
+        $icon,
+        'registration__send-icon--success',
+        'Ваша заявка была успешно отправлена',
+        'Отправить ещё одну заявку'
+      );
+    });
   };
 
-  var onSubmitSend = function () {
-    var $container = $('.registration .container');
-    var startHeight = $container.height();
-    var $startContent = $container.children();
-    var progressIcon = document.createElement('div');
+  const onSendError = () => {
+    const elements = setPrevElems();
+    const $icon = $('.registration__send-icon');
+
+    $icon.fadeOut(ANIMATION_TIME, () => {
+      showMessage(
+        elements,
+        $icon,
+        'registration__send-icon--error',
+        'Что-то пошло не так...',
+        'Попробовать ещё раз.'
+      );
+    });
+  };
+
+  const onSubmitSend = () => {
+    const $container = $('.registration .container');
+    const startHeight = $container.height();
+    const $startContent = $container.children();
+    const progressIcon = document.createElement('div');
 
     $container.height(startHeight);
     $startContent.fadeOut(ANIMATION_TIME);
@@ -91,7 +99,7 @@
     $container.append(progressIcon);
   };
 
-  var SendParam = {
+  const SendParam = {
     URL: 'https://echo.htmlacademy.ru/',
     METHOD: 'POST',
     TIMEOUT: 5000,
@@ -99,8 +107,8 @@
     ON_ERROR: onSendError
   };
 
-  var onFormSubmit = function (sendParams) {
-    var formData = $form.serializeArray();
+  const onFormSubmit = (sendParams) => {
+    const formData = $form.serializeArray();
 
     $.ajax({
       url: sendParams.URL,
@@ -114,8 +122,8 @@
     });
   };
 
-  var validateForm = function () {
-    jQuery.validator.addMethod("checkMask", function(value, element) {
+  const validateForm = () => {
+    jQuery.validator.addMethod("checkMask", (value, element) => {
       return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/.test(value);
     });
 
@@ -152,13 +160,13 @@
       });
   };
 
-  var setSubmitCallback = function () {
-    $form.on('submit', function (evt) {
+  const setSubmitCallback = () => {
+    $form.on('submit', (evt) => {
       evt.preventDefault();
 
       if ($('.registration__input[name=name]').val() !== '' && $('.registration__input[name=phone]').val() !== '') {
-        var invalidObj = $('.registration__form').validate().invalid;
-        var isObjElem = invalidObj[Object.keys(invalidObj)[0]];
+        const invalidObj = $('.registration__form').validate().invalid;
+        const isObjElem = invalidObj[Object.keys(invalidObj)[0]];
 
         if (!isObjElem) {
           onSubmitSend();

@@ -1,7 +1,7 @@
 'use strict';
 
 (function () {
-  var requestParam = {
+  const requestParam = {
     GET_REQUEST: 'GET',
     GET_DATA_TYPE: 'json',
 
@@ -16,9 +16,9 @@
     dataType: requestParam.GET_DATA_TYPE
   });
 
-  var getItems = function (itemParams) {
+  const getItems = (itemParams) => {
     $.ajax(itemParams.URL, {
-      success: function (resp) {
+      success: (resp) => {
         if (!itemParams.ON_SUCCESS.setTheBest) {
           itemParams.ON_SUCCESS.makeItems(resp, itemParams.MAKE_ITEM, itemParams.SECTION, itemParams.LIST_CLASS, itemParams.MAKE_SLIDER);
         }

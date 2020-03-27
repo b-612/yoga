@@ -1,8 +1,8 @@
 'use strict';
 
 (function () {
-  var REVIEWS_URL = 'https://b-612.github.io/json/yoga/reviews.json';
-  var monthMap = {
+  const REVIEWS_URL = 'https://b-612.github.io/json/yoga/reviews.json';
+  const monthMap = {
     '01': 'января',
     '02': 'февраля',
     '03': 'марта',
@@ -17,14 +17,14 @@
     '12': 'декабря'
   };
 
-  var section = $('.reviews');
-  var $slider = $('.reviews__slider');
-  var $reviewCardTemp = $.parseHTML($('#review').html());
+  const section = $('.reviews');
+  const $slider = $('.reviews__slider');
+  const $reviewCardTemp = $.parseHTML($('#review').html());
 
-  var makeTime = function (timeElement, timeData) {
-    var day = timeData.substr(8);
-    var month = monthMap[timeData.substr(5, 2)];
-    var year = timeData.substr(0, 4);
+  const makeTime = (timeElement, timeData) => {
+    let day = timeData.substr(8);
+    const month = monthMap[timeData.substr(5, 2)];
+    const year = timeData.substr(0, 4);
 
     if (Number(day[0]) === 0) {
       day = day.substr(1, 1);
@@ -34,7 +34,7 @@
     timeElement.text(day + ' ' + month + ' ' + year);
   };
 
-  var makeAuthorImage = function (imageElement, imageData) {
+  const makeAuthorImage = (imageElement, imageData) => {
     imageElement.attr('src', 'img/' + imageData + '@1x.jpg');
     imageElement.attr('srcset', 'img/' + imageData + '@2x.jpg 2x');
 
@@ -45,9 +45,9 @@
 
   window.team.resetSocialCounter();
 
-  var makeReview = function (reviewData) {
-    var $reviewCard = $($reviewCardTemp).clone();
-    var $reviewParam = {
+  var makeReview = (reviewData) => {
+    const $reviewCard = $($reviewCardTemp).clone();
+    const $ReviewParam = {
       AUTHOR_NAME: $($reviewCard).find('.review__author-name'),
       TIME: $($reviewCard).find('.review__time'),
       AUTHOR_IMAGE: $($reviewCard).find('.review__avatar'),
@@ -57,22 +57,22 @@
       DESCRIPTION: $($reviewCard).find('.review__paragraph')
     };
 
-    window.items.makeText($reviewParam.AUTHOR_NAME, reviewData.authorName);
-    makeTime($reviewParam.TIME, reviewData.time);
-    makeAuthorImage($reviewParam.AUTHOR_IMAGE, reviewData.image);
+    window.items.makeText($ReviewParam.AUTHOR_NAME, reviewData.authorName);
+    makeTime($ReviewParam.TIME, reviewData.time);
+    makeAuthorImage($ReviewParam.AUTHOR_IMAGE, reviewData.image);
     $($reviewCard).find('.review__paragraph').remove();
-    window.team.makeDescription(reviewData.review, $($reviewParam.DESCRIPTION)[0]).forEach(function (current) {
-      $reviewParam.TEXT.append(current);
+    window.team.makeDescription(reviewData.review, $($ReviewParam.DESCRIPTION)[0]).forEach((current) => {
+      $ReviewParam.TEXT.append(current);
     });
-    window.team.makeSocial($reviewParam.LINK_VK, reviewData.vk, 'Вконтакте', 'reviews', reviewData.authorName);
-    window.team.makeSocial($reviewParam.LINK_TWITTER, reviewData.twitter, 'в Твиттер', 'reviews', reviewData.authorName);
+    window.team.makeSocial($ReviewParam.LINK_VK, reviewData.vk, 'Вконтакте', 'reviews', reviewData.authorName);
+    window.team.makeSocial($ReviewParam.LINK_TWITTER, reviewData.twitter, 'в Твиттер', 'reviews', reviewData.authorName);
     window.team.makeSocial.counter++;
 
     return $($reviewCard)[0];
   };
 
-  var makePaginationCurrent = function (currentSlide) {
-    var $currentPage = $('.reviews__nav-page--current');
+  const makePaginationCurrent = (currentSlide) => {
+    const $currentPage = $('.reviews__nav-page--current');
 
     if (screen.width >= window.util.screenWidth.MOB_MID && currentSlide >= 2) {
       $currentPage.text(Math.ceil((currentSlide + 1) / 2));
@@ -81,9 +81,9 @@
     }
   };
 
-  var makePaginationAll = function () {
-    var $allPages = $('.reviews__nav-page--all');
-    var $slides = $('.reviews-slider__item-wrapper:not(.slick-cloned)');
+  const makePaginationAll = () => {
+    const $allPages = $('.reviews__nav-page--all');
+    const $slides = $('.reviews-slider__item-wrapper:not(.slick-cloned)');
 
     $allPages.text($slides.length);
 
@@ -94,7 +94,7 @@
     }
   };
 
-  var makeReviewsSlider = function () {
+  const makeReviewsSlider = () => {
     $('.reviews-slider').slick({
       dots: false,
       prevArrow: '<button class="reviews__btn reviews__btn--prev slider-arrow" type="button"><span class="visually-hidden">Предыдущий отзыв</span></button>',
@@ -131,7 +131,7 @@
     makePaginationAll();
   };
 
-  var InquiryParam = {
+  const InquiryParam = {
     URL: REVIEWS_URL,
     ON_SUCCESS: {
       makeItems: window.items.makeItems
@@ -145,7 +145,7 @@
 
   window.backend.getItems(InquiryParam);
 
-  $slider.on('afterChange', function(event, slick, currentSlide) {
+  $slider.on('afterChange', (evt, slick, currentSlide) => {
     makePaginationCurrent(currentSlide);
   });
 

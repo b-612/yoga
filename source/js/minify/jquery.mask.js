@@ -131,8 +131,8 @@
                 // clear the value if it not complete the mask
                 .on('focusout.mask', function() {
                     if (options.clearIfNotMatch && !regexMask.test(p.val())) {
-                       p.val('');
-                   }
+                      p.val('');
+                    }
                 });
             },
             getRegexMask: function() {
@@ -163,7 +163,7 @@
 
                 if (oRecursive) {
                     r = r.replace(new RegExp('(' + oRecursive.digit + '(.*' + oRecursive.digit + ')?)'), '($1)?')
-                         .replace(new RegExp(oRecursive.digit, 'g'), oRecursive.pattern);
+                      .replace(new RegExp(oRecursive.digit, 'g'), oRecursive.pattern);
                 }
 
                 return new RegExp(r);
@@ -305,16 +305,16 @@
                     if (translation) {
                         if (valDigit.match(translation.pattern)) {
                             buf[addMethod](valDigit);
-                             if (translation.recursive) {
-                                if (resetPos === -1) {
-                                    resetPos = m;
-                                } else if (m === lastMaskChar && m !== resetPos) {
-                                    m = resetPos - offset;
-                                }
+                            if (translation.recursive) {
+                              if (resetPos === -1) {
+                                  resetPos = m;
+                              } else if (m === lastMaskChar && m !== resetPos) {
+                                  m = resetPos - offset;
+                              }
 
-                                if (lastMaskChar === resetPos) {
-                                    m -= offset;
-                                }
+                              if (lastMaskChar === resetPos) {
+                                  m -= offset;
+                              }
                             }
                             m += offset;
                         } else if (valDigit === lastUntranslatedMaskChar) {
@@ -409,15 +409,15 @@
 
         // get value without mask
         jMask.getCleanVal = function() {
-           return p.getMasked(true);
+          return p.getMasked(true);
         };
 
         // get masked value without the value being in the input or element
         jMask.getMaskedVal = function(val) {
-           return p.getMasked(false, val);
+          return p.getMasked(false, val);
         };
 
-       jMask.init = function(onlyMask) {
+        jMask.init = function(onlyMask) {
             onlyMask = onlyMask || false;
             options = options || {};
 
@@ -486,7 +486,7 @@
         }
 
         if (input.attr(prefix + 'selectonfocus') === 'true') {
-           options.selectOnFocus = true;
+          options.selectOnFocus = true;
         }
 
         if (notSameMaskObject(input, mask, options)) {

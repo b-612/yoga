@@ -75,10 +75,10 @@
     }
 
     @media (min-width: $desktop-min-width) {
-      background-image: url("../img/directions-bg-desktop@1x.png");
+      background-image: url("../img/directions-bg-desktop@1x.jpg");
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-        background-image: url("../img/directions-bg-desktop@2x.png");
+        background-image: url("../img/directions-bg-desktop@2x.jpg");
       }
     }
   }

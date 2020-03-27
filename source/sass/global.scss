@@ -98,7 +98,7 @@ img {
   }
 }
 
-@-webkit-keyframes autofill {
+@keyframes autofill {
   to {
     color: #000000;
     background: transparent;
@@ -106,8 +106,8 @@ img {
 }
 
 input:-webkit-autofill {
-  -webkit-animation-name: autofill;
-  -webkit-animation-fill-mode: both;
+  animation-name: autofill;
+  animation-fill-mode: both;
 }
 
 .visually-hidden {
