@@ -14,6 +14,7 @@ var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var csso = require('gulp-csso');
 var jsminify = require('gulp-minify');
+var babel = require('gulp-babel');
 var flatten = require('gulp-flatten');
 var server = require('browser-sync').create();
 
@@ -99,15 +100,18 @@ gulp.task('jscopy', function () {
 });
 
 gulp.task('jsmin', function () {
-    return gulp.src(['source/js/minify/*.js'])
-        .pipe(jsminify({
-            ext:{
-                src:'.js',
-                min:'.min.js'
-            },
-            noSource:'*.js'
-        }))
-        .pipe(gulp.dest('build/js'))
+  return gulp.src(['source/js/minify/*.js'])
+    .pipe(sourcemap.init())
+    .pipe(babel())
+    .pipe(jsminify({
+          ext:{
+              src:'.js',
+              min:'.min.js'
+          },
+          noSource:'*.js'
+      }))
+    .pipe(sourcemap.write('.'))
+    .pipe(gulp.dest('build/js'))
 });
 
 gulp.task('refresh', function (done) {
