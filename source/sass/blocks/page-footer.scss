@@ -17,10 +17,9 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+    min-height: 720px;
     margin-top: 41px;
-    padding-top: 100px;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding: 100px 10% 190px;
 
     background-size: 1920px auto;
     background-position: center top;
@@ -41,7 +40,6 @@
     &:last-of-type {
       @media (min-width: $desktop-min-width) {
         width: 100%;
-        padding-bottom: 20px;
       }
     }
   }
@@ -225,20 +223,16 @@
 
 .page-footer .container.page-footer__copyright-wrapper {
   @media (min-width: $desktop-min-width) {
-    position: relative;
+    position: absolute;
     left: 50%;
+    bottom: 0;
 
+    max-width: 1920px;
     order: 2;
 
     transform: translateX(-50%);
-  }
 
-  @media (min-width: $desktop-min-width) and (max-width: $footer-line-breakpoint) {
-    margin-top: 130px;
-  }
-
-  @media (min-width: $footer-line-breakpoint + 1) {
-    margin-top: 180px;
+    background-color: $footer-bg-color;
   }
 }
 
@@ -269,7 +263,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 100%;
+    width: 73%;
+    margin: 0 auto;
+    padding-top: 45px;
+    padding-bottom: 40px;
   }
 }
 
@@ -280,7 +277,7 @@
 
   @media (min-width: $desktop-min-width) {
     order: 1;
-    width: 450px;
+    width: 750px;
 
     text-align: right;
   }
