@@ -26,7 +26,7 @@
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
-    "autoprefixer": "^9.7.4",
+    "autoprefixer": "^9.7.5",
     "babel-plugin-transform-object-assign": "^6.22.0",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
@@ -34,23 +34,25 @@
     "eslint-config-htmlacademy": "^0.5.2",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
-    "gulp-csso": "^3.0.1",
+    "gulp-csso": "^4.0.1",
     "gulp-flatten": "^0.4.0",
     "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "^6.2.0",
+    "gulp-imagemin": "^7.1.0",
     "gulp-minify": "^3.1.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
-    "gulp-rename": "^1.4.0",
+    "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-svgstore": "^7.0.1",
     "gulp-webp": "^4.0.1",
-    "stylelint": "^11.1.1",
+    "stylelint": "^13.2.1",
     "stylelint-config-htmlacademy": "^0.1.4"
   },
   "engines": {
-    "node": "12.13"
+    "node": "12.16"
   },
-  "dependencies": {}
+  "dependencies": {
+    "npm": "^6.14.4"
+  }
 }
