@@ -1,10 +1,10 @@
 'use strict';
 
 (function () {
-  const makeElemOrAttr = (itemElem, dataElemArr, itemElemOrAttrArr) => {
+  const makeElemAttr = (itemElem, dataElemArr, itemElemOrAttrArr) => {
     for (let i = 0; i < dataElemArr.length; i++) {
       if (dataElemArr[i]) {
-        itemElem[itemElemOrAttrArr[i]] = dataElemArr[i];
+        itemElem.setAttribute(itemElemOrAttrArr[i], dataElemArr[i]);
       } else {
         itemElem.remove();
         break;
@@ -38,27 +38,24 @@
 
           if (format === 'webp') {
             if (i !== 'mob') {
-              makeElemOrAttr(source, [
+              makeElemAttr(source, [
                   'image/webp',
-                  '(min-width: ' + device + ')',
-                  'img/' + imageData + '-' + i + '@1x.' + format + ' 1x, ' +
-                  'img/' + imageData + '-' + i + '@2x.' + format + ' 2x'
+                  `(min-width: ${device})`,
+                  `img/${imageData}-${i}@1x.${format} 1x, img/${imageData}-${i}@2x.${format} 2x`
                 ],
                 ['type', 'media', 'srcset']);
             } else {
-              makeElemOrAttr(source, [
+              makeElemAttr(source, [
                   'image/webp',
-                  'img/' + imageData + '-' + i + '@1x.' + format + ' 1x, ' +
-                  'img/' + imageData + '-' + i + '@2x.' + format + ' 2x'
+                  `img/${imageData}-${i}@1x.${format} 1x, img/${imageData}-${i}@2x.${format} 2x`
                 ],
                 ['type', 'srcset']);
             }
           } else {
             if (i !== 'mob') {
-              makeElemOrAttr(source, [
+              makeElemAttr(source, [
                   '(min-width: ' + device + ')',
-                  'img/' + imageData + '-' + i + '@1x.' + format + ' 1x, ' +
-                  'img/' + imageData + '-' + i + '@2x.' + format + ' 2x'
+                  `img/${imageData}-${i}@1x.${format} 1x, img/${imageData}-${i}@2x.${format} 2x`
                 ],
                 ['media', 'srcset']);
             }
@@ -77,8 +74,8 @@
   };
 
   const setImgAttr = (imgElem, imgData, title) => {
-    imgElem.attr('src', 'img/' + imgData + '-mob@1x.jpg');
-    imgElem.attr('srcset', 'img/' + imgData + '-mob@2x.jpg 2x');
+    imgElem.attr('src', `img/${imgData}-mob@1x.jpg`);
+    imgElem.attr('srcset', `img/${imgData}-mob@2x.jpg 2x`);
     imgElem.attr('alt', title);
     imgElem.attr('width', '250');
     imgElem.attr('height', '200');
