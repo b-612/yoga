@@ -136,34 +136,38 @@
   &:hover,
   &:focus {
     .nav__toggle-line {
-      background-color: $light-on-dark;
+      background-color: $accent-hover;
 
       &::before,
       &::after {
-        background-color: $light-on-dark;
+        background-color: $accent-hover;
       }
     }
 
     .nav__toggle-text {
-      color: $dark-on-light-hover;
+      color: $accent-hover;
     }
   }
 
   &:active {
     .nav__toggle-line {
-      background-color: $accent;
+      background-color: $accent-pressed;
 
       &::before,
       &::after {
-        background-color: $accent;
+        background-color: $accent-pressed;
       }
+    }
+
+    .nav__toggle-text {
+      color: $accent-pressed;
     }
   }
 }
 
 .nav__toggle-line {
   position: relative;
-  top: -3px;
+  top: 3px;
 
   display: block;
   height: 1px;

@@ -19,7 +19,7 @@
   }
 
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
-    padding-top: 35px;
+    padding-top: 26px;
     padding-bottom: 116px;
   }
 
@@ -151,12 +151,12 @@
 
   &:hover,
   &:focus {
-    color: $dark-on-light-hover;
+    color: $accent-hover;
     outline: none;
   }
 
   &:active {
-    color: $dark-on-light-pressed;
+    color: $accent-pressed;
   }
 }
 
