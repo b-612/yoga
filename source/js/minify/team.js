@@ -80,7 +80,7 @@
         `${sectionName}heading-${socialElem.find('use').attr('xlink:href').split('#')[1]}-user-${makeSocial.counter}`
       );
 
-    socialItem.append(socialElem);
+    $(socialItem)[0].appendChild($(socialElem)[0]);
 
     setTimeout(() => {
       const elemClone = socialElem.clone();
