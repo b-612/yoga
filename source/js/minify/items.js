@@ -89,7 +89,7 @@
 
 
     $.each(makeSources(deviceVersions, imageData, imgFormats), function () {
-      picture.append(this);
+      picture.appendChild(this);
     });
 
     picture.appendChild($(imgElem)[0]);
@@ -106,9 +106,26 @@
     const fragment = window.util.fragment;
     const list = section.find('.' + listClass);
 
-    $.each(itemsData, function () {
-      fragment.appendChild(makeItem(this));
-    });
+    if (section.hasClass('directions') && screen.width >= window.util.screenWidth.TAB_MIN) {
+      const $itemsWrapper = $('<div>').addClass('directions__items-wrapper');
+      const $btnLookMore = $('<a>', {href: '#'}).addClass('directions__watch-more').text('Смотреть больше');
+      const firstItem = makeItem(itemsData[0]);
+
+      for (let i = 1; i < itemsData.length; i += 1) {
+        const item = makeItem(itemsData[i]);
+        $(item).addClass('direction--small');
+        $($itemsWrapper)[0].appendChild(item);
+      }
+
+      $itemsWrapper.append($btnLookMore);
+      $(firstItem).addClass('direction--big');
+      fragment.appendChild(firstItem);
+      fragment.appendChild($($itemsWrapper)[0]);
+    } else {
+      $.each(itemsData, function () {
+        fragment.appendChild(makeItem(this));
+      });
+    }
 
     switch (true) {
       case section.hasClass('subscriptions') && window.subscriptions.onTimeBtnClickCounter > 1 :
@@ -129,16 +146,16 @@
               }, ANIMATION_TIME);
             });
         } else {
-        list.animate({
-            opacity: 0
-          },
-          ANIMATION_TIME, function () {
-            $(this).empty();
-            this.appendChild(fragment);
-            $(this).animate({
-              opacity: 1,
-            }, ANIMATION_TIME);
-          });
+          list.animate({
+              opacity: 0
+            },
+            ANIMATION_TIME, function () {
+              $(this).empty();
+              this.appendChild(fragment);
+              $(this).animate({
+                opacity: 1,
+              }, ANIMATION_TIME);
+            });
         }
         break;
 

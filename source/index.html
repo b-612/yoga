@@ -116,9 +116,7 @@
         <div class="container">
           <h2 class="directions__title section-title">Направления</h2>
 
-          <ul class="directions__list default-list"></ul>
-
-          <a class="directions__watch-more" href="#">Смотреть больше</a>
+          <div class="directions__list"></div>
         </div>
       </section>
 
@@ -257,7 +255,7 @@
 
     <!--Шаблон карточки направления-->
     <template id="direction">
-      <li class="directions__item direction">
+      <div class="directions__item direction">
 
         <div class="direction__wrapper">
           <h3 class="direction__title">Йога 23</h3>
@@ -275,7 +273,7 @@
         <a href="#" class="direction__link">
           <span class="visually-hidden">Подробнее</span>
         </a>
-      </li>
+      </div>
     </template>
 
     <!--Шаблон абонемента-->
@@ -406,7 +404,7 @@
     <script src="js/util.min.js"></script>
     <script src="js/main-nav.min.js"></script>
     <script src="js/backend.min.js"></script>
-    <script src="js/items.min.js"></script>
+    <script src="js/items.js"></script>
     <script src="js/directions.min.js"></script>
     <script src="js/subscription.min.js"></script>
     <script src="js/slick.min.js"></script>

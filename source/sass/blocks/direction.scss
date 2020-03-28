@@ -20,19 +20,13 @@
     background-color: $reserve-image-bg;
   }
 
-  &:first-of-type {
-    @media (min-width: $tablet-min-width) {
-      margin-left: auto;
-      margin-right: 3%;
-    }
-
+  &--big {
     @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
       width: 40%;
     }
 
     @media (min-width: $desktop-min-width) {
-      width: 31%;
-      max-width: 370px;
+      width: 36%;
     }
 
     picture {
@@ -61,24 +55,17 @@
       }
 
       @media (min-width: $desktop-min-width) {
-        padding: 32px 25px 17px 48px;
+        padding: 32px 25px 27px 48px;
       }
     }
   }
 
-  &:not(:first-of-type) {
-    @media (min-width: $tablet-min-width) {
-      margin-right: auto;
-    }
-
+  &--small {
     @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
-      width: 57%;
       margin-bottom: 20px;
     }
 
     @media (min-width: $desktop-min-width) {
-      width: 44%;
-      max-width: 525px;
       margin-bottom: 27px;
     }
 
