@@ -174,8 +174,8 @@
 
   background-color: $dark-on-light;
 
-  transition-property: transform;
-  transition-duration: 0.5s;
+  transition-property: transform, background-color;
+  transition-duration: 0.5s, 0.3s;
 
   @media (max-width: $mobile-max-width) {
     top: -6px;
@@ -203,6 +203,9 @@
     height: 1px;
 
     background-color: $dark-on-light;
+
+    transition-property: background-color;
+    transition-duration: 0.3s;
   }
 
   &::before {
@@ -247,6 +250,9 @@
 }
 
 .nav__toggle-text {
+  transition-property: color;
+  transition-duration: 0.3s;
+
   @media (max-width: $mobile-max-width) {
     display: none;
   }

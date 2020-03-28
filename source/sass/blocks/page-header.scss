@@ -138,6 +138,9 @@
   line-height: $body-lh;
   color: $dark-on-light;
 
+  transition-property: color;
+  transition-duration: 0.3s;
+
   @media (max-width: $tablet-max-width) {
     max-width: 230px;
     margin-left: 20px;
@@ -217,6 +220,9 @@
   line-height: $body-lh;
   color: $accent;
 
+  transition-property: color;
+  transition-duration: 0.3s;
+
   @media (max-width: $mobile-max-width) {
     width: 175px;
     margin-bottom: 10px;
@@ -257,6 +263,9 @@
     top: 1px;
 
     background-color: $accent;
+
+    transition-property: background-color;
+    transition-duration: 0.3s;
 
     @media (max-width: $tablet-max-width) {
       width: 30px;
@@ -359,18 +368,21 @@
     outline: none;
 
     .page-header__social-icon {
-      fill: $dark-on-light-hover;
+      fill: $accent-hover;
     }
   }
 
   &:active {
     .page-header__social-icon {
-      fill: $dark-on-light-pressed;
+      fill: $accent-pressed;
     }
   }
 }
 
 .page-header__social-icon {
+  transition-property: fill;
+  transition-duration: 0.3s;
+
   @media (min-width: $tablet-min-width) {
     fill: $dark-on-light;
   }
