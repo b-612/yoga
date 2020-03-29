@@ -103,13 +103,17 @@
     const fragment = window.util.fragment;
     const list = section.find('.' + listClass);
 
+    if (section.hasClass('directions') && !window.items.directionsData) {
+      window.items.directionsData = itemsData;
+    }
+
     if (section.hasClass('directions') && screen.width >= window.util.screenWidth.TAB_MIN) {
       const $itemsWrapper = $('<div>').addClass('directions__items-wrapper');
       const $btnLookMore = $('<a>', {href: '#'}).addClass('directions__watch-more').text('Смотреть больше');
-      const firstItem = makeItem(itemsData[0]);
+      const firstItem = makeItem(window.items.directionsData[0]);
 
-      for (let i = 1; i < itemsData.length; i += 1) {
-        const item = makeItem(itemsData[i]);
+      for (let i = 1; i < window.items.directionsData.length; i += 1) {
+        const item = makeItem(window.items.directionsData[i]);
         $(item).addClass('direction--small');
         $($itemsWrapper)[0].appendChild(item);
       }
@@ -118,6 +122,10 @@
       $(firstItem).addClass('direction--big');
       fragment.appendChild(firstItem);
       fragment.appendChild($($itemsWrapper)[0]);
+    } else if (section.hasClass('directions')) {
+      $.each(window.items.directionsData, function () {
+        fragment.appendChild(makeItem(this));
+      });
     } else {
       $.each(itemsData, function () {
         fragment.appendChild(makeItem(this));
@@ -178,6 +186,6 @@
     makeItemImage: makeItemImage,
     setImgAttr: setImgAttr,
     removeSection: removeSection,
-    makeItems: makeItems
+    makeItems: makeItems,
   };
 })();

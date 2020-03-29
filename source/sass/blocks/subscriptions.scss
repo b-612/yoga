@@ -191,6 +191,8 @@
 
   @media (max-width: $mobile-max-width) {
     margin-right: -20px;
+    align-items: flex-start;
+    align-content: flex-start;
   }
 
   @media (min-width: $tablet-min-width) {
@@ -200,7 +202,11 @@
 
 .subscriptions__item {
   @media (max-width: $tablet-max-width) {
-    margin: 0 20px 28px 0;
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+    margin-right: 24px;
   }
 
   @media (min-width: $desktop-min-width) {

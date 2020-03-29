@@ -40,8 +40,6 @@
     return $($directionCard)[0];
   };
 
-  // url, onSuccess, onError, makeItem, section, listClass, makeSlider
-
   const InquiryParam = {
     URL: DIRECTIONS_URL,
     ON_SUCCESS: {
@@ -55,4 +53,8 @@
   };
 
   window.backend.getItems(InquiryParam);
+
+  window.directions = {
+    makeDirection: makeDirection
+  }
 })();

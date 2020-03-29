@@ -9,12 +9,12 @@
   }
 
   @media (max-width: $header-bg-point-mob) {
-    background-size: 529px 336px;
+    background-size: cover;
     background-position: top center;
   }
 
   @media (min-width: $header-bg-point-mob + 1) and (max-width: $mobile-max-width) {
-    background-size: 767px 487px;
+    background-size: cover;
     background-position: bottom center;
   }
 

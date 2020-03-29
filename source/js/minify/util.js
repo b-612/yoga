@@ -3,6 +3,7 @@
 (function () {
   const screenWidth = {
     MOB_MIN: 320,
+    MOB_SUBSCR_MIN: 590,
     MOB_MID: 610,
     MOB_MAX: 768,
     TAB_MIN: 768,
