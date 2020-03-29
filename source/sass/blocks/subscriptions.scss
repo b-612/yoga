@@ -76,7 +76,7 @@
   &.no-webp {
     @media (max-width: $mobile-max-width) {
       background-image:
-        url("../img/subscriptions-team-bg-mob@1x.jpg"),
+        url("../img/subscriptions-team-bg-mob@1x.png"),
         url("../img/subscriptions-bg-mob@1x.jpg");
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
@@ -203,6 +203,7 @@
 .subscriptions__item {
   @media (max-width: $tablet-max-width) {
     margin-bottom: 20px;
+    margin-right: 24px;
   }
 
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {

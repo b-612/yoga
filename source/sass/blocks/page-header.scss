@@ -79,7 +79,7 @@
     }
 
     @media (min-width: $header-bg-point-mob + 1) {
-      background-image: url("../img/header-bg-mobile-max@1x.png");
+      background-image: url("../img/header-bg-mobile-max@1x.jpg");
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
         background-image: url("../img/header-bg-mobile-max@2x.jpg");

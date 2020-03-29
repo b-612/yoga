@@ -30,7 +30,6 @@
       case screen.width >= window.util.screenWidth.TAB_MIN && setLastWindowWidth.lastWindowWidth < window.util.screenWidth.TAB_MIN :
         window.subscriptions.resizeSubscr();
         makeDirections(DirectionParam);
-        console.log('!!!!!Работает');
         break;
 
       case screen.width < window.util.screenWidth.TAB_MIN && setLastWindowWidth.lastWindowWidth >= window.util.screenWidth.TAB_MIN :
@@ -48,6 +47,7 @@
     }
 
     setLastWindowWidth();
+    console.log('Изменён размер');
   });
 
   setLastWindowWidth();
