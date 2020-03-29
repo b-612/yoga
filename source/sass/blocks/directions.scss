@@ -109,13 +109,17 @@
 }
 
 .directions__items-wrapper {
+  @media (min-width: $tablet-min-width) {
+    display: flex;
+    flex-direction: column;
+  }
+
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     width: 57%;
+    margin-left: 3%;
   }
 
   @media (min-width: $desktop-min-width) {
-    display: flex;
-    flex-direction: column;
     width: 54%;
     margin-left: 4%;
   }
@@ -128,6 +132,9 @@
 }
 
 .directions__watch-more {
+  transition-property: background-color, color;
+  transition-duration: $short-transition;
+
   @media (max-width: $mobile-max-width) {
     display: none;
   }

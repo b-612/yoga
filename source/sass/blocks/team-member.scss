@@ -228,12 +228,13 @@
 
     .team-member__social-icon {
       opacity: 1;
+      fill: $accent;
     }
   }
 
   &:active {
     .team-member__social-icon {
-      fill: #7869ac;
+      fill: $accent-hover;
     }
   }
 }
@@ -241,4 +242,7 @@
 .team-member__social-icon {
   fill: #8b7eac;
   opacity: 0.65;
+
+  transition-property: fill;
+  transition-duration: $short-transition;
 }

@@ -87,7 +87,11 @@
     }
 
     @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+      left: 50%;
+
       margin-left: -35px;
+
+      transform: translateX(-50%) rotate(180deg);
     }
 
     @media (min-width: $desktop-min-width) {
@@ -101,7 +105,11 @@
     }
 
     @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
+      left: 50%;
+
       margin-left: 35px;
+
+      transform: translateX(-50%);
     }
 
     @media (min-width: $desktop-min-width) {

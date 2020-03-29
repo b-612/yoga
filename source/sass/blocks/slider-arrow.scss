@@ -9,6 +9,9 @@
   background-position: center;
   cursor: pointer;
 
+  transition-property: background-color;
+  transition-duration: $short-transition;
+
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     width: 30px;
     height: 20px;

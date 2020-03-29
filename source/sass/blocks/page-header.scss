@@ -1,9 +1,9 @@
 .page-header {
-  background-size: 100%;
   background-position: bottom center;
   background-repeat: no-repeat;
 
   @media (max-width: $mobile-max-width) {
+    background-size: 100%;
     padding-top: 10px;
     padding-bottom: 83px;
   }
@@ -18,6 +18,10 @@
     background-position: bottom center;
   }
 
+  @media (min-width: $tablet-min-width) {
+    background-size: cover;
+  }
+
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     padding-top: 26px;
     padding-bottom: 116px;
@@ -27,7 +31,6 @@
     padding-top: 65px;
 
     background-position: 0 100%;
-    background-size: cover;
   }
 
   &.webp {
@@ -139,7 +142,7 @@
   color: $dark-on-light;
 
   transition-property: color;
-  transition-duration: 0.3s;
+  transition-duration: $short-transition;
 
   @media (max-width: $tablet-max-width) {
     max-width: 230px;
@@ -221,7 +224,7 @@
   color: $accent;
 
   transition-property: color;
-  transition-duration: 0.3s;
+  transition-duration: $short-transition;
 
   @media (max-width: $mobile-max-width) {
     width: 175px;
@@ -265,7 +268,7 @@
     background-color: $accent;
 
     transition-property: background-color;
-    transition-duration: 0.3s;
+    transition-duration: $short-transition;
 
     @media (max-width: $tablet-max-width) {
       width: 30px;
@@ -381,7 +384,7 @@
 
 .page-header__social-icon {
   transition-property: fill;
-  transition-duration: 0.3s;
+  transition-duration: $short-transition;
 
   @media (min-width: $tablet-min-width) {
     fill: $dark-on-light;

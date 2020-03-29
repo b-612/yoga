@@ -71,6 +71,8 @@
 
     .direction__wrapper {
       @media (min-width: $tablet-min-width) {
+        display: flex;
+        flex-direction: column;
         width: 59%;
       }
     }
@@ -103,7 +105,7 @@
 
       @media (min-width: $desktop-min-width) {
         right: 39px;
-        bottom: 37px;
+        bottom: 21px;
 
         width: 45px;
         height: 30px;
@@ -192,7 +194,7 @@
 
   @media (min-width: $tablet-min-width) {
     width: 70%;
-    margin: 5px 0 0;
+    margin: auto 0 0;
   }
 
   @media (min-width: $desktop-min-width) {
@@ -214,13 +216,17 @@
   background-position: center center;
   background-size: 9px 13px;
 
+  transition-property: background-color;
+  transition-duration: $short-transition;
+
   @media (max-width: $mobile-max-width) {
     width: 30px;
   }
 
   &:hover,
   &:focus {
-    background-color: $dark-on-light-hover;
+    background-color: $accent-hover;
+    outline: none;
   }
 
   &:active {

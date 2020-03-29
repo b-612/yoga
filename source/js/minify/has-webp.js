@@ -21,6 +21,7 @@ hasWebP().then(
       $('.directions'),
       $('.subscriptions'),
       $('.team'),
+      $('.registration'),
       $('.page-footer')
     ];
 

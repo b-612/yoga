@@ -18,7 +18,7 @@
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     margin-bottom: 75px;
     padding-top: 67px;
-    padding-bottom: 69px;
+    padding-bottom: 60px;
 
     background-size: 1159px 475px;
   }
@@ -49,6 +49,14 @@
 
   &.no-webp {
     @media (max-width: $mobile-max-width) {
+      background-image: url("../img/registration-bg-tablet@1x.jpg");
+
+      @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+        background-image: url("../img/registration-bg-tablet@2x.jpg");
+      }
+    }
+
+    @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
       background-image: url("../img/registration-bg-tablet@1x.jpg");
 
       @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
@@ -258,6 +266,9 @@ span.registration__error-message {
   color: $light-on-dark;
 
   background-color: $accent;
+
+  transition-property: background-color;
+  transition-duration: $short-transition;
 
   @media (max-width: $mobile-max-width) {
     margin: 34px 0 20px;

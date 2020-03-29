@@ -136,17 +136,21 @@
 
     .review__social-icon {
       opacity: 1;
+      fill: $accent;
     }
   }
 
   &:active {
     .review__social-icon {
-      fill: #7869ac;
+      fill: $accent-hover;
     }
   }
 }
 
 .review__social-icon {
-  fill: #8b7eac;
+  fill: $dark-on-light;
   opacity: 0.65;
+
+  transition-property: fill, opacity;
+  transition-duration: $short-transition;
 }

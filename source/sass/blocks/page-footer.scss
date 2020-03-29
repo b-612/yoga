@@ -119,6 +119,9 @@
 
   .page-footer__phone,
   .page-footer__email {
+    transition-property: color;
+    transition-duration: $short-transition;
+
     @media (max-width: $tablet-max-width) {
       color: $light-on-dark;
     }
@@ -126,7 +129,18 @@
     @media (min-width: $desktop-min-width) {
       color: $dark-on-light;
     }
+
+    &:hover,
+    &:focus {
+      color: $accent;
+      outline: none;
+    }
+
+    &:active {
+      color: $accent-hover;
+    }
   }
+
 
   .page-footer__phone {
     @media (max-width: $mobile-max-width) {
@@ -148,7 +162,7 @@
 
   @media (min-width: $tablet-min-width) and (max-width: $tablet-max-width) {
     width: 35%;
-    margin-top: 13px;
+    margin-top: -3px;
   }
 
   @media (min-width: $desktop-min-width) {
@@ -187,6 +201,9 @@
 }
 
 .page-footer__social-icon {
+  transition-property: fill;
+  transition-duration: $short-transition;
+
   @media (max-width: $tablet-max-width) {
     fill: #ffffff;
   }
@@ -286,11 +303,24 @@
 .page-footer__copyright-link {
   color: $light-on-dark;
 
+  transition-property: color;
+  transition-duration: $short-transition;
+
   @media (max-width: $mobile-max-width) {
     margin-bottom: 10px;
   }
 
   @media (min-width: $desktop-min-width) {
     width: 250px;
+  }
+
+  &:hover,
+  &:focus {
+    color: $accent;
+    outline: none;
+  }
+
+  &:active {
+    color: $accent-hover;
   }
 }

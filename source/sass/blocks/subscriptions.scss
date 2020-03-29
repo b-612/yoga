@@ -166,9 +166,13 @@
 .subscriptions__time-btn {
   color: $accent;
 
+  transition-property: color;
+  transition-duration: $short-transition;
+
   &:hover,
   &:focus {
     color: $accent-hover;
+    outline-color: $dark-on-light;
   }
 
   &:active {

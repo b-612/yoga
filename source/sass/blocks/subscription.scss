@@ -10,6 +10,8 @@
   transition-property: width, height;
   transition-duration: 300ms;
 
+  outline-color: $dark-on-light;
+
   @media (max-width: $mobile-max-width) {
     min-width: 250px;
     padding: 21px 20px 31px;
@@ -113,6 +115,9 @@
 
   background-color: $dark-on-light;
 
+  transition-property: color, background-color;
+  transition-duration: $short-transition;
+
   @media (max-width: $mobile-max-width) {
     width: 148px;
     margin-top: 18px;
@@ -138,7 +143,8 @@
 
   &:hover,
   &:focus {
-    background-color: $dark-on-light-hover;
+    background-color: $accent-hover;
+    outline: none;
   }
 
   &:active {

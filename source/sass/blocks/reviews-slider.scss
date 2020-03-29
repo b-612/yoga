@@ -24,7 +24,7 @@
   display: flex;
   height: auto;
 
-  outline: 0;
+  outline: none;
 
   @media (max-width: $mobile-mid-max) {
     padding-left: 20px;
