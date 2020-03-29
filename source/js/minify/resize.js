@@ -47,7 +47,6 @@
     }
 
     setLastWindowWidth();
-    console.log('Изменён размер');
   });
 
   setLastWindowWidth();

@@ -83,6 +83,8 @@ img {
   text-align: center;
   font-weight: normal;
 
+  outline: none;
+
   @media (max-width: $mobile-max-width) {
     font-size: $section-title-fs-m;
   }
